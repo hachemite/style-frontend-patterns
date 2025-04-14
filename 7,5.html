@@ -1,12 +1,11 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Modern Design Styles Showcase</title>
+  <title>Practical Industry-Specific Design Styles</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;700&family=Inter:wght@300;400;700&family=Roboto+Mono&family=IBM+Plex+Mono:wght@400;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;700&family=Inter:wght@300;400;600;800&family=Source+Serif+Pro:ital,wght@0,400;0,700;1,400&family=Outfit:wght@300;400;600;800&display=swap');
 
     * {
       margin: 0;
@@ -15,8 +14,8 @@
     }
     
     body {
-      background-color: #f0f0f0;
-      color: #202020;
+      background-color: #f8f9fa;
+      color: #333;
       font-family: 'Inter', sans-serif;
       line-height: 1.6;
     }
@@ -33,12 +32,23 @@
       position: relative;
     }
     
+    header::after {
+      content: "";
+      position: absolute;
+      bottom: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 200px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #3498db, transparent);
+    }
+    
     h1 {
       font-size: 3.5rem;
       margin-bottom: 15px;
       color: #222;
-      font-family: 'Space Grotesk', sans-serif;
-      font-weight: 700;
+      font-family: 'Bebas Neue', sans-serif;
+      letter-spacing: 2px;
     }
     
     .subtitle {
@@ -56,16 +66,17 @@
     }
     
     .style-card {
-      border-radius: 12px;
+      border-radius: 8px;
       padding: 25px;
-      transition: all 0.4s ease;
+      transition: all 0.3s ease;
       cursor: pointer;
-      height: 550px;
+      height: 600px;
       display: flex;
       flex-direction: column;
       position: relative;
       overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      background-color: #fff;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
     }
     
     .style-title {
@@ -73,8 +84,6 @@
       margin-bottom: 5px;
       z-index: 2;
       position: relative;
-      font-family: 'Space Grotesk', sans-serif;
-      font-weight: 700;
     }
     
     .style-vibe {
@@ -98,695 +107,987 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      border-radius: 8px;
+      border-radius: 2px;
       margin-top: auto;
       position: relative;
       z-index: 2;
-      overflow: hidden;
-    }
-
-    /* Retro-futurism Style */
-    .retro-futurism {
-      background: linear-gradient(135deg, #ffc266, #ff6b6b);
-      color: #222;
-    }
-    
-    .retro-futurism::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: radial-gradient(circle at 70% 30%, rgba(255, 255, 255, 0.3), transparent 70%);
-      z-index: 1;
-    }
-    
-    .retro-futurism:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 30px rgba(255, 107, 107, 0.3);
-    }
-    
-    .retro-futurism .style-title {
-      color: #fff;
-      text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
-    }
-    
-    .retro-futurism .style-vibe {
-      color: #fff;
-      font-weight: bold;
-    }
-    
-    .retro-futurism .style-description {
-      color: #fff;
-      text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);
-    }
-    
-    .retro-futurism .style-example {
-      background-color: rgba(255, 255, 255, 0.2);
-      border: 2px solid #fff;
-    }
-    
-    .retro-future-example {
-      width: 100%;
-      height: 100%;
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
-    
-    .retro-future-rocket {
-      width: 80px;
-      height: 140px;
-      position: relative;
-    }
-    
-    .rocket-body {
-      position: absolute;
-      width: 30px;
-      height: 80px;
       background-color: #fff;
-      border-radius: 15px 15px 5px 5px;
-      top: 30px;
-      left: 25px;
+      border: 1px solid #eee;
+      overflow: hidden;
     }
     
-    .rocket-head {
-      position: absolute;
-      width: 30px;
-      height: 30px;
-      background-color: #ff6b6b;
-      border-radius: 50% 50% 0 0;
-      top: 0;
-      left: 25px;
-    }
-    
-    .rocket-window {
-      position: absolute;
-      width: 15px;
-      height: 15px;
-      background-color: #87ceeb;
-      border-radius: 50%;
-      border: 2px solid #fff;
-      top: 45px;
-      left: 32.5px;
-    }
-    
-    .rocket-fin {
-      position: absolute;
-      width: 20px;
-      height: 30px;
-      background-color: #ff6b6b;
-      top: 70px;
-    }
-    
-    .rocket-fin.left {
-      left: 5px;
-      clip-path: polygon(0 0, 100% 50%, 100% 100%, 0 100%);
-    }
-    
-    .rocket-fin.right {
-      right: 5px;
-      clip-path: polygon(0 50%, 100% 0, 100% 100%, 0 100%);
-    }
-    
-    .rocket-flame {
-      position: absolute;
-      width: 30px;
-      height: 40px;
-      background: linear-gradient(to bottom, #ff6b6b, #ffc266);
-      border-radius: 0 0 15px 15px;
-      top: 110px;
-      left: 25px;
-      animation: flame 0.5s infinite alternate;
-    }
-    
-    @keyframes flame {
-      0% { height: 30px; top: 110px; }
-      100% { height: 50px; top: 110px; }
-    }
-    
-    .retro-future-stars {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-    }
-    
-    .star {
-      position: absolute;
-      width: 4px;
-      height: 4px;
+    /* Corporate / SaaS Style */
+    .corporate {
       background-color: #fff;
-      border-radius: 50%;
+      border-top: 4px solid #2563eb;
     }
     
-    .star:nth-child(1) { top: 20%; left: 10%; }
-    .star:nth-child(2) { top: 30%; left: 80%; }
-    .star:nth-child(3) { top: 70%; left: 15%; }
-    .star:nth-child(4) { top: 80%; left: 70%; }
-    .star:nth-child(5) { top: 10%; left: 60%; }
-    .star:nth-child(6) { top: 50%; left: 30%; }
-    .star:nth-child(7) { top: 60%; left: 85%; }
-    .star:nth-child(8) { top: 15%; left: 40%; }
-
-    /* AI-core Style */
-    .ai-core {
-      background-color: #151c26;
-      color: #e0e0e0;
+    .corporate:hover {
+      box-shadow: 0 15px 35px rgba(37, 99, 235, 0.1);
     }
     
-    .ai-core::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: radial-gradient(circle at 70% 30%, rgba(64, 223, 251, 0.1), transparent 70%);
-      z-index: 1;
+    .corporate .style-title {
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      color: #1e40af;
     }
     
-    .ai-core:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 30px rgba(64, 223, 251, 0.2);
+    .corporate .style-vibe {
+      color: #6b7280;
     }
     
-    .ai-core .style-title {
-      color: #40dffa;
-      font-family: 'IBM Plex Mono', monospace;
-    }
-    
-    .ai-core .style-vibe {
-      color: #a0a0a0;
-    }
-    
-    .ai-core .style-example {
-      background-color: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(64, 223, 251, 0.3);
-    }
-    
-    .ai-core-example {
-      width: 100%;
-      height: 100%;
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-    }
-    
-    .neural-network {
-      width: 80%;
-      height: 80%;
-      position: relative;
-    }
-    
-    .node {
-      position: absolute;
-      width: 12px;
-      height: 12px;
-      background-color: #40dffa;
-      border-radius: 50%;
-      box-shadow: 0 0 10px rgba(64, 223, 251, 0.7);
-    }
-    
-    .node:nth-child(1) { top: 20%; left: 20%; }
-    .node:nth-child(2) { top: 30%; left: 50%; }
-    .node:nth-child(3) { top: 20%; left: 80%; }
-    .node:nth-child(4) { top: 50%; left: 35%; }
-    .node:nth-child(5) { top: 50%; left: 65%; }
-    .node:nth-child(6) { top: 80%; left: 20%; }
-    .node:nth-child(7) { top: 80%; left: 50%; }
-    .node:nth-child(8) { top: 80%; left: 80%; }
-    
-    .connection {
-      position: absolute;
-      height: 2px;
-      background: linear-gradient(to right, #40dffa, rgba(64, 223, 251, 0.3));
-      transform-origin: left center;
-    }
-    
-    .connection:nth-child(9) {
-      width: 70px;
-      top: 22%;
-      left: 24%;
-      transform: rotate(25deg);
-    }
-    
-    .connection:nth-child(10) {
-      width: 75px;
-      top: 22%;
-      left: 22%;
-      transform: rotate(-25deg);
-    }
-    
-    .connection:nth-child(11) {
-      width: 65px;
-      top: 52%;
-      left: 38%;
-      transform: rotate(30deg);
-    }
-    
-    .connection:nth-child(12) {
-      width: 65px;
-      top: 52%;
-      left: 38%;
-      transform: rotate(-30deg);
-    }
-    
-    .connection:nth-child(13) {
-      width: 70px;
-      top: 52%;
-      left: 68%;
-      transform: rotate(30deg);
-    }
-    
-    .connection:nth-child(14) {
-      width: 70px;
-      top: 52%;
-      left: 68%;
-      transform: rotate(-30deg);
-    }
-    
-    .pulse {
-      position: absolute;
-      width: 8px;
-      height: 8px;
-      background-color: rgba(64, 223, 251, 0.8);
-      border-radius: 50%;
-      animation: pulse 3s infinite;
-    }
-    
-    .pulse:nth-child(15) {
-      top: 22%;
-      left: 22%;
-      animation-delay: 0s;
-    }
-    
-    .pulse:nth-child(16) {
-      top: 22%;
-      left: 78%;
-      animation-delay: 1s;
-    }
-    
-    .pulse:nth-child(17) {
-      top: 78%;
-      left: 22%;
-      animation-delay: 2s;
-    }
-    
-    @keyframes pulse {
-      0% {
-        transform: scale(1);
-        opacity: 1;
-      }
-      100% {
-        transform: scale(3);
-        opacity: 0;
-      }
-    }
-
-    /* Monochrome Style */
-    .monochrome {
-      background-color: #222;
-      color: #f5f5f5;
-    }
-    
-    .monochrome:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-    }
-    
-    .monochrome .style-title {
-      color: #fff;
-    }
-    
-    .monochrome .style-vibe {
-      color: #aaa;
-    }
-    
-    .monochrome .style-example {
-      background-color: #2a2a2a;
-    }
-    
-    .monochrome-example {
-      width: 100%;
-      height: 100%;
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      padding: 20px;
-    }
-    
-    .mono-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: repeat(3, 1fr);
-      gap: 10px;
-      width: 100%;
-      height: 100%;
-    }
-    
-    .mono-tile {
-      border-radius: 4px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    
-    .mono-tile:nth-child(1) { background-color: #f5f5f5; color: #222; }
-    .mono-tile:nth-child(2) { background-color: #e0e0e0; color: #222; }
-    .mono-tile:nth-child(3) { background-color: #cccccc; color: #222; }
-    .mono-tile:nth-child(4) { background-color: #b3b3b3; color: #222; }
-    .mono-tile:nth-child(5) { background-color: #999999; color: #fff; }
-    .mono-tile:nth-child(6) { background-color: #808080; color: #fff; }
-    .mono-tile:nth-child(7) { background-color: #666666; color: #fff; }
-    .mono-tile:nth-child(8) { background-color: #4d4d4d; color: #fff; }
-    .mono-tile:nth-child(9) { background-color: #333333; color: #fff; }
-
-    /* Gradient-heavy Style */
-    .gradient-heavy {
-      background: linear-gradient(135deg, #6e48aa, #9d50bb, #6e48aa);
-      background-size: 200% 200%;
-      animation: gradientBG 15s ease infinite;
-      color: #fff;
-    }
-    
-    @keyframes gradientBG {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-    
-    .gradient-heavy:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 30px rgba(158, 87, 187, 0.4);
-    }
-    
-    .gradient-heavy .style-example {
-      background-color: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(5px);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-    }
-    
-    .gradient-example {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    
-    .gradient-circles {
-      position: relative;
-      width: 80%;
-      height: 80%;
-    }
-    
-    .gradient-circle {
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(5px);
-    }
-    
-    .gradient-circle:nth-child(1) {
-      width: 100px;
-      height: 100px;
-      background: linear-gradient(to right, #f953c6, #b91d73);
-      top: 20%;
-      left: 30%;
-      animation: floatCircle 7s ease-in-out infinite;
-    }
-    
-    .gradient-circle:nth-child(2) {
-      width: 70px;
-      height: 70px;
-      background: linear-gradient(to right, #4facfe, #00f2fe);
-      top: 50%;
-      left: 60%;
-      animation: floatCircle 5s ease-in-out infinite 1s;
-    }
-    
-    .gradient-circle:nth-child(3) {
-      width: 50px;
-      height: 50px;
-      background: linear-gradient(to right, #43e97b, #38f9d7);
-      top: 70%;
-      left: 30%;
-      animation: floatCircle 6s ease-in-out infinite 2s;
-    }
-    
-    @keyframes floatCircle {
-      0%, 100% { transform: translateY(0) translateX(0); }
-      50% { transform: translateY(-20px) translateX(10px); }
-    }
-
-    /* 3D UI / Isometric Style */
-    .isometric {
-      background-color: #f9f9f9;
-      color: #333;
-    }
-    
-    .isometric:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-    }
-    
-    .isometric .style-example {
-      background-color: #eaeaea;
-    }
-    
-    .isometric-example {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    
-    .isometric-container {
-      width: 150px;
-      height: 150px;
-      position: relative;
-      transform-style: preserve-3d;
-      transform: rotateX(55deg) rotateZ(-45deg);
-    }
-    
-    .isometric-cube {
-      position: absolute;
-      width: 50px;
-      height: 50px;
-      transform-style: preserve-3d;
-    }
-    
-    .isometric-cube:nth-child(1) {
-      transform: translate3d(0, 0, 0);
-    }
-    
-    .isometric-cube:nth-child(2) {
-      transform: translate3d(60px, 0, 0);
-    }
-    
-    .isometric-cube:nth-child(3) {
-      transform: translate3d(0, 60px, 0);
-    }
-    
-    .isometric-cube:nth-child(4) {
-      transform: translate3d(60px, 60px, 0);
-    }
-    
-    .cube-face {
-      position: absolute;
-      width: 50px;
-      height: 50px;
-    }
-    
-    .cube-face.top {
-      background-color: #6c5ce7;
-      transform: rotateX(90deg) translateZ(25px);
-    }
-    
-    .cube-face.front {
-      background-color: #a29bfe;
-      transform: translateZ(25px);
-    }
-    
-    .cube-face.right {
-      background-color: #5a52c4;
-      transform: rotateY(90deg) translateZ(25px);
-    }
-    
-    .isometric-cube:nth-child(2) .cube-face.top { background-color: #ff7675; }
-    .isometric-cube:nth-child(2) .cube-face.front { background-color: #fab1a0; }
-    .isometric-cube:nth-child(2) .cube-face.right { background-color: #e84d4d; }
-    
-    .isometric-cube:nth-child(3) .cube-face.top { background-color: #55efc4; }
-    .isometric-cube:nth-child(3) .cube-face.front { background-color: #81ecec; }
-    .isometric-cube:nth-child(3) .cube-face.right { background-color: #00cec9; }
-    
-    .isometric-cube:nth-child(4) .cube-face.top { background-color: #fdcb6e; }
-    .isometric-cube:nth-child(4) .cube-face.front { background-color: #ffeaa7; }
-    .isometric-cube:nth-child(4) .cube-face.right { background-color: #f1c40f; }
-
-    /* Animated UI / Motion Design */
-    .animated-ui {
-      background-color: #3498db;
-      color: #fff;
-    }
-    
-    .animated-ui:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 30px rgba(52, 152, 219, 0.3);
-    }
-    
-    .animated-ui .style-example {
-      background-color: rgba(255, 255, 255, 0.1);
-      overflow: hidden;
-    }
-    
-    .motion-example {
+    .corporate-example {
       width: 100%;
       height: 100%;
       display: flex;
       flex-direction: column;
+    }
+    
+    .corporate-header {
+      display: flex;
+      justify-content: space-between;
       align-items: center;
-      justify-content: center;
       padding: 15px;
+      border-bottom: 1px solid #e5e7eb;
     }
     
-    .motion-loader {
-      width: 60px;
-      height: 60px;
-      position: relative;
+    .corporate-logo {
+      font-weight: 700;
+      color: #1e40af;
+      font-size: 20px;
+    }
+    
+    .corporate-nav {
+      display: flex;
+      gap: 15px;
+    }
+    
+    .corporate-nav-item {
+      font-size: 14px;
+      color: #4b5563;
+    }
+    
+    .corporate-hero {
+      padding: 25px 15px;
+      background-color: #f3f4f6;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      flex-grow: 1;
+    }
+    
+    .corporate-headline {
+      font-size: 24px;
+      font-weight: 700;
+      color: #1e293b;
+      margin-bottom: 10px;
+      line-height: 1.2;
+    }
+    
+    .corporate-subhead {
+      font-size: 14px;
+      color: #64748b;
       margin-bottom: 20px;
     }
     
-    .motion-circle {
-      position: absolute;
+    .corporate-cta {
+      background-color: #2563eb;
+      color: white;
+      padding: 8px 20px;
+      border-radius: 4px;
+      font-weight: 500;
+      font-size: 14px;
+    }
+    
+    /* Tech / Startup Style */
+    .tech-startup {
+      background-color: #fff;
+      border-radius: 12px;
+    }
+    
+    .tech-startup:hover {
+      transform: translateY(-5px);
+    }
+    
+    .tech-startup .style-title {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 700;
+      background: linear-gradient(90deg, #7928ca, #ff0080);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .tech-startup .style-vibe {
+      color: #6d28d9;
+    }
+    
+    .tech-startup-example {
       width: 100%;
       height: 100%;
-      border: 4px solid transparent;
-      border-top-color: #fff;
-      border-radius: 50%;
-      animation: spin 1.5s linear infinite;
-    }
-    
-    .motion-circle:nth-child(2) {
-      border-top-color: transparent;
-      border-right-color: #fff;
-      animation-duration: 2s;
-    }
-    
-    .motion-circle:nth-child(3) {
-      border-top-color: transparent;
-      border-bottom-color: #fff;
-      animation-duration: 2.5s;
-    }
-    
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-    
-    .motion-buttons {
       display: flex;
-      gap: 10px;
-      margin-top: 20px;
+      flex-direction: column;
     }
     
-    .motion-button {
-      width: 15px;
-      height: 15px;
-      border-radius: 50%;
-      background-color: rgba(255, 255, 255, 0.5);
+    .tech-startup-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px;
+    }
+    
+    .tech-startup-logo {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #7928ca, #ff0080);
+    }
+    
+    .tech-startup-nav {
+      display: flex;
+      gap: 15px;
+    }
+    
+    .tech-startup-nav-item {
+      font-size: 14px;
+      font-weight: 500;
+      color: #4b5563;
+    }
+    
+    .tech-startup-hero {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 15px;
+      flex-grow: 1;
       position: relative;
       overflow: hidden;
     }
     
-    .motion-button::after {
+    .tech-startup-hero::before {
       content: "";
       position: absolute;
+      top: 0;
+      right: 0;
+      width: 150px;
+      height: 150px;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" viewBox="0 0 24 24" fill="none" stroke="%23f0f0f0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg>');
+      opacity: 0.2;
+      z-index: 0;
+    }
+    
+    .tech-startup-headline {
+      font-size: 24px;
+      font-weight: 700;
+      color: #111827;
+      margin-bottom: 10px;
+      line-height: 1.2;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .tech-startup-subhead {
+      font-size: 14px;
+      color: #6b7280;
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .tech-startup-cta {
+      background: linear-gradient(90deg, #7928ca, #ff0080);
+      color: white;
+      padding: 10px 25px;
+      border-radius: 50px;
+      font-weight: 500;
+      font-size: 14px;
+      position: relative;
+      z-index: 1;
+    }
+    
+    /* Portfolio Style */
+    .portfolio {
+      background-color: #fafafa;
+    }
+    
+    .portfolio:hover {
+      background-color: #f3f3f3;
+    }
+    
+    .portfolio .style-title {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      color: #18181b;
+    }
+    
+    .portfolio .style-vibe {
+      color: #71717a;
+    }
+    
+    .portfolio-example {
       width: 100%;
       height: 100%;
-      background-color: rgba(255, 255, 255, 0.8);
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .portfolio-header {
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .portfolio-name {
+      font-weight: 700;
+      font-size: 18px;
+      color: #18181b;
+    }
+    
+    .portfolio-menu {
+      display: flex;
+      gap: 15px;
+    }
+    
+    .portfolio-menu-item {
+      font-size: 14px;
+      color: #71717a;
+    }
+    
+    .portfolio-content {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 20px;
+      position: relative;
+    }
+    
+    .portfolio-image {
+      width: 100px;
+      height: 100px;
       border-radius: 50%;
-      transform: scale(0);
-      animation: pulseButton 2s infinite;
+      background-color: #e4e4e7;
+      margin-bottom: 20px;
     }
     
-    .motion-button:nth-child(2)::after { animation-delay: 0.6s; }
-    .motion-button:nth-child(3)::after { animation-delay: 1.2s; }
-    
-    @keyframes pulseButton {
-      0% { transform: scale(0); opacity: 1; }
-      100% { transform: scale(2.5); opacity: 0; }
+    .portfolio-title {
+      font-size: 24px;
+      font-weight: 700;
+      color: #18181b;
+      margin-bottom: 10px;
     }
     
-    .motion-bars {
+    .portfolio-desc {
+      font-size: 14px;
+      color: #71717a;
+      margin-bottom: 20px;
+    }
+    
+    .portfolio-links {
+      display: flex;
+      gap: 10px;
+    }
+    
+    .portfolio-link {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background-color: #e4e4e7;
+    }
+    
+    /* Editorial / Magazine Style */
+    .editorial {
+      background-color: #fff;
+      padding: 0;
+      overflow: hidden;
+    }
+    
+    .editorial:hover .editorial-header-image {
+      transform: scale(1.05);
+    }
+    
+    .editorial .style-title {
+      font-family: 'Source Serif Pro', serif;
+      font-weight: 700;
+      color: #1a1a1a;
+    }
+    
+    .editorial .style-vibe {
+      color: #6b7280;
+    }
+    
+    .editorial .style-description {
+      padding: 0 25px;
+    }
+    
+    .editorial-example {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .editorial-header {
+      position: relative;
+      height: 180px;
+      overflow: hidden;
+    }
+    
+    .editorial-header-image {
+      width: 100%;
+      height: 100%;
+      background-color: #d1d5db;
+      transition: transform 0.5s ease;
+    }
+    
+    .editorial-content {
+      padding: 20px;
+    }
+    
+    .editorial-category {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #4b5563;
+      margin-bottom: 10px;
+    }
+    
+    .editorial-title {
+      font-family: 'Source Serif Pro', serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+    
+    .editorial-excerpt {
+      font-size: 14px;
+      color: #4b5563;
+      margin-bottom: 15px;
+      line-height: 1.5;
+    }
+    
+    .editorial-meta {
+      display: flex;
+      align-items: center;
+      font-size: 12px;
+      color: #6b7280;
+    }
+    
+    .editorial-author {
+      margin-right: 15px;
+    }
+    
+    /* E-commerce Style */
+    .ecommerce {
+      background-color: #fff;
+      border: 1px solid #e5e7eb;
+    }
+    
+    .ecommerce:hover {
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+    
+    .ecommerce .style-title {
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      color: #111827;
+    }
+    
+    .ecommerce .style-vibe {
+      color: #6b7280;
+    }
+    
+    .ecommerce-example {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .ecommerce-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    
+    .ecommerce-logo {
+      font-weight: 700;
+      font-size: 18px;
+      color: #111827;
+    }
+    
+    .ecommerce-icons {
+      display: flex;
+      gap: 15px;
+    }
+    
+    .ecommerce-icon {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: #f3f4f6;
+    }
+    
+    .ecommerce-product {
+      display: flex;
+      flex-direction: column;
+      padding: 15px;
+      flex-grow: 1;
+    }
+    
+    .ecommerce-product-image {
+      width: 100%;
+      height: 150px;
+      background-color: #f3f4f6;
+      margin-bottom: 15px;
+    }
+    
+    .ecommerce-product-title {
+      font-size: 16px;
+      font-weight: 600;
+      color: #111827;
+      margin-bottom: 5px;
+    }
+    
+    .ecommerce-product-price {
+      font-size: 18px;
+      font-weight: 700;
+      color: #111827;
+      margin-bottom: 15px;
+    }
+    
+    .ecommerce-add-to-cart {
+      background-color: #111827;
+      color: white;
+      padding: 8px 15px;
+      border-radius: 4px;
+      font-weight: 500;
+      font-size: 14px;
+      text-align: center;
+    }
+    
+    /* Dashboard UI Style */
+    .dashboard {
+      background-color: #f8fafc;
+      border: 1px solid #e2e8f0;
+    }
+    
+    .dashboard .style-title {
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      color: #0f172a;
+    }
+    
+    .dashboard .style-vibe {
+      color: #64748b;
+    }
+    
+    .dashboard-example {
+      width: 100%;
+      height: 100%;
+      display: flex;
+    }
+    
+    .dashboard-sidebar {
+      width: 60px;
+      background-color: #1e293b;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 15px;
+    }
+    
+    .dashboard-logo {
+      width: 30px;
+      height: 30px;
+      border-radius: 6px;
+      background-color: #3b82f6;
+      margin-bottom: 25px;
+    }
+    
+    .dashboard-menu {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      align-items: center;
+    }
+    
+    .dashboard-menu-item {
+      width: 20px;
+      height: 20px;
+      border-radius: 4px;
+      background-color: #475569;
+    }
+    
+    .dashboard-menu-item:nth-child(1) {
+      background-color: #3b82f6;
+    }
+    
+    .dashboard-content {
+      flex-grow: 1;
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .dashboard-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+    
+    .dashboard-title {
+      font-size: 16px;
+      font-weight: 600;
+      color: #0f172a;
+    }
+    
+    .dashboard-user {
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      background-color: #e2e8f0;
+    }
+    
+    .dashboard-stats {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+    
+    .dashboard-stat-card {
+      flex: 1;
+      background-color: #fff;
+      padding: 10px;
+      border-radius: 6px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    }
+    
+    .dashboard-stat-title {
+      font-size: 12px;
+      color: #64748b;
+      margin-bottom: 5px;
+    }
+    
+    .dashboard-stat-value {
+      font-size: 16px;
+      font-weight: 600;
+      color: #0f172a;
+    }
+    
+    .dashboard-chart {
+      flex-grow: 1;
+      background-color: #fff;
+      border-radius: 6px;
+      padding: 10px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    }
+    
+    .dashboard-chart-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    
+    .dashboard-chart-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: #0f172a;
+    }
+    
+    .dashboard-chart-options {
+      display: flex;
+      gap: 5px;
+    }
+    
+    .dashboard-chart-option {
+      width: 15px;
+      height: 15px;
+      border-radius: 2px;
+      background-color: #e2e8f0;
+    }
+    
+    .dashboard-chart-content {
+      height: 80px;
       display: flex;
       align-items: flex-end;
-      height: 40px;
       gap: 5px;
-      margin-top: 10px;
+      padding-top: 10px;
     }
     
-    .motion-bar {
-      width: 6px;
-      background-color: #fff;
-      border-radius: 3px;
-      animation: equalize 1s infinite alternate;
+    .dashboard-chart-bar {
+      flex-grow: 1;
+      background-color: #e2e8f0;
+      border-radius: 2px 2px 0 0;
     }
     
-    .motion-bar:nth-child(1) { height: 40%; animation-delay: 0.0s; }
-    .motion-bar:nth-child(2) { height: 60%; animation-delay: 0.2s; }
-    .motion-bar:nth-child(3) { height: 80%; animation-delay: 0.4s; }
-    .motion-bar:nth-child(4) { height: 40%; animation-delay: 0.6s; }
-    .motion-bar:nth-child(5) { height: 20%; animation-delay: 0.8s; }
+    .dashboard-chart-bar:nth-child(1) {
+      height: 30%;
+    }
     
-    @keyframes equalize {
-      0% { height: 10%; }
-      100% { height: 100%; }
+    .dashboard-chart-bar:nth-child(2) {
+      height: 60%;
     }
-
-    /* Media Queries */
-    @media (max-width: 1200px) {
-      .styles-grid {
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      }
+    
+    .dashboard-chart-bar:nth-child(3) {
+      height: 40%;
+      background-color: #3b82f6;
     }
-
-    @media (max-width: 768px) {
-      .styles-grid {
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      }
-      
-      h1 {
-        font-size: 2.5rem;
-      }
-      
-      .style-card {
-        height: 800px;
-      }
-      
-      .style-title {
-        font-size: 1.5rem;
-      }
+    
+    .dashboard-chart-bar:nth-child(4) {
+      height: 70%;
     }
+    
+    .dashboard-chart-bar:nth-child(5) {
+      height: 50%;
+    }
+    
+    /* Gaming / Esports Style */
+    .gaming {
+      background-color: #0f0f0f;
+      color: #f0f0f0;
+      border: 1px solid #333;
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .gaming::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(255, 0, 93, 0.1), rgba(0, 183, 255, 0.1));
+      z-index: 1;
+    }
+    
+    .gaming:hover {
+      box-shadow: 0 0 20px rgba(255, 0, 93, 0.3), 0 0 40px rgba(0, 183, 255, 0.2);
+    }
+    
+    .gaming .style-title {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 800;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    .gaming .style-vibe {
+      color: #ff005d;
+    }
+    
+    .gaming .style-description {
+      color: #aaa;
+    }
+    
+    .gaming-example {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .gaming-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px;
+      border-bottom: 1px solid #333;
+    }
+    
+    .gaming-logo {
+      font-weight: 800;
+      font-size: 18px;
+      color: #fff;
+      text-transform: uppercase;
+      text-shadow: 0 0 10px rgba(255, 0, 93, 0.8);
+    }
+    
+    .gaming-nav {
+      display: flex;
+      gap: 15px;
+    }
+    
+    .gaming-nav-item {
+      font-size: 14px;
+      color: #aaa;
+      text-transform: uppercase;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    
+    .gaming-nav-item:hover {
+      color: #00b7ff;
+      text-shadow: 0 0 10px rgba(0, 183, 255, 0.8);
+    }
+    
+    .gaming-content {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      position: relative;
+    }
+    
+    .gaming-content::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: -1;
+    }
+    
+    .gaming-title {
+      font-size: 24px;
+      font-weight: 800;
+      color: #fff;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      text-align: center;
+      text-shadow: 0 0 15px rgba(255, 0, 93, 0.8);
+    }
+    
+    .gaming-button {
+      background: linear-gradient(90deg, #ff005d, #00b7ff);
+      color: white;
+      padding: 10px 30px;
+      border-radius: 4px;
+      font-weight: 700;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 0 15px rgba(255, 0, 93, 0.5);
+    }
+    
+    .gaming-button::after {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(transparent, rgba(255, 255, 255, 0.2), transparent);
+      transform: rotate(45deg);
+      animation: shine 2s infinite;
+    }
+    
+          /* Health / Wellness Style */
+          .health-wellness {
+            background-color: #f8faf7;
+            border-top: 4px solid #84cc16;
+          }
+          
+          .health-wellness:hover {
+            box-shadow: 0 15px 35px rgba(132, 204, 22, 0.1);
+          }
+          
+          .health-wellness .style-title {
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            color: #365314;
+          }
+          
+          .health-wellness .style-vibe {
+            color: #65a30d;
+          }
+          
+          .health-wellness-example {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+          }
+          
+          .health-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+          }
+          
+          .health-logo {
+            font-weight: 600;
+            color: #365314;
+            font-size: 20px;
+            letter-spacing: 1px;
+          }
+          
+          .health-nav {
+            display: flex;
+            gap: 15px;
+          }
+          
+          .health-nav-item {
+            font-size: 14px;
+            color: #4d7c0f;
+          }
+          
+          .health-hero {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="%23d9f99d" stroke-width="0.5"><path d="M30,20 Q50,10 70,20 T90,40 Q95,60 80,80 T50,95 Q20,85 10,60 T20,20 Q35,5 50,10 T80,20" /></svg>');
+            background-size: 200px;
+            background-position: center;
+            background-repeat: no-repeat;
+          }
+          
+          .health-headline {
+            font-size: 24px;
+            font-weight: 600;
+            color: #1a2e05;
+            margin-bottom: 10px;
+            line-height: 1.3;
+          }
+          
+          .health-subhead {
+            font-size: 14px;
+            color: #4d7c0f;
+            margin-bottom: 20px;
+            max-width: 300px;
+          }
+          
+          .health-cta {
+            background-color: #65a30d;
+            color: white;
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-weight: 500;
+            font-size: 14px;
+          }
+          
+          /* Restaurant / Food Style */
+          .restaurant {
+            background-color: #fff5f5;
+            border-top: 4px solid #ef4444;
+          }
+          
+          .restaurant:hover {
+            box-shadow: 0 15px 35px rgba(239, 68, 68, 0.1);
+          }
+          
+          .restaurant .style-title {
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 700;
+            color: #991b1b;
+          }
+          
+          .restaurant .style-vibe {
+            color: #dc2626;
+          }
+          
+          .restaurant-example {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+          }
+          
+          .restaurant-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+          }
+          
+          .restaurant-logo {
+            font-weight: 700;
+            color: #991b1b;
+            font-size: 20px;
+            font-style: italic;
+          }
+          
+          .restaurant-nav {
+            display: flex;
+            gap: 15px;
+          }
+          
+          .restaurant-nav-item {
+            font-size: 14px;
+            color: #b91c1c;
+          }
+          
+          .restaurant-hero {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+          }
+          
+          .restaurant-hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="%22%23fecaca%22" stroke-width="0.5"><circle cx="20" cy="20" r="15"/><circle cx="80" cy="30" r="10"/><circle cx="40" cy="70" r="12"/><circle cx="70" cy="80" r="8"/></svg>');
+            background-size: 150px;
+            opacity: 0.3;
+            z-index: 0;
+          }
+          
+          .restaurant-headline {
+            font-size: 24px;
+            font-weight: 700;
+            color: #7f1d1d;
+            margin-bottom: 10px;
+            line-height: 1.3;
+            position: relative;
+          }
+          
+          .restaurant-subhead {
+            font-size: 14px;
+            color: #b91c1c;
+            margin-bottom: 20px;
+            max-width: 300px;
+            position: relative;
+          }
+          
+          .restaurant-cta {
+            background-color: #dc2626;
+            color: white;
+            padding: 10px 25px;
+            border-radius: 4px;
+            font-weight: 500;
+            font-size: 14px;
+            position: relative;
+          }
 
-    @media (max-width: 480px) {
-      h1 {
-        font-size: 2rem;
+    @keyframes shine {
+      0% {
+        left: -50%;
       }
-      
-      .styles-grid {
-        grid-template-columns: 1fr;
-      }
-      
-      .style-card {
-        height: 280px;
+      100% {
+        left: 150%;
       }
     }
   </style>
@@ -794,174 +1095,240 @@
 <body>
   <div class="container">
     <header>
-      <h1>Modern Design Styles</h1>
-      <p class="subtitle">Explore the latest trends in UI/UX design that are shaping digital experiences today.</p>
+      <h1>🛠️ Practical Industry-Specific Styles</h1>
+      <p class="subtitle">Explore specialized design aesthetics tailored for different business sectors and practical applications.</p>
     </header>
     
     <div class="styles-grid">
-      <!-- Retro-futurism Card -->
-      <div class="style-card retro-futurism">
-        <h2 class="style-title">Retro-futurism</h2>
-        <p class="style-vibe">Tomorrowland vibes</p>
-        <p class="style-description">A nostalgic vision of the future from the 50s-70s lens, featuring optimistic space-age aesthetics.</p>
+      <!-- Corporate / SaaS -->
+      <div class="style-card corporate">
+        <h3 class="style-title">Corporate / SaaS</h3>
+        <p class="style-vibe">Trustworthy, efficient</p>
+        <p class="style-description">Blue tones, clean layout, call-to-action buttons.</p>
         <div class="style-example">
-          <div class="retro-future-example">
-            <div class="retro-future-rocket">
-              <div class="rocket-head"></div>
-              <div class="rocket-body"></div>
-              <div class="rocket-window"></div>
-              <div class="rocket-fin left"></div>
-              <div class="rocket-fin right"></div>
-              <div class="rocket-flame"></div>
+          <div class="corporate-example">
+            <div class="corporate-header">
+              <div class="corporate-logo">CloudSoft</div>
+              <div class="corporate-nav">
+                <div class="corporate-nav-item">Features</div>
+                <div class="corporate-nav-item">Pricing</div>
+                <div class="corporate-nav-item">Enterprise</div>
+              </div>
             </div>
-            <div class="retro-future-stars">
-              <div class="star"></div>
-              <div class="star"></div>
-              <div class="star"></div>
-              <div class="star"></div>
-              <div class="star"></div>
-              <div class="star"></div>
-              <div class="star"></div>
-              <div class="star"></div>
+            <div class="corporate-hero">
+              <h2 class="corporate-headline">Streamline Your Business Operations</h2>
+              <p class="corporate-subhead">All your essential tools in one platform. Save time and boost productivity.</p>
+              <div class="corporate-cta">Start Free Trial</div>
             </div>
           </div>
         </div>
       </div>
       
-      <!-- AI-core Card -->
-      <div class="style-card ai-core">
-        <h2 class="style-title">AI-core</h2>
-        <p class="style-vibe">Abstract, digital</p>
-        <p class="style-description">Visualizing artificial intelligence concepts with neural patterns and abstract data representations.</p>
+      <!-- Tech / Startup -->
+      <div class="style-card tech-startup">
+        <h3 class="style-title">Tech / Startup</h3>
+        <p class="style-vibe">Fresh, innovative</p>
+        <p class="style-description">Bold type, vibrant gradients, illustrations.</p>
         <div class="style-example">
-          <div class="ai-core-example">
-            <div class="neural-network">
-              <div class="node"></div>
-              <div class="node"></div>
-              <div class="node"></div>
-              <div class="node"></div>
-              <div class="node"></div>
-              <div class="node"></div>
-              <div class="node"></div>
-              <div class="node"></div>
-              <div class="connection"></div>
-              <div class="connection"></div>
-              <div class="connection"></div>
-              <div class="connection"></div>
-              <div class="connection"></div>
-              <div class="connection"></div>
-              <div class="pulse"></div>
-              <div class="pulse"></div>
-              <div class="pulse"></div>
+          <div class="tech-startup-example">
+            <div class="tech-startup-header">
+              <div class="tech-startup-logo"></div>
+              <div class="tech-startup-nav">
+                <div class="tech-startup-nav-item">Product</div>
+                <div class="tech-startup-nav-item">Team</div>
+                <div class="tech-startup-nav-item">Blog</div>
+              </div>
+            </div>
+            <div class="tech-startup-hero">
+              <h2 class="tech-startup-headline">Reimagine How Teams Collaborate</h2>
+              <p class="tech-startup-subhead">The all-in-one workspace for your notes, tasks, and team collaboration.</p>
+              <div class="tech-startup-cta">Join the Waitlist</div>
             </div>
           </div>
         </div>
       </div>
       
-      <!-- Monochrome Card -->
-      <div class="style-card monochrome">
-        <h2 class="style-title">Monochrome</h2>
-        <p class="style-vibe">Focused, elegant</p>
-        <p class="style-description">A refined approach using a single color with multiple tonal variations to create depth and hierarchy.</p>
+      <!-- Portfolio -->
+      <div class="style-card portfolio">
+        <h3 class="style-title">Portfolio</h3>
+        <p class="style-vibe">Personal, creative</p>
+        <p class="style-description">Large imagery, bio focus, minimal nav.</p>
         <div class="style-example">
-          <div class="monochrome-example">
-            <div class="mono-grid">
-              <div class="mono-tile">100%</div>
-              <div class="mono-tile">90%</div>
-              <div class="mono-tile">80%</div>
-              <div class="mono-tile">70%</div>
-              <div class="mono-tile">60%</div>
-              <div class="mono-tile">50%</div>
-              <div class="mono-tile">40%</div>
-              <div class="mono-tile">30%</div>
-              <div class="mono-tile">20%</div>
+          <div class="portfolio-example">
+            <div class="portfolio-header">
+              <div class="portfolio-name">Alex Morgan</div>
+              <div class="portfolio-menu">
+                <div class="portfolio-menu-item">Work</div>
+                <div class="portfolio-menu-item">About</div>
+                <div class="portfolio-menu-item">Contact</div>
+              </div>
+            </div>
+            <div class="portfolio-content">
+              <div class="portfolio-image"></div>
+              <h2 class="portfolio-title">Product Designer & Developer</h2>
+              <p class="portfolio-desc">Creating thoughtful digital experiences that balance form and function.</p>
+              <div class="portfolio-links">
+                <div class="portfolio-link"></div>
+                <div class="portfolio-link"></div>
+                <div class="portfolio-link"></div>
+              </div>
             </div>
           </div>
         </div>
       </div>
       
-      <!-- Gradient-heavy Card -->
-      <div class="style-card gradient-heavy">
-        <h2 class="style-title">Gradient-heavy</h2>
-        <p class="style-vibe">Stylish, smooth</p>
-        <p class="style-description">Vibrant color transitions create depth and dimension across backgrounds and UI elements.</p>
+      <!-- Editorial / Magazine -->
+      <div class="style-card editorial">
+        <h3 class="style-title">Editorial / Magazine</h3>
+        <p class="style-vibe">Structured, elegant</p>
+        <p class="style-description">Big headlines, grid layout, storytelling.</p>
         <div class="style-example">
-          <div class="gradient-example">
-            <div class="gradient-circles">
-              <div class="gradient-circle"></div>
+          <div class="editorial-example">
+            <div class="editorial-header">
+              <div class="editorial-header-image"></div>
+            </div>
+            <div class="editorial-content">
+              <div class="editorial-category">Technology</div>
+              <h2 class="editorial-title">The Future of Sustainable Design in Consumer Electronics</h2>
+              <p class="editorial-excerpt">How leading companies are rethinking product lifecycles and creating more environmentally conscious devices.</p>
+              <div class="editorial-meta">
+                <span class="editorial-author">By Sarah Johnson</span>
+                <span class="editorial-date">April 12, 2025</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-
-
-              <div class="gradient-circle"></div>
-              <div class="gradient-circle"></div>
-            </div>
+ <!-- E-commerce -->
+<div class="style-card ecommerce">
+    <h3 class="style-title">E-commerce</h3>
+    <p class="style-vibe">Engaging, shoppable</p>
+    <p class="style-description">Product focus, clear pricing, easy checkout.</p>
+    <div class="style-example">
+      <div class="ecommerce-example">
+        <div class="ecommerce-header">
+          <div class="ecommerce-logo">MinimalGoods</div>
+          <div class="ecommerce-icons">
+            <div class="ecommerce-icon"></div>
+            <div class="ecommerce-icon"></div>
+            <div class="ecommerce-icon"></div>
           </div>
         </div>
-      </div>
-      
-      <!-- 3D UI / Isometric Style -->
-      <div class="style-card isometric">
-        <h2 class="style-title">Isometric</h2>
-        <p class="style-vibe">Dimensional, clean</p>
-        <p class="style-description">Three-dimensional representation on a 2D plane, creating depth through isometric projection.</p>
-        <div class="style-example">
-          <div class="isometric-example">
-            <div class="isometric-container">
-              <div class="isometric-cube">
-                <div class="cube-face top"></div>
-                <div class="cube-face front"></div>
-                <div class="cube-face right"></div>
-              </div>
-              <div class="isometric-cube">
-                <div class="cube-face top"></div>
-                <div class="cube-face front"></div>
-                <div class="cube-face right"></div>
-              </div>
-              <div class="isometric-cube">
-                <div class="cube-face top"></div>
-                <div class="cube-face front"></div>
-                <div class="cube-face right"></div>
-              </div>
-              <div class="isometric-cube">
-                <div class="cube-face top"></div>
-                <div class="cube-face front"></div>
-                <div class="cube-face right"></div>
-              </div>
-            </div>
-          </div>
+        <div class="ecommerce-product">
+          <div class="ecommerce-product-image"></div>
+          <h3 class="ecommerce-product-title">Premium Wireless Headphones</h3>
+          <div class="ecommerce-product-price">$199</div>
+          <div class="ecommerce-add-to-cart">Add to Cart</div>
         </div>
       </div>
-      
-      <!-- Animated UI / Motion Design -->
-      <div class="style-card animated-ui">
-        <h2 class="style-title">Animated UI</h2>
-        <p class="style-vibe">Dynamic, engaging</p>
-        <p class="style-description">Purposeful motion and transitions bring interfaces to life, enhancing user experience.</p>
-        <div class="style-example">
-          <div class="motion-example">
-            <div class="motion-loader">
-              <div class="motion-circle"></div>
-              <div class="motion-circle"></div>
-              <div class="motion-circle"></div>
-            </div>
-            <div class="motion-bars">
-              <div class="motion-bar"></div>
-              <div class="motion-bar"></div>
-              <div class="motion-bar"></div>
-              <div class="motion-bar"></div>
-              <div class="motion-bar"></div>
-            </div>
-            <div class="motion-buttons">
-              <div class="motion-button"></div>
-              <div class="motion-button"></div>
-              <div class="motion-button"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-      
     </div>
   </div>
+  
+  <!-- Dashboard UI -->
+  <div class="style-card dashboard">
+    <h3 class="style-title">Dashboard UI</h3>
+    <p class="style-vibe">Data-driven, organized</p>
+    <p class="style-description">Cards layout, charts, minimal distractions.</p>
+    <div class="style-example">
+      <div class="dashboard-example">
+        <div class="dashboard-sidebar">
+          <div class="dashboard-logo"></div>
+          <div class="dashboard-menu">
+            <div class="dashboard-menu-item"></div>
+            <div class="dashboard-menu-item"></div>
+            <div class="dashboard-menu-item"></div>
+            <div class="dashboard-menu-item"></div>
+          </div>
+        </div>
+        <div class="dashboard-content">
+          <div class="dashboard-header">
+            <div class="dashboard-title">Analytics Overview</div>
+            <div class="dashboard-user"></div>
+          </div>
+          <div class="dashboard-stats">
+            <div class="dashboard-stat-card">
+              <div class="dashboard-stat-title">Total Users</div>
+              <div class="dashboard-stat-value">1,248</div>
+            </div>
+            <div class="dashboard-stat-card">
+              <div class="dashboard-stat-title">Conversion</div>
+              <div class="dashboard-stat-value">3.2%</div>
+            </div>
+            <div class="dashboard-stat-card">
+              <div class="dashboard-stat-title">Revenue</div>
+              <div class="dashboard-stat-value">$8,420</div>
+            </div>
+          </div>
+          <div class="dashboard-chart">
+            <div class="dashboard-chart-header">
+              <div class="dashboard-chart-title">Weekly Performance</div>
+              <div class="dashboard-chart-options">
+                <div class="dashboard-chart-option"></div>
+                <div class="dashboard-chart-option"></div>
+              </div>
+            </div>
+            <div class="dashboard-chart-content">
+              <div class="dashboard-chart-bar"></div>
+              <div class="dashboard-chart-bar"></div>
+              <div class="dashboard-chart-bar"></div>
+              <div class="dashboard-chart-bar"></div>
+              <div class="dashboard-chart-bar"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Gaming / Esports -->
+  <div class="style-card gaming">
+    <h3 class="style-title">Gaming / Esports</h3>
+    <p class="style-vibe">High-energy, immersive</p>
+    <p class="style-description">Dark themes, neon accents, bold typography.</p>
+    <div class="style-example">
+      <div class="gaming-example">
+        <div class="gaming-header">
+          <div class="gaming-logo">Nexus</div>
+          <div class="gaming-nav">
+            <div class="gaming-nav-item">Games</div>
+            <div class="gaming-nav-item">Tournaments</div>
+            <div class="gaming-nav-item">Shop</div>
+          </div>
+        </div>
+        <div class="gaming-content">
+          <h2 class="gaming-title">Season 4 Championship</h2>
+          <div class="gaming-button">Register Now</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Health / Wellness -->
+  <div class="style-card health-wellness">
+    <h3 class="style-title">Health / Wellness</h3>
+    <p class="style-vibe">Calming, natural</p>
+    <p class="style-description">Organic shapes, soft colors, breathing space.</p>
+    <div class="style-example">
+      <div class="health-wellness-example">
+        <div class="health-header">
+          <div class="health-logo">Serene</div>
+          <div class="health-nav">
+            <div class="health-nav-item">Programs</div>
+            <div class="health-nav-item">About</div>
+            <div class="health-nav-item">Contact</div>
+          </div>
+        </div>
+        <div class="health-hero">
+          <h2 class="health-headline">Find Your Balance</h2>
+          <p class="health-subhead">Personalized wellness programs to nourish your mind and body.</p>
+          <div class="health-cta">Begin Your Journey</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
 </body>
-</html>
 </html>

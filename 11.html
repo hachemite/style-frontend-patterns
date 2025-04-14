@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manga Panel Layout</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollTrigger.min.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Bangers&family=Annie+Use+Your+Telescope&family=DotGothic16&display=swap');
+    
+    :root {
+      --manga-black: #111;
+      --manga-white: #f9f9f9;
+      --manga-gray: #888;
+      --action-red: #e63946;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      background-color: var(--manga-white);
+      color: var(--manga-black);
+      font-family: 'DotGothic16', sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    
+    .manga-container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-auto-rows: minmax(200px, auto);
+      gap: 15px;
+      position: relative;
+    }
+    
+    /* Manga Panel Styles */
+    .panel {
+      background-color: var(--manga-white);
+      border: 3px solid var(--manga-black);
+      position: relative;
+      overflow: hidden;
+      box-shadow: 5px 5px 0 rgba(0,0,0,0.2);
+      transition: all 0.3s ease;
+    }
+    
+    .panel:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 8px 8px 0 rgba(0,0,0,0.2);
+    }
+    
+    /* Panel Shapes */
+    .panel-1 {
+      grid-column: 1 / span 5;
+      grid-row: 1 / span 3;
+      clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+    }
+    
+    .panel-2 {
+      grid-column: 6 / span 3;
+      grid-row: 1 / span 2;
+      border-radius: 0 0 30px 0;
+    }
+    
+    .panel-3 {
+      grid-column: 9 / span 4;
+      grid-row: 1 / span 4;
+      clip-path: polygon(0 0, 100% 0, 80% 100%, 0 100%);
+    }
+    
+    .panel-4 {
+      grid-column: 1 / span 4;
+      grid-row: 4 / span 2;
+      border-top: none;
+    }
+    
+    .panel-5 {
+      grid-column: 5 / span 4;
+      grid-row: 4 / span 3;
+      border-right: none;
+      border-bottom: none;
+    }
+    
+    .panel-6 {
+      grid-column: 9 / span 4;
+      grid-row: 5 / span 2;
+      clip-path: polygon(20% 0, 100% 0, 100% 100%, 0 100%);
+    }
+    
+    /* Panel Content */
+    .panel-content {
+      padding: 15px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .panel-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(100%) contrast(120%);
+    }
+    
+    /* Speech Bubbles */
+    .speech-bubble {
+      position: absolute;
+      background-color: var(--manga-white);
+      border: 2px solid var(--manga-black);
+      border-radius: 20px;
+      padding: 15px;
+      font-family: 'Annie Use Your Telescope', cursive;
+      font-size: 18px;
+      max-width: 70%;
+    }
+    
+    .speech-bubble::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: var(--manga-white);
+      border-right: 2px solid var(--manga-black);
+      border-bottom: 2px solid var(--manga-black);
+    }
+    
+    .bubble-1 {
+      top: 30%;
+      left: 20%;
+    }
+    
+    .bubble-1::after {
+      bottom: -10px;
+      left: 30px;
+      transform: rotate(45deg);
+    }
+    
+    .bubble-2 {
+      bottom: 20%;
+      right: 15%;
+    }
+    
+    .bubble-2::after {
+      top: -10px;
+      right: 30px;
+      transform: rotate(225deg);
+    }
+    
+    /* Action Effects */
+    .action-line {
+      position: absolute;
+      background-color: var(--manga-black);
+      transform-origin: left center;
+    }
+    
+    .sfx-text {
+      position: absolute;
+      font-family: 'Bangers', cursive;
+      font-size: 50px;
+      color: var(--manga-black);
+      transform: rotate(-10deg);
+      opacity: 0.9;
+      text-shadow: 3px 3px 0 var(--manga-gray);
+    }
+    
+    /* Manga Page Turn Effect */
+    .page-turn {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background-color: var(--manga-black);
+      z-index: 100;
+      transform-origin: right center;
+      transform: scaleX(0);
+    }
+    
+    /* Navigation */
+    .manga-nav {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 50;
+    }
+    
+    .nav-button {
+      background-color: var(--manga-black);
+      color: var(--manga-white);
+      border: none;
+      padding: 10px 15px;
+      font-family: 'DotGothic16', sans-serif;
+      cursor: pointer;
+      margin-left: 10px;
+    }
+    
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      .manga-container {
+        grid-template-columns: repeat(4, 1fr);
+      }
+      
+      .panel-1, .panel-2, .panel-3, 
+      .panel-4, .panel-5, .panel-6 {
+        grid-column: 1 / span 4;
+        grid-row: auto;
+        clip-path: none;
+        border-radius: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="manga-container">
+    <!-- Page Turn Effect -->
+    <div class="page-turn" id="page-turn"></div>
+    
+    <!-- Panel 1 - Hero Shot -->
+    <div class="panel panel-1">
+      <img src="https://source.unsplash.com/random/600x800/?anime" alt="Manga hero" class="panel-image">
+      <div class="speech-bubble bubble-1">
+        "We have to stop them before it's too late!"
+      </div>
+      <div class="sfx-text" style="top: 60%; left: 10%;">BOOM!</div>
+    </div>
+    
+    <!-- Panel 2 - Close Up -->
+    <div class="panel panel-2">
+      <div class="panel-content">
+        <img src="https://source.unsplash.com/random/400x400/?face" alt="Close up" class="panel-image">
+      </div>
+      <div class="action-line" style="width: 80%; height: 2px; top: 30%; left: 10%; transform: rotate(5deg);"></div>
+      <div class="action-line" style="width: 80%; height: 2px; top: 35%; left: 10%; transform: rotate(-5deg);"></div>
+    </div>
+    
+    <!-- Panel 3 - Action Scene -->
+    <div class="panel panel-3">
+      <img src="https://source.unsplash.com/random/600x800/?action" alt="Action scene" class="panel-image">
+      <div class="sfx-text" style="top: 20%; right: 20%; color: var(--action-red);">POW!</div>
+      <div class="sfx-text" style="bottom: 30%; left: 10%;">WHAM!</div>
+    </div>
+    
+    <!-- Panel 4 - Narrative -->
+    <div class="panel panel-4">
+      <div class="panel-content">
+        <h2 style="margin-bottom: 15px; font-family: 'Bangers', cursive;">Chapter 1: The Beginning</h2>
+        <p style="margin-bottom: 10px;">In a world where shadows rule, one hero stands against the darkness.</p>
+        <p>The battle begins at dawn, when the first light pierces through the eternal night.</p>
+      </div>
+    </div>
+    
+    <!-- Panel 5 - Dramatic Scene -->
+    <div class="panel panel-5">
+      <img src="https://source.unsplash.com/random/600x800/?dramatic" alt="Dramatic scene" class="panel-image">
+      <div class="speech-bubble bubble-2">
+        "I won't let you destroy our world!"
+      </div>
+    </div>
+    
+    <!-- Panel 6 - Cliffhanger -->
+    <div class="panel panel-6">
+      <img src="https://source.unsplash.com/random/600x800/?mystery" alt="Cliffhanger" class="panel-image">
+      <div class="sfx-text" style="top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(-5deg);">TO BE CONTINUED...</div>
+    </div>
+  </div>
+  
+  <div class="manga-nav">
+    <button class="nav-button" id="prev-btn">Previous Page</button>
+    <button class="nav-button" id="next-btn">Next Page</button>
+  </div>
+
+  <script>
+    // Initialize GSAP ScrollTrigger
+    gsap.registerPlugin(ScrollTrigger);
+    
+    // Animate panels on scroll
+    document.querySelectorAll('.panel').forEach((panel, i) => {
+      gsap.from(panel, {
+        scrollTrigger: {
+          trigger: panel,
+          start: "top 80%",
+          toggleActions: "play none none none"
+        },
+        opacity: 0,
+        y: 50,
+        duration: 0.8,
+        delay: i * 0.1,
+        ease: "back.out(1.7)"
+      });
+    });
+    
+    // Animate action lines
+    document.querySelectorAll('.action-line').forEach(line => {
+      gsap.from(line, {
+        scrollTrigger: {
+          trigger: line,
+          start: "top 80%",
+          toggleActions: "play none none none"
+        },
+        scaleX: 0,
+        duration: 0.5,
+        ease: "power2.out"
+      });
+    });
+    
+    // Animate SFX text
+    document.querySelectorAll('.sfx-text').forEach(sfx => {
+      gsap.from(sfx, {
+        scrollTrigger: {
+          trigger: sfx,
+          start: "top 80%",
+          toggleActions: "play none none none"
+        },
+        scale: 0,
+        opacity: 0,
+        duration: 0.5,
+        ease: "elastic.out(1, 0.5)"
+      });
+    });
+    
+    // Page turn animation
+    const pageTurn = document.getElementById('page-turn');
+    const nextBtn = document.getElementById('next-btn');
+    const prevBtn = document.getElementById('prev-btn');
+    
+    function turnPage(direction) {
+      gsap.to(pageTurn, {
+        scaleX: 1,
+        duration: 0.5,
+        transformOrigin: direction === 'next' ? 'right center' : 'left center',
+        onComplete: () => {
+          // In a real implementation, this would load new content
+          setTimeout(() => {
+            gsap.to(pageTurn, {
+              scaleX: 0,
+              duration: 0.5,
+              delay: 0.3,
+              transformOrigin: direction === 'next' ? 'left center' : 'right center'
+            });
+          }, 500);
+        }
+      });
+    }
+    
+    nextBtn.addEventListener('click', () => turnPage('next'));
+    prevBtn.addEventListener('click', () => turnPage('prev'));
+    
+    // Speech bubble hover effect
+    document.querySelectorAll('.speech-bubble').forEach(bubble => {
+      bubble.addEventListener('mouseenter', () => {
+        gsap.to(bubble, {
+          scale: 1.05,
+          duration: 0.2,
+          ease: "power2.out"
+        });
+      });
+      
+      bubble.addEventListener('mouseleave', () => {
+        gsap.to(bubble, {
+          scale: 1,
+          duration: 0.2,
+          ease: "power2.out"
+        });
+      });
+    });
+  </script>
+</body>
+</html>

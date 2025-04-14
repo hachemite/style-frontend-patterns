@@ -1,0 +1,1662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>More Fusion & Hybrid Design Styles</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display&family=Italiana&family=Josefin+Sans:wght@300;400;600&family=Montserrat:wght@300;400;600&family=Nunito:wght@300;400;700&family=Poppins:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600&family=Sacramento&family=Space+Mono&family=VT323&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      background-color: #121212;
+      color: #e0e0e0;
+      font-family: 'Nunito', sans-serif;
+      line-height: 1.6;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+    
+    header {
+      text-align: center;
+      margin-bottom: 50px;
+      position: relative;
+    }
+    
+    header::after {
+      content: "";
+      position: absolute;
+      bottom: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 200px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #64dfdf, transparent);
+    }
+    
+    h1 {
+      font-size: 3.5rem;
+      margin-bottom: 15px;
+      color: #ffffff;
+      font-family: 'Bebas Neue', sans-serif;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+    
+    .subtitle {
+      font-size: 1.1rem;
+      color: #9e9e9e;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .styles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+    
+    .style-card {
+      border-radius: 4px;
+      padding: 25px;
+      transition: all 0.4s ease;
+      cursor: pointer;
+      height: 500px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .style-title {
+      font-size: 1.8rem;
+      margin-bottom: 5px;
+      z-index: 2;
+      position: relative;
+    }
+    
+    .style-vibe {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 15px;
+      color: #888;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .style-description {
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .style-example {
+      flex-grow: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 2px;
+      margin-top: auto;
+      position: relative;
+      z-index: 2;
+    }
+    
+    /* Dreamy SaaS Style */
+    .dreamy-saas {
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      color: #495057;
+      border: 1px solid #dee2e6;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    .dreamy-saas:hover {
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    }
+    
+    .dreamy-saas .style-title {
+      font-family: 'DM Serif Display', serif;
+      color: #495057;
+    }
+    
+    .dreamy-saas .style-vibe {
+      color: #6c757d;
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    .dreamy-saas .style-description {
+      color: #495057;
+    }
+    
+    .dreamy-saas .style-example {
+      background-color: #f8f9fa;
+      border: 1px solid #dee2e6;
+      border-radius: 6px;
+    }
+    
+    .dreamy-saas-example {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+    }
+    
+    .dreamy-saas-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    
+    .dreamy-saas-logo {
+      font-family: 'DM Serif Display', serif;
+      font-size: 24px;
+      color: #495057;
+    }
+    
+    .dreamy-saas-nav {
+      display: flex;
+      gap: 15px;
+    }
+    
+    .dreamy-saas-nav-item {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 12px;
+      color: #6c757d;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    .dreamy-saas-content {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    
+    .dreamy-saas-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 28px;
+      color: #495057;
+      margin-bottom: 10px;
+    }
+    
+    .dreamy-saas-subtitle {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+      color: #6c757d;
+      margin-bottom: 20px;
+      max-width: 80%;
+    }
+    
+    .dreamy-saas-cta {
+      background: linear-gradient(135deg, #8e9aaf 0%, #cbc0d3 100%);
+      color: white;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 12px;
+      padding: 8px 20px;
+      border: none;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    /* AI Futurism Style */
+    .ai-futurism {
+      background-color: rgba(15, 23, 42, 0.8);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(148, 163, 184, 0.2);
+      box-shadow: 0 8px 32px rgba(31, 38, 135, 0.2);
+    }
+    
+    .ai-futurism::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: 
+        radial-gradient(circle at 20% 30%, rgba(56, 189, 248, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(124, 58, 237, 0.15) 0%, transparent 50%);
+      z-index: 1;
+    }
+    
+    .ai-futurism:hover {
+      box-shadow: 0 8px 32px rgba(124, 58, 237, 0.3);
+    }
+    
+    .ai-futurism .style-title {
+      font-family: 'Inter', sans-serif;
+      color: #f8fafc;
+      font-weight: 600;
+    }
+    
+    .ai-futurism .style-vibe {
+      color: #38bdf8;
+    }
+    
+    .ai-futurism .style-description {
+      color: #cbd5e1;
+    }
+    
+    .ai-futurism .style-example {
+      background-color: rgba(15, 23, 42, 0.6);
+      border-radius: 12px;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(148, 163, 184, 0.2);
+      box-shadow: 0 8px 32px rgba(31, 38, 135, 0.1);
+    }
+    
+    .ai-futurism-example {
+      width: 100%;
+      height: 100%;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    
+    .ai-futurism-node {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: #38bdf8;
+    }
+    
+    .ai-futurism-node:nth-child(1) { top: 20%; left: 30%; }
+    .ai-futurism-node:nth-child(2) { top: 40%; left: 70%; }
+    .ai-futurism-node:nth-child(3) { top: 70%; left: 20%; }
+    .ai-futurism-node:nth-child(4) { top: 60%; left: 60%; }
+    .ai-futurism-node:nth-child(5) { top: 30%; left: 50%; }
+    
+    .ai-futurism-connection {
+      position: absolute;
+      height: 1px;
+      background: linear-gradient(90deg, #38bdf8, #7c3aed);
+      transform-origin: left;
+      opacity: 0.4;
+    }
+    
+    .ai-futurism-connection:nth-child(6) {
+      width: 40%;
+      top: 22%;
+      left: 30%;
+      transform: rotate(25deg);
+    }
+    
+    .ai-futurism-connection:nth-child(7) {
+      width: 30%;
+      top: 40%;
+      left: 30%;
+      transform: rotate(-20deg);
+    }
+    
+    .ai-futurism-connection:nth-child(8) {
+      width: 40%;
+      top: 62%;
+      left: 20%;
+      transform: rotate(30deg);
+    }
+    
+    .ai-futurism-connection:nth-child(9) {
+      width: 25%;
+      top: 45%;
+      left: 50%;
+      transform: rotate(15deg);
+    }
+    
+    .ai-futurism-card {
+      background-color: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(5px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      padding: 15px;
+      width: 80%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+    
+    .ai-futurism-title {
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      color: #f8fafc;
+      font-size: 16px;
+      margin-bottom: 5px;
+    }
+    
+    .ai-futurism-metric {
+      font-family: 'Space Mono', monospace;
+      color: #38bdf8;
+      font-size: 28px;
+      margin-bottom: 5px;
+    }
+    
+    .ai-futurism-label {
+      font-family: 'Inter', sans-serif;
+      color: #94a3b8;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    /* Soft Tech Style */
+    .soft-tech {
+      background-color: #ffffff;
+      color: #333333;
+      border: 1px solid #e0e0e0;
+    }
+    
+    .soft-tech:hover {
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    .soft-tech .style-title {
+      font-family: 'Montserrat', sans-serif;
+      color: #333333;
+      font-weight: 600;
+    }
+    
+    .soft-tech .style-vibe {
+      color: #666666;
+    }
+    
+    .soft-tech .style-description {
+      color: #333333;
+    }
+    
+    .soft-tech .style-example {
+      background-color: #f9f9f9;
+      border-radius: 8px;
+    }
+    
+    .soft-tech-example {
+      width: 100%;
+      height: 100%;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .soft-tech-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    
+    .soft-tech-logo {
+      font-family: 'Montserrat', sans-serif;
+      color: #333333;
+      font-weight: 600;
+      font-size: 18px;
+    }
+    
+    .soft-tech-menu {
+      display: flex;
+      gap: 15px;
+    }
+    
+    .soft-tech-menu-item {
+      color: #666666;
+      font-size: 12px;
+    }
+    
+    .soft-tech-content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: 20px;
+      flex-grow: 1;
+    }
+    
+    .soft-tech-title {
+      font-family: 'Montserrat', sans-serif;
+      color: #333333;
+      font-weight: 600;
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    
+    .soft-tech-description {
+      color: #666666;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+    
+    .soft-tech-boxes {
+      display: flex;
+      gap: 10px;
+      width: 100%;
+    }
+    
+    .soft-tech-box {
+      background-color: #ffffff;
+      border: 1px solid #e0e0e0;
+      border-radius: 6px;
+      padding: 10px;
+      flex: 1;
+      height: 40px;
+    }
+    
+    .soft-tech-footer {
+      display: flex;
+      justify-content: flex-end;
+    }
+    
+    .soft-tech-button {
+      background-color: #333333;
+      color: white;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 12px;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 4px;
+    }
+    
+    /* Corporate Neumorphism Style */
+    .corporate-neumorphism {
+      background-color: #e6e7ee;
+      color: #555;
+      border-radius: 10px;
+      box-shadow: 
+        6px 6px 12px #c8c9cf,
+        -6px -6px 12px #ffffff;
+    }
+    
+    .corporate-neumorphism:hover {
+      box-shadow: 
+        8px 8px 16px #c8c9cf,
+        -8px -8px 16px #ffffff;
+    }
+    
+    .corporate-neumorphism .style-title {
+      font-family: 'Inter', sans-serif;
+      color: #5a6acf;
+      font-weight: 600;
+    }
+    
+    .corporate-neumorphism .style-vibe {
+      color: #888;
+    }
+    
+    .corporate-neumorphism .style-description {
+      color: #555;
+    }
+    
+    .corporate-neumorphism .style-example {
+      background-color: #e6e7ee;
+      border-radius: 8px;
+      box-shadow: 
+        inset 2px 2px 5px #c8c9cf,
+        inset -2px -2px 5px #ffffff;
+    }
+    
+    .corporate-neumorphism-example {
+      width: 100%;
+      height: 100%;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .corporate-neumorphism-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+    
+    .corporate-neumorphism-title {
+      font-family: 'Inter', sans-serif;
+      color: #5a6acf;
+      font-weight: 600;
+      font-size: 20px;
+    }
+    
+    .corporate-neumorphism-badge {
+      background-color: #e6e7ee;
+      color: #5a6acf;
+      font-size: 12px;
+      padding: 4px 10px;
+      border-radius: 15px;
+      box-shadow: 
+        2px 2px 5px #c8c9cf,
+        -2px -2px 5px #ffffff;
+    }
+    
+    .corporate-neumorphism-content {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    
+    .corporate-neumorphism-card {
+      background-color: #e6e7ee;
+      border-radius: 8px;
+      padding: 15px;
+      box-shadow: 
+        4px 4px 8px #c8c9cf,
+        -4px -4px 8px #ffffff;
+    }
+    
+    .corporate-neumorphism-metric {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .corporate-neumorphism-label {
+      font-size: 14px;
+      color: #555;
+    }
+    
+    .corporate-neumorphism-value {
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      color: #5a6acf;
+    }
+    
+    .corporate-neumorphism-footer {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 15px;
+    }
+    
+    .corporate-neumorphism-button {
+      background-color: #e6e7ee;
+      color: #5a6acf;
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 20px;
+      box-shadow: 
+        4px 4px 8px #c8c9cf,
+        -4px -4px 8px #ffffff;
+    }
+    
+    /* Futurist Memphis Style */
+    .futurist-memphis {
+      background-color: #0e0b16;
+      border: 1px solid #a239ca;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .futurist-memphis::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: 
+        radial-gradient(circle at 10% 20%, rgba(71, 30, 84, 0.2) 0%, transparent 30%),
+        radial-gradient(circle at 90% 80%, rgba(162, 57, 202, 0.2) 0%, transparent 30%);
+      z-index: 1;
+    }
+    
+    .futurist-memphis::after {
+      content: "";
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 20px;
+      height: 20px;
+      background-color: #e7dfdd;
+      z-index: 1;
+    }
+    
+    .futurist-memphis:hover {
+      box-shadow: 0 0 20px rgba(162, 57, 202, 0.5);
+    }
+    
+    .futurist-memphis .style-title {
+      font-family: 'Inter', sans-serif;
+      color: #e7dfdd;
+      font-weight: 600;
+    }
+    
+    .futurist-memphis .style-vibe {
+      color: #a239ca;
+    }
+    
+    .futurist-memphis .style-description {
+      color: #e7dfdd;
+    }
+    
+    .futurist-memphis .style-example {
+      background-color: #0e0b16;
+      position: relative;
+    }
+    
+    .futurist-memphis-example {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 15px;
+      position: relative;
+    }
+    
+    .futurist-memphis-shape {
+      position: absolute;
+      z-index: 1;
+    }
+    
+    .futurist-memphis-shape:nth-child(1) {
+      width: 30px;
+      height: 30px;
+      background-color: #4717f6;
+      clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+      top: 10%;
+      right: 15%;
+    }
+    
+    .futurist-memphis-shape:nth-child(2) {
+      width: 40px;
+      height: 5px;
+      background-color: #a239ca;
+      bottom: 20%;
+      left: 10%;
+    }
+    
+    .futurist-memphis-shape:nth-child(3) {
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background-color: #e7dfdd;
+      top: 70%;
+      right: 20%;
+    }
+    
+    .futurist-memphis-shape:nth-child(4) {
+      width: 20px;
+      height: 20px;
+      background-color: #a239ca;
+      transform: rotate(45deg);
+      top: 25%;
+      left: 20%;
+    }
+    
+    .futurist-memphis-content {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    
+    .futurist-memphis-title {
+      font-family: 'Inter', sans-serif;
+      color: #e7dfdd;
+      font-weight: 600;
+      font-size: 24px;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+    
+    .futurist-memphis-subtitle {
+      color: #a239ca;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+    
+    .futurist-memphis-button {
+      background-color: #4717f6;
+      color: #e7dfdd;
+      border: none;
+      padding: 8px 16px;
+      font-size: 12px;
+      text-transform: uppercase;
+      position: relative;
+    }
+    
+    .futurist-memphis-button::after {
+      content: "";
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      width: 100%;
+      height: 100%;
+      border: 1px solid #a239ca;
+      z-index: -1;
+    }
+    
+    /* Minimal Grunge Style */
+    .minimal-grunge {
+      background-color: #f5f5f5;
+      color: #222;
+      border: none;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .minimal-grunge::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url("data:image/svg+xml,%3Csvg width='20' height='12' viewBox='0 0 20 12' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 12c0-.622-.095-1.221-.27-1.785A5.982 5.982 0 0 0 10 12c1.67 0 3.182-.657 4.27-1.785A5.998 5.998 0 0 0 14 12h2c0-.665-.095-1.309-.27-1.915A7.961 7.961 0 0 0 12 6c-.85 0-1.673.118-2.447.34A7.003 7.003 0 0 0 6 2c-.424 0-.841.033-1.247.099A5.99 5.99 0 0 0 0 6c0 1.67.658 3.183 1.786 4.27-.095.565-.143 1.15-.143 1.743h2c0-.851.118-1.673.34-2.446A4.997 4.997 0 0 1 6 12zm8-10c1.105 0 2 .896 2 2s-.895 2-2 2-2-.896-2-2 .895-2 2-2zm-8 0c1.105 0 2 .896 2 2s-.895 2-2 2-2-.896-2-2 .895-2 2-2z' fill='%23000000' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
+      opacity: 0.4;
+      z-index: 1;
+    }
+    
+    .minimal-grunge:hover {
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    .minimal-grunge .style-title {
+      font-family: 'Space Mono', monospace;
+      color: #222;
+      font-weight: normal;
+    }
+    
+    .minimal-grunge .style-vibe {
+      color: #777;
+      font-family: 'Space Mono', monospace;
+    }
+    
+    .minimal-grunge .style-description {
+      color: #222;
+    }
+    
+    .minimal-grunge .style-example {
+      background-color: #f5f5f5;
+      position: relative;
+    }
+    
+    .minimal-grunge-example {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+    }
+    
+    .minimal-grunge-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 30px;
+    }
+    
+    .minimal-grunge-title {
+      font-family: 'Space Mono', monospace;
+      color: #222;
+      font-size: 18px;
+      position: relative;
+    }
+    
+    .minimal-grunge-title::after {
+      content: "";
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background-color: #222;
+      opacity: 0.2;
+    }
+    
+    .minimal-grunge-menu {
+      font-family: 'Space Mono', monospace;
+      color: #777;
+      font-size: 14px;
+    }
+    
+    .minimal-grunge-content {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    
+    .minimal-grunge-message {
+      font-family: 'Space Mono', monospace;
+      color: #222;
+      font-size: 26px;
+      margin-bottom: 15px;
+      font-weight: bold;
+      position: relative;
+      display: inline-block;
+    }
+    
+    .minimal-grunge-message::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -5px;
+      width: 2px;
+      height: 100%;
+      background-color: #222;
+    }
+    
+    .minimal-grunge-submessage {
+      font-family: 'Space Mono', monospace;
+      color: #777;
+      font-size: 14px;
+      max-width: 70%;
+    }
+    
+    .minimal-grunge-footer {
+      margin-top: 30px;
+      display: flex;
+      justify-content: flex-start;
+    }
+    
+    .minimal-grunge-button {
+      background-color: transparent;
+      color: #222;
+      border: 1px solid #222;
+      padding: 8px 16px;
+      font-family: 'Space Mono', monospace;
+      font-size: 12px;
+      position: relative;
+    }
+    
+    .minimal-grunge-button::after {
+      content: "";
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      width: 100%;
+      height: 100%;
+      background-color: #222;
+      opacity: 0.05;
+      z-index: -1;
+    }
+    
+    /* Y2K x Vaporwave Style */
+    .y2k-vaporwave {
+      background: linear-gradient(135deg, #ff6ad5, #c774e8, #ad8cff);
+      border: 2px solid #8c52ff;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .y2k-vaporwave::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: 
+        linear-gradient(0deg, rgba(0, 0, 0, 0.1) 1px, transparent 1px),
+
+        linear-gradient(90deg, rgba(0, 0, 0, 0.1) 1px, transparent 1px);
+      background-size: 20px 20px;
+      opacity: 0.2;
+      z-index: 1;
+    }
+    
+    .y2k-vaporwave:hover {
+      filter: hue-rotate(15deg);
+      box-shadow: 0 0 30px rgba(140, 82, 255, 0.6);
+    }
+    
+    .y2k-vaporwave .style-title {
+      font-family: 'VT323', monospace;
+      color: #ffffff;
+      text-shadow: 2px 2px 0 #8c52ff, -2px -2px 0 #00ffff;
+    }
+    
+    .y2k-vaporwave .style-vibe {
+      color: #ffffff;
+      text-shadow: 1px 1px 0 #00ffff;
+    }
+    
+    .y2k-vaporwave .style-description {
+      color: #ffffff;
+      text-shadow: 1px 1px 0 #8c52ff;
+    }
+    
+    .y2k-vaporwave .style-example {
+      background: linear-gradient(135deg, rgba(255, 106, 213, 0.7), rgba(173, 140, 255, 0.7));
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      position: relative;
+    }
+    
+    .y2k-vaporwave-example {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 15px;
+      position: relative;
+    }
+    
+    .y2k-vaporwave-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    
+    .y2k-vaporwave-logo {
+      font-family: 'VT323', monospace;
+      color: #ffffff;
+      font-size: 22px;
+      text-shadow: 2px 2px 0 #8c52ff;
+    }
+    
+    .y2k-vaporwave-menu {
+      display: flex;
+      gap: 15px;
+    }
+    
+    .y2k-vaporwave-menu-item {
+      color: #ffffff;
+      font-family: 'VT323', monospace;
+      font-size: 16px;
+    }
+    
+    .y2k-vaporwave-content {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    
+    .y2k-vaporwave-grid {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: 
+        linear-gradient(0deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+      background-size: 10px 10px;
+      perspective: 500px;
+      transform: rotateX(45deg);
+      z-index: 1;
+    }
+    
+    .y2k-vaporwave-title {
+      font-family: 'VT323', monospace;
+      color: #ffffff;
+      font-size: 28px;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 0 #8c52ff, -2px -2px 0 #00ffff;
+      text-transform: uppercase;
+    }
+    
+    .y2k-vaporwave-subtitle {
+      color: #ffffff;
+      font-size: 14px;
+      margin-bottom: 20px;
+      text-shadow: 1px 1px 0 #8c52ff;
+    }
+    
+    .y2k-vaporwave-button {
+      background: linear-gradient(to right, #ff6ad5, #8c52ff);
+      color: white;
+      font-family: 'VT323', monospace;
+      border: 1px solid white;
+      padding: 8px 20px;
+      font-size: 16px;
+      box-shadow: 3px 3px 0 #00ffff;
+      position: relative;
+    }
+    
+    /* Neo Glassmorphism Style */
+    .neo-glassmorphism {
+      background-color: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 8px 32px rgba(31, 38, 135, 0.2);
+    }
+    
+    .neo-glassmorphism:hover {
+      box-shadow: 0 8px 32px rgba(31, 38, 135, 0.4);
+    }
+    
+    .neo-glassmorphism .style-title {
+      font-family: 'Poppins', sans-serif;
+      color: #ffffff;
+      font-weight: 600;
+    }
+    
+    .neo-glassmorphism .style-vibe {
+      color: rgba(255, 255, 255, 0.7);
+    }
+    
+    .neo-glassmorphism .style-description {
+      color: rgba(255, 255, 255, 0.9);
+    }
+    
+    .neo-glassmorphism .style-example {
+      background-color: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 8px;
+    }
+    
+    .neo-glassmorphism-example {
+      width: 100%;
+      height: 100%;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .neo-glassmorphism-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    
+    .neo-glassmorphism-logo {
+      font-family: 'Poppins', sans-serif;
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 18px;
+    }
+    
+    .neo-glassmorphism-menu {
+      display: flex;
+      gap: 15px;
+    }
+    
+    .neo-glassmorphism-menu-item {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 14px;
+    }
+    
+    .neo-glassmorphism-content {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .neo-glassmorphism-card {
+      background-color: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 8px;
+      padding: 20px;
+      width: 80%;
+      text-align: center;
+    }
+    
+    .neo-glassmorphism-title {
+      font-family: 'Poppins', sans-serif;
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+    
+    .neo-glassmorphism-subtitle {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+    
+    .neo-glassmorphism-button {
+      background-color: rgba(255, 255, 255, 0.2);
+      color: #ffffff;
+      font-family: 'Poppins', sans-serif;
+      font-size: 14px;
+      padding: 8px 16px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 20px;
+      backdrop-filter: blur(5px);
+    }
+    
+    /* Warm Neumorphism Style */
+    .warm-neumorphism {
+      background-color: #f8e7dd;
+      color: #7d5a50;
+      border-radius: 10px;
+      box-shadow: 
+        6px 6px 12px #e0d0c7,
+        -6px -6px 12px #fff4f0;
+    }
+    
+    .warm-neumorphism:hover {
+      box-shadow: 
+        8px 8px 16px #e0d0c7,
+        -8px -8px 16px #fff4f0;
+    }
+    
+    .warm-neumorphism .style-title {
+      font-family: 'Josefin Sans', sans-serif;
+      color: #7d5a50;
+      font-weight: 600;
+    }
+    
+    .warm-neumorphism .style-vibe {
+      color: #b4846c;
+    }
+    
+    .warm-neumorphism .style-description {
+      color: #7d5a50;
+    }
+    
+    .warm-neumorphism .style-example {
+      background-color: #f8e7dd;
+      border-radius: 8px;
+      box-shadow: 
+        inset 2px 2px 5px #e0d0c7,
+        inset -2px -2px 5px #fff4f0;
+    }
+    
+    .warm-neumorphism-example {
+      width: 100%;
+      height: 100%;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .warm-neumorphism-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+    
+    .warm-neumorphism-title {
+      font-family: 'Josefin Sans', sans-serif;
+      color: #7d5a50;
+      font-weight: 600;
+      font-size: 20px;
+    }
+    
+    .warm-neumorphism-icon {
+      width: 30px;
+      height: 30px;
+      background-color: #f8e7dd;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #b4846c;
+      box-shadow: 
+        2px 2px 5px #e0d0c7,
+        -2px -2px 5px #fff4f0;
+    }
+    
+    .warm-neumorphism-content {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    
+    .warm-neumorphism-card {
+      background-color: #f8e7dd;
+      border-radius: 8px;
+      padding: 15px;
+      box-shadow: 
+        4px 4px 8px #e0d0c7,
+        -4px -4px 8px #fff4f0;
+    }
+    
+    .warm-neumorphism-label {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 14px;
+      color: #b4846c;
+      margin-bottom: 5px;
+    }
+    
+    .warm-neumorphism-value {
+      font-family: 'Josefin Sans', sans-serif;
+      font-weight: 600;
+      color: #7d5a50;
+    }
+    
+    .warm-neumorphism-footer {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    
+    .warm-neumorphism-button {
+      background-color: #f8e7dd;
+      color: #7d5a50;
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 14px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 25px;
+      box-shadow: 
+        4px 4px 8px #e0d0c7,
+        -4px -4px 8px #fff4f0;
+    }
+    /* Neubrutalism Style */
+.neubrutalism {
+    background-color: #f9f703;
+    color: #000000;
+    border: 3px solid #000000;
+    box-shadow: 6px 6px 0 #000000;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .neobrutalism:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 8px 8px 0 #000000;
+  }
+  
+  .neubrutalism .style-title {
+    font-family: 'Space Mono', monospace;
+    color: #000000;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  .neubrutalism .style-vibe {
+    color: #000000;
+    font-family: 'Space Mono', monospace;
+  }
+  
+  .neubrutalism .style-description {
+    color: #000000;
+  }
+  
+  .neubrutalism .style-example {
+    background-color: #ffb8ff;
+    position: relative;
+    border: 3px solid #000000;
+  }
+  
+  .neubrutalism-example {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+  }
+  
+  .neubrutalism-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .neubrutalism-title {
+    font-family: 'Space Mono', monospace;
+    color: #000000;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  .neubrutalism-menu {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .neubrutalism-menu-item {
+    background-color: #00de7a;
+    color: #000000;
+    padding: 5px 10px;
+    border: 2px solid #000000;
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    font-weight: bold;
+    box-shadow: 3px 3px 0 #000000;
+  }
+  
+  .neubrutalism-menu-item:hover {
+    transform: translateY(-2px);
+  }
+  
+  .neubrutalism-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .neubrutalism-message {
+    font-family: 'Space Mono', monospace;
+    color: #000000;
+    font-size: 24px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 10px;
+    background-color: #ff5252;
+    border: 2px solid #000000;
+    display: inline-block;
+  }
+  
+  .neubrutalism-submessage {
+    font-family: 'Space Mono', monospace;
+    color: #000000;
+    font-size: 14px;
+    max-width: 80%;
+    margin-bottom: 20px;
+  }
+  
+  .neubrutalism-footer {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-start;
+  }
+  
+  .neubrutalism-button {
+    background-color: #5d5dff;
+    color: #ffffff;
+    border: 3px solid #000000;
+    padding: 10px 20px;
+    font-family: 'Space Mono', monospace;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    box-shadow: 4px 4px 0 #000000;
+  }
+  
+  .neubrutalism-button:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 #000000;
+  }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Fusion Design Styles</h1>
+      <p class="subtitle">Explore hybrid design aesthetics that combine multiple styles into unique visual languages.</p>
+    </header>
+    
+    <div class="styles-grid">
+      <!-- Dreamy SaaS -->
+      <div class="style-card dreamy-saas">
+        <h2 class="style-title">Dreamy SaaS</h2>
+        <p class="style-vibe">Light Academia + Corporate UI</p>
+        <p class="style-description">Airy, light theme for software UIs — soothing gradients, serif headers with humanistic touches.</p>
+        <div class="style-example">
+          <div class="dreamy-saas-example">
+            <div class="dreamy-saas-header">
+              <div class="dreamy-saas-logo">Serene</div>
+              <div class="dreamy-saas-nav">
+                <div class="dreamy-saas-nav-item">Dashboard</div>
+                <div class="dreamy-saas-nav-item">Analytics</div>
+                <div class="dreamy-saas-nav-item">Settings</div>
+              </div>
+            </div>
+            <div class="dreamy-saas-content">
+              <h3 class="dreamy-saas-title">Welcome to your dashboard</h3>
+              <p class="dreamy-saas-subtitle">Track your progress with an enlightened approach</p>
+              <button class="dreamy-saas-cta">Get Started</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- AI Futurism -->
+      <div class="style-card ai-futurism">
+        <h2 class="style-title">AI Futurism</h2>
+        <p class="style-vibe">AI-core + Glassmorphism</p>
+        <p class="style-description">Neural net visuals with glows, blurs, and floating UI elements for an AI-driven aesthetic.</p>
+        <div class="style-example">
+          <div class="ai-futurism-example">
+            <div class="ai-futurism-node"></div>
+            <div class="ai-futurism-node"></div>
+            <div class="ai-futurism-node"></div>
+            <div class="ai-futurism-node"></div>
+            <div class="ai-futurism-node"></div>
+            <div class="ai-futurism-connection"></div>
+            <div class="ai-futurism-connection"></div>
+            <div class="ai-futurism-connection"></div>
+            <div class="ai-futurism-connection"></div>
+            
+            <div class="ai-futurism-card">
+              <h3 class="ai-futurism-title">Neural Network</h3>
+              <p class="ai-futurism-metric">98.7%</p>
+              <p class="ai-futurism-label">Accuracy</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Soft Tech -->
+      <div class="style-card soft-tech">
+        <h2 class="style-title">Soft Tech</h2>
+        <p class="style-vibe">Scandinavian + Tech/Startup</p>
+        <p class="style-description">Light tones, lots of white space, but still tech-forward with high functionality.</p>
+        <div class="style-example">
+          <div class="soft-tech-example">
+            <div class="soft-tech-nav">
+              <div class="soft-tech-logo">simplify</div>
+              <div class="soft-tech-menu">
+                <div class="soft-tech-menu-item">Home</div>
+                <div class="soft-tech-menu-item">Features</div>
+                <div class="soft-tech-menu-item">About</div>
+              </div>
+            </div>
+            <div class="soft-tech-content">
+              <h3 class="soft-tech-title">Transform Your Workflow</h3>
+              <p class="soft-tech-description">Clean design meets powerful technology</p>
+              <div class="soft-tech-boxes">
+                <div class="soft-tech-box"></div>
+                <div class="soft-tech-box"></div>
+                <div class="soft-tech-box"></div>
+              </div>
+            </div>
+            <div class="soft-tech-footer">
+              <button class="soft-tech-button">Get Started</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Corporate Neumorphism -->
+      <div class="style-card corporate-neumorphism">
+        <h2 class="style-title">Corporate Neumorphism</h2>
+        <p class="style-vibe">Neumorphism + Corporate/SaaS</p>
+        <p class="style-description">Clean UI with soft tactile buttons — rare, but visually polished style for business applications.</p>
+        <div class="style-example">
+          <div class="corporate-neumorphism-example">
+            <div class="corporate-neumorphism-header">
+              <div class="corporate-neumorphism-title">Performance</div>
+              <div class="corporate-neumorphism-badge">Pro</div>
+            </div>
+            <div class="corporate-neumorphism-content">
+              <div class="corporate-neumorphism-card">
+                <div class="corporate-neumorphism-metric">
+                  <div class="corporate-neumorphism-label">Revenue</div>
+                  <div class="corporate-neumorphism-value">$48,352</div>
+                </div>
+              </div>
+              <div class="corporate-neumorphism-card">
+                <div class="corporate-neumorphism-metric">
+                  <div class="corporate-neumorphism-label">Users</div>
+                  <div class="corporate-neumorphism-value">1,245</div>
+                </div>
+              </div>
+            </div>
+            <div class="corporate-neumorphism-footer">
+              <button class="corporate-neumorphism-button">View Report</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Futurist Memphis -->
+      <div class="style-card futurist-memphis">
+        <h2 class="style-title">Futurist Memphis</h2>
+        <p class="style-vibe">Futurism + Memphis Design</p>
+        <p class="style-description">Angular shapes, 3D forms with abstract patterns and neon colors for bold visual impact.</p>
+        <div class="style-example">
+          <div class="futurist-memphis-example">
+            <div class="futurist-memphis-shape"></div>
+            <div class="futurist-memphis-shape"></div>
+            <div class="futurist-memphis-shape"></div>
+            <div class="futurist-memphis-shape"></div>
+            
+            <div class="futurist-memphis-content">
+              <h3 class="futurist-memphis-title">Synth 2025</h3>
+              <p class="futurist-memphis-subtitle">Future forward creativity</p>
+              <button class="futurist-memphis-button">Explore</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Minimal Grunge -->
+      <div class="style-card minimal-grunge">
+        <h2 class="style-title">Minimal Grunge</h2>
+        <p class="style-vibe">Minimalism + Grunge</p>
+        <p class="style-description">Clean layout with distressed textures, dark tones, or gritty fonts for an edgy minimalist look.</p>
+        <div class="style-example">
+          <div class="minimal-grunge-example">
+            <div class="minimal-grunge-header">
+              <div class="minimal-grunge-title">raw/minimal</div>
+              <div class="minimal-grunge-menu">menu</div>
+            </div>
+            <div class="minimal-grunge-content">
+              <div class="minimal-grunge-message">break the rules</div>
+              <div class="minimal-grunge-submessage">minimalism with an edge — clean but never sterile</div>
+            </div>
+            <div class="minimal-grunge-footer">
+              <button class="minimal-grunge-button">discover</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Y2K x Vaporwave -->
+      <div class="style-card y2k-vaporwave">
+        <h2 class="style-title">Y2K x Vaporwave</h2>
+        <p class="style-vibe">Y2K Aesthetic + Vaporwave</p>
+        <p class="style-description">Chrome-gloss with neon surrealism; intense nostalgia mixed with futuristic technology.</p>
+        <div class="style-example">
+          <div class="y2k-vaporwave-example">
+            <div class="y2k-vaporwave-grid"></div>
+            
+            <div class="y2k-vaporwave-header">
+              <div class="y2k-vaporwave-logo">RETRO.NET</div>
+              <div class="y2k-vaporwave-menu">
+                <div class="y2k-vaporwave-menu-item">HOME</div>
+                <div class="y2k-vaporwave-menu-item">ABOUT</div>
+              </div>
+            </div>
+            
+            <div class="y2k-vaporwave-content">
+              <h3 class="y2k-vaporwave-title">CYBER DREAMS</h3>
+              <p class="y2k-vaporwave-subtitle">Digital nostalgia for the future</p>
+              <button class="y2k-vaporwave-button">ENTER</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Neo Glassmorphism -->
+      <div class="style-card neo-glassmorphism">
+        <h2 class="style-title">Neo Glassmorphism</h2>
+        <p class="style-vibe">Glassmorphism + Minimalism</p>
+        <p class="style-description">Translucent cards in minimalist or SaaS designs for a modern, clean aesthetic.</p>
+        <div class="style-example">
+          <div class="neo-glassmorphism-example">
+            <div class="neo-glassmorphism-header">
+              <div class="neo-glassmorphism-logo">glassify</div>
+              <div class="neo-glassmorphism-menu">
+                <div class="neo-glassmorphism-menu-item">Home</div>
+                <div class="neo-glassmorphism-menu-item">Features</div>
+              </div>
+            </div>
+            <div class="neo-glassmorphism-content">
+              <div class="neo-glassmorphism-card">
+                <h3 class="neo-glassmorphism-title">Transparent Design</h3>
+                <p class="neo-glassmorphism-subtitle">Modern aesthetics with depth and clarity</p>
+                <button class="neo-glassmorphism-button">Learn More</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Neubrutalism -->
+<div class="style-card neubrutalism">
+    <h2 class="style-title">Neubrutalism</h2>
+    <p class="style-vibe">Brutalism + Modern Web</p>
+    <p class="style-description">Bold colors, thick black borders, and strong shadows with playful layouts and intentional design "rawness".</p>
+    <div class="style-example">
+      <div class="neubrutalism-example">
+        <div class="neubrutalism-header">
+          <div class="neubrutalism-title">BRUTAL.UI</div>
+          <div class="neubrutalism-menu">
+            <div class="neubrutalism-menu-item">HOME</div>
+            <div class="neubrutalism-menu-item">ABOUT</div>
+          </div>
+        </div>
+        <div class="neubrutalism-content">
+          <div class="neubrutalism-message">NO COMPROMISE</div>
+          <div class="neubrutalism-submessage">bold design for the digital age — unapologetically raw</div>
+        </div>
+        <div class="neubrutalism-footer">
+          <button class="neubrutalism-button">Explore</button>
+        </div>
+      </div>
+    </div>
+  </div>
+      <!-- Warm Neumorphism -->
+      <div class="style-card warm-neumorphism">
+        <h2 class="style-title">Warm Neumorphism</h2>
+        <p class="style-vibe">Neumorphism + Warm Minimalism</p>
+        <p class="style-description">Soft shadows with cozy tones, feels tactile but welcoming for a friendly interface.</p>
+        <div class="style-example">
+          <div class="warm-neumorphism-example">
+            <div class="warm-neumorphism-header">
+              <div class="warm-neumorphism-title">cozy space</div>
+              <div class="warm-neumorphism-icon">☕</div>
+            </div>
+            <div class="warm-neumorphism-content">
+              <div class="warm-neumorphism-card">
+                <div class="warm-neumorphism-label">Today's Mood</div>
+                <div class="warm-neumorphism-value">Relaxed & Productive</div>
+              </div>
+              <div class="warm-neumorphism-card">
+                <div class="warm-neumorphism-label">Ambient</div>
+                <div class="warm-neumorphism-value">Peaceful</div>
+              </div>
+            </div>
+            <div class="warm-neumorphism-footer">
+              <button class="warm-neumorphism-button">Customize</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

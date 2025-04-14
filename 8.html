@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fusion & Hybrid Design Styles</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Courier+Prime:wght@400;700&family=UnifrakturMaguntia&family=Orbitron:wght@400;700&family=Playfair+Display:ital,wght@0,700;1,400&family=Nunito:wght@300;400;700&family=Poppins:wght@300;400;600&family=DM+Serif+Display&family=Italiana&family=Sacramento&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      background-color: #121212;
+      color: #e0e0e0;
+      font-family: 'Courier Prime', monospace;
+      line-height: 1.6;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+    
+    header {
+      text-align: center;
+      margin-bottom: 50px;
+      position: relative;
+    }
+    
+    header::after {
+      content: "";
+      position: absolute;
+      bottom: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 200px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #9d4edd, transparent);
+    }
+    
+    h1 {
+      font-size: 3.5rem;
+      margin-bottom: 15px;
+      color: #ffffff;
+      font-family: 'Bebas Neue', sans-serif;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+    
+    .subtitle {
+      font-size: 1.1rem;
+      color: #9e9e9e;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .styles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+    
+    .style-card {
+      border-radius: 4px;
+      padding: 25px;
+      transition: all 0.4s ease;
+      cursor: pointer;
+      height: 500px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .style-title {
+      font-size: 1.8rem;
+      margin-bottom: 5px;
+      z-index: 2;
+      position: relative;
+    }
+    
+    .style-vibe {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 15px;
+      color: #888;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .style-description {
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .style-example {
+      flex-grow: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 2px;
+      margin-top: auto;
+      position: relative;
+      z-index: 2;
+    }
+    
+    /* Neo Brutalism Style */
+    .neo-brutalism {
+      background-color: #f8f8f8;
+      color: #121212;
+      box-shadow: 10px 10px 0 #121212;
+      border: 2px solid #000;
+      transform-origin: center;
+      transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    
+    .neo-brutalism:hover {
+      transform: rotate(-1deg) scale(1.02);
+    }
+    
+    .neo-brutalism .style-title {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 2rem;
+      text-transform: uppercase;
+      color: #121212;
+    }
+    
+    .neo-brutalism .style-vibe {
+      color: #555;
+    }
+    
+    .neo-brutalism .style-description {
+      color: #121212;
+    }
+    
+    .neo-brutalism .style-example {
+      background-color: #e2e2e2;
+      padding: 10px;
+      border: 1px solid #000;
+      border-radius: 4px;
+    }
+    
+    .neo-brutalism-example {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .neo-brutalism-header {
+      background-color: #000;
+      color: white;
+      padding: 12px;
+      font-size: 16px;
+      font-weight: bold;
+      text-align: left;
+      margin-bottom: 15px;
+      border-radius: 3px;
+      font-family: 'Poppins', sans-serif;
+    }
+    
+    .neo-brutalism-content {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      padding: 0 5px;
+    }
+    
+    .neo-brutalism-box {
+      width: 100%;
+      height: 12px;
+      border-radius: 3px;
+      background-color: #000;
+    }
+    
+    .neo-brutalism-box:nth-child(2) {
+      width: 70%;
+    }
+    
+    .neo-brutalism-box:nth-child(3) {
+      width: 90%;
+    }
+    
+    .neo-brutalism-button {
+      background-color: #000;
+      color: white;
+      padding: 10px 15px;
+      font-family: 'Poppins', sans-serif;
+      border: none;
+      border-radius: 3px;
+      margin-top: 15px;
+      align-self: flex-start;
+      font-size: 14px;
+    }
+    
+    /* Soft Brutalism Style */
+    .soft-brutalism {
+      background-color: #ffd6e0;
+      color: #222;
+      box-shadow: 10px 10px 0 #ff8fab;
+      border: 2px solid #ff8fab;
+    }
+    
+    .soft-brutalism:hover {
+      box-shadow: 12px 12px 0 #ff8fab;
+    }
+    
+    .soft-brutalism .style-title {
+      font-family: 'Courier Prime', monospace;
+      font-weight: bold;
+      font-size: 2.2rem;
+      text-transform: uppercase;
+      color: #222;
+    }
+    
+    .soft-brutalism .style-vibe {
+      color: #ff8fab;
+    }
+    
+    .soft-brutalism .style-description {
+      color: #222;
+    }
+    
+    .soft-brutalism .style-example {
+      background-color: #fff0f3;
+      border: 2px solid #ff8fab;
+    }
+    
+    .soft-brutalism-example {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .soft-brutalism-tiles {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+    
+    .soft-brutalism-tile {
+      aspect-ratio: 1;
+      border: 2px solid #ff8fab;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      font-weight: bold;
+      color: #222;
+      background-color: #ffd6e0;
+    }
+    
+    .soft-brutalism-tile:nth-child(2) {
+      background-color: #ff8fab;
+    }
+    
+    .soft-brutalism-tile:nth-child(3) {
+      background-color: #ffb3c6;
+    }
+    
+    .soft-brutalism-menu {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 15px;
+    }
+    
+    .soft-brutalism-button {
+      background-color: #ff8fab;
+      color: white;
+      border: 1px solid #ff8fab;
+      padding: 5px 10px;
+      font-size: 12px;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+    
+    /* Cyber Deco Style */
+    .cyber-deco {
+      background-color: #080320;
+      background-image: linear-gradient(135deg, #080320 0%, #1a1040 100%);
+      border: 1px solid #c9b037;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .cyber-deco::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: repeating-linear-gradient(
+        45deg,
+        rgba(201, 176, 55, 0.1),
+        rgba(201, 176, 55, 0.1) 2px,
+        transparent 2px,
+        transparent 4px
+      );
+      z-index: 1;
+    }
+    
+    .cyber-deco:hover {
+      box-shadow: 0 0 20px rgba(201, 176, 55, 0.5);
+    }
+    
+    .cyber-deco .style-title {
+      font-family: 'Italiana', serif;
+      color: #c9b037;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    
+    .cyber-deco .style-vibe {
+      color: #9d4edd;
+    }
+    
+    .cyber-deco .style-example {
+      background-color: rgba(8, 3, 32, 0.8);
+      border: 1px solid #c9b037;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .cyber-deco-example {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    
+    .cyber-deco-ornament {
+      width: 80%;
+      height: 40px;
+      margin-bottom: 20px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    
+    .cyber-deco-ornament::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 45%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #c9b037);
+    }
+    
+    .cyber-deco-ornament::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 45%;
+      height: 1px;
+      background: linear-gradient(270deg, transparent, #c9b037);
+    }
+    
+    .cyber-deco-diamond {
+      width: 14px;
+      height: 14px;
+      background-color: #c9b037;
+      transform: rotate(45deg);
+    }
+    
+    .cyber-deco-title {
+      font-family: 'Italiana', serif;
+      color: #c9b037;
+      font-size: 24px;
+      letter-spacing: 2px;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+    }
+    
+    .cyber-deco-subtitle {
+      color: #9d4edd;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin-bottom: 20px;
+    }
+    
+    .cyber-deco-buttons {
+      display: flex;
+      gap: 15px;
+    }
+    
+    .cyber-deco-button {
+      background-color: transparent;
+      color: #c9b037;
+      border: 1px solid #c9b037;
+      padding: 8px 15px;
+      text-transform: uppercase;
+      font-size: 10px;
+      letter-spacing: 1px;
+      position: relative;
+      z-index: 2;
+    }
+    
+    /* Cottage-Goth Style */
+    .cottage-goth {
+      background-color: #0a0a0a;
+      border: 1px solid #800;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .cottage-goth::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cpath d='M20 8s-3 4-8 4-8-4-8-4 3-4 8-4 8 4 8 4zm0 24s-3-4-8-4-8 4-8 4 3 4 8 4 8-4 8-4zm20-16s-3 4-8 4-8-4-8-4 3-4 8-4 8 4 8 4zm0 24s-3-4-8-4-8 4-8 4 3 4 8 4 8-4 8-4z' fill='%23800' fill-opacity='0.08'/%3E%3C/svg%3E");
+      opacity: 0.4;
+      z-index: 1;
+    }
+    
+    .cottage-goth:hover {
+      box-shadow: 0 0 20px rgba(136, 0, 0, 0.3);
+    }
+    
+    .cottage-goth .style-title {
+      font-family: 'Playfair Display', serif;
+      color: #800;
+      text-shadow: 0 0 5px rgba(136, 0, 0, 0.3);
+    }
+    
+    .cottage-goth .style-vibe {
+      color: #d4a373;
+      font-family: 'Sacramento', cursive;
+      font-size: 1.2rem;
+      letter-spacing: 0;
+      text-transform: none;
+    }
+    
+    .cottage-goth .style-example {
+      background-color: #0a0a0a;
+      border: 1px solid #800;
+    }
+    
+    .cottage-goth-example {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 15px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .cottage-goth-example::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cpath d='M20 5s4 7 4 10c0 3-2 4-4 4s-4-1-4-4c0-3 4-10 4-10zm0 30c0 0-4-7-4-10 0-3 2-4 4-4s4 1 4 4c0 3-4 10-4 10z' fill='%23d4a373' fill-opacity='0.1'/%3E%3C/svg%3E");
+      opacity: 0.2;
+      z-index: -1;
+    }
+    
+    .cottage-goth-title {
+      font-family: 'UnifrakturMaguntia', cursive;
+      color: #800;
+      font-size: 28px;
+      margin-bottom: 5px;
+      text-align: center;
+    }
+    
+    .cottage-goth-subtitle {
+      font-family: 'Sacramento', cursive;
+      color: #d4a373;
+      font-size: 18px;
+      margin-bottom: 15px;
+    }
+    
+    .cottage-goth-ornament {
+      width: 30px;
+      height: 30px;
+      margin: 10px 0;
+      position: relative;
+    }
+    
+    .cottage-goth-ornament::before {
+      content: "❀";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #800;
+      font-size: 24px;
+    }
+    
+    .cottage-goth-text {
+      color: #d4a373;
+      font-style: italic;
+      text-align: center;
+      font-size: 14px;
+      max-width: 80%;
+      margin-bottom: 15px;
+    }
+    
+    /* Dark Academia UI Style */
+    .dark-academia {
+      background-color: #1c1814;
+      background-image: linear-gradient(135deg, #1c1814 0%, #2c2418 100%);
+      border: 1px solid #a67c52;
+    }
+    
+    .dark-academia:hover {
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    }
+    
+    .dark-academia .style-title {
+      font-family: 'DM Serif Display', serif;
+      color: #d3b88c;
+    }
+    
+    .dark-academia .style-vibe {
+      color: #a67c52;
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+    }
+    
+    .dark-academia .style-example {
+      background-color: #1c1814;
+      border: 1px solid #a67c52;
+    }
+    
+    .dark-academia-example {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      padding: 15px;
+    }
+    
+    .dark-academia-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #a67c52;
+      padding-bottom: 10px;
+      margin-bottom: 15px;
+    }
+    
+    .dark-academia-title {
+      font-family: 'DM Serif Display', serif;
+      color: #d3b88c;
+      font-size: 22px;
+    }
+    
+    .dark-academia-date {
+      color: #a67c52;
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 14px;
+    }
+    
+    .dark-academia-content {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .dark-academia-paragraph {
+      width: 100%;
+      height: 8px;
+      background-color: #2c2418;
+      margin-bottom: 10px;
+    }
+    
+    .dark-academia-paragraph:nth-child(1) {
+      width: 90%;
+    }
+    
+    .dark-academia-paragraph:nth-child(2) {
+      width: 100%;
+    }
+    
+    .dark-academia-paragraph:nth-child(3) {
+      width: 70%;
+    }
+    
+    .dark-academia-paragraph:nth-child(4) {
+      width: 85%;
+    }
+    
+    .dark-academia-footer {
+      margin-top: 15px;
+      display: flex;
+      justify-content: flex-end;
+    }
+    
+    .dark-academia-page {
+      color: #a67c52;
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 14px;
+    }
+    
+    /* Pop Cyber Style */
+    .pop-cyber {
+      background-color: #08001a;
+      border: 3px solid #ff00ff;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .pop-cyber::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, rgba(255, 0, 255, 0.1), rgba(0, 255, 255, 0.1));
+      z-index: 1;
+    }
+    
+    .pop-cyber::after {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: repeating-linear-gradient(
+        45deg,
+        rgba(255, 255, 0, 0.05),
+        rgba(255, 0, 255, 0.05) 5px,
+        transparent 5px,
+        transparent 10px
+      );
+      animation: glitch 10s linear infinite;
+      opacity: 0.1;
+      z-index: 1;
+    }
+    
+    @keyframes glitch {
+      0% {
+        transform: translate(0);
+      }
+      20% {
+        transform: translate(-5px, 5px);
+      }
+      40% {
+        transform: translate(-5px, -5px);
+      }
+      60% {
+        transform: translate(5px, 5px);
+      }
+      80% {
+        transform: translate(5px, -5px);
+      }
+      100% {
+        transform: translate(0);
+      }
+    }
+    
+    .pop-cyber:hover {
+      box-shadow: 0 0 30px rgba(255, 0, 255, 0.5);
+    }
+    
+    .pop-cyber .style-title {
+      font-family: 'Orbitron', sans-serif;
+      color: #ff00ff;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      text-shadow: 3px 3px 0 #00ffff;
+    }
+    
+    .pop-cyber .style-vibe {
+      color: #ffff00;
+      font-weight: bold;
+    }
+    
+    .pop-cyber .style-example {
+      background-color: #08001a;
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .pop-cyber-example {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      position: relative;
+    }
+    
+    .pop-cyber-title {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 24px;
+      color: #ff00ff;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+      text-shadow: 3px 3px 0 #00ffff;
+      position: relative;
+    }
+    
+    .pop-cyber-star {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: #ffff00;
+      clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    }
+    
+    .pop-cyber-star:nth-child(1) {
+      top: 10px;
+      left: 10px;
+      animation: spin 3s linear infinite;
+    }
+    
+    .pop-cyber-star:nth-child(2) {
+      top: 10px;
+      right: 10px;
+      animation: spin 3s linear infinite reverse;
+    }
+    
+    .pop-cyber-star:nth-child(3) {
+      bottom: 10px;
+      left: 10px;
+      animation: spin 3s linear infinite reverse;
+    }
+    
+    .pop-cyber-star:nth-child(4) {
+      bottom: 10px;
+      right: 10px;
+      animation: spin 3s linear infinite;
+    }
+    
+    @keyframes spin {
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+    
+    .pop-cyber-button {
+      background-color: #ff00ff;
+      border: 3px solid #00ffff;
+      color: #08001a;
+      padding: 8px 20px;
+      font-family: 'Orbitron', sans-serif;
+      text-transform: uppercase;
+      font-size: 14px;
+      font-weight: bold;
+      position: relative;
+      z-index: 2;
+      transition: all 0.3s ease;
+    }
+    
+    .pop-cyber-button:hover {
+      background-color: #00ffff;
+      border-color: #ff00ff;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Fusion & Hybrid Design Styles</h1>
+      <p class="subtitle">Exploring the exciting intersections of design aesthetics with these creative style combinations.</p>
+    </header>
+    
+    <div class="styles-grid">
+      <!-- Neo Brutalism -->
+      <div class="style-card neo-brutalism">
+        <h3 class="style-title">Neo Brutalism</h3>
+        <p class="style-vibe">Brutalism + Minimalism</p>
+        <p class="style-description">Flat layout, rough edges, but with better alignment and white space.</p>
+        <div class="style-example">
+          <div class="neo-brutalism-example">
+            <div class="neo-brutalism-header">Projects</div>
+            <div class="neo-brutalism-content">
+              <div class="neo-brutalism-box"></div>
+              <div class="neo-brutalism-box"></div>
+              <div class="neo-brutalism-box"></div>
+              <button class="neo-brutalism-button">View All</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Soft Brutalism -->
+      <div class="style-card soft-brutalism">
+        <h3 class="style-title">Soft Brutalism</h3>
+        <p class="style-vibe">Brutalism + Pastel</p>
+        <p class="style-description">Harsh layout with cute/kawaii colors and soft fonts.</p>
+        <div class="style-example">
+          <div class="soft-brutalism-example">
+            <div class="soft-brutalism-tiles">
+              <div class="soft-brutalism-tile">★</div>
+              <div class="soft-brutalism-tile">♡</div>
+              <div class="soft-brutalism-tile">♪</div>
+              <div class="soft-brutalism-tile">☺</div>
+            </div>
+            <div class="soft-brutalism-menu">
+              <button class="soft-brutalism-button">Next</button>
+              <button class="soft-brutalism-button">Menu</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Cyber Deco -->
+      <div class="style-card cyber-deco">
+        <h3 class="style-title">Cyber Deco</h3>
+        <p class="style-vibe">Cyberpunk + Art Deco</p>
+        <p class="style-description">Futuristic layout with elegant, symmetrical gold/metal textures.</p>
+        <div class="style-example">
+          <div class="cyber-deco-example">
+            <div class="cyber-deco-ornament">
+              <div class="cyber-deco-diamond"></div>
+            </div>
+            <div class="cyber-deco-title">NEXUS</div>
+            <div class="cyber-deco-subtitle">ESTABLISHED 2077</div>
+            <div class="cyber-deco-buttons">
+              <div class="cyber-deco-button">ENTER</div>
+              <div class="cyber-deco-button">EXIT</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Cottage-Goth -->
+      <div class="style-card cottage-goth">
+        <h3 class="style-title">Cottage-Goth</h3>
+        <p class="style-vibe">Cottagecore + Gothic Web</p>
+        <p class="style-description">Romantic + dark fairytale vibes, combining soft florals with black/red.</p>
+        <div class="style-example">
+          <div class="cottage-goth-example">
+            <div class="cottage-goth-title">Nightshade</div>
+            <div class="cottage-goth-subtitle">a darkened garden</div>
+            <div class="cottage-goth-ornament"></div>
+            <div class="cottage-goth-text">"Where wildflowers bloom in moonlight's embrace"</div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Dark Academia UI -->
+      <div class="style-card dark-academia">
+        <h3 class="style-title">Dark Academia UI</h3>
+        <p class="style-vibe">Dark Mode + Editorial</p>
+        <p class="style-description">Serif typography, moody tones, and elegant headlines.</p>
+        <div class="style-example">
+          <div class="dark-academia-example">
+            <div class="dark-academia-header">
+              <div class="dark-academia-title">The Archives</div>
+              <div class="dark-academia-date">Vol. IV</div>
+            </div>
+            <div class="dark-academia-content">
+              <div class="dark-academia-paragraph"></div>
+              <div class="dark-academia-paragraph"></div>
+              <div class="dark-academia-paragraph"></div>
+              <div class="dark-academia-paragraph"></div>
+            </div>
+            <div class="dark-academia-footer">
+              <div class="dark-academia-page">Page 42</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Pop Cyber -->
+             <!-- Pop Cyber -->
+      <div class="style-card pop-cyber">
+        <h3 class="style-title">Pop Cyber</h3>
+        <p class="style-vibe">Cyberpunk + Y2K Pop</p>
+        <p class="style-description">Neon colors, glitch effects, and playful retro-futurism.</p>
+        <div class="style-example">
+          <div class="pop-cyber-example">
+            <div class="pop-cyber-star"></div>
+            <div class="pop-cyber-star"></div>
+            <div class="pop-cyber-star"></div>
+            <div class="pop-cyber-star"></div>
+            <div class="pop-cyber-title">SYNTHWAVE</div>
+            <button class="pop-cyber-button">PLAY NOW</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
