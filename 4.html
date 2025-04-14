@@ -1,0 +1,1188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Soft & Natural Design Styles</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&family=Montserrat:wght@300;500;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Quicksand:wght@300;400;600&family=Libre+Baskerville:ital@0;1&family=Caveat:wght@400;700&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      background-color: #f9f7f5;
+      color: #4a4a4a;
+      font-family: 'Quicksand', sans-serif;
+      line-height: 1.6;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+    
+    header {
+      text-align: center;
+      margin-bottom: 50px;
+      position: relative;
+    }
+    
+    header::after {
+      content: "";
+      position: absolute;
+      bottom: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 200px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #8BAA6F, transparent);
+    }
+    
+    h1 {
+      font-size: 3.5rem;
+      margin-bottom: 15px;
+      color: #5E7B65;
+      font-family: 'Cormorant Garamond', serif;
+      letter-spacing: 1px;
+      font-weight: 400;
+    }
+    
+    .subtitle {
+      font-size: 1.1rem;
+      color: #8D8D8D;
+      max-width: 600px;
+      margin: 0 auto;
+      font-weight: 300;
+    }
+    
+    .styles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+    
+    .style-card {
+      border-radius: 8px;
+      padding: 25px;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+      cursor: pointer;
+      height: 600px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      background-color: #fff;
+    }
+    
+    .style-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    .style-title {
+      font-size: 1.8rem;
+      margin-bottom: 5px;
+      z-index: 2;
+      position: relative;
+    }
+    
+    .style-vibe {
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+      margin-bottom: 15px;
+      color: #888;
+      position: relative;
+      z-index: 2;
+      font-weight: 400;
+    }
+    
+    .style-description {
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 2;
+      font-size: 0.95rem;
+      color: #666;
+    }
+    
+    .style-features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 15px;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .feature-tag {
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      display: inline-block;
+      background-color: #f0f0f0;
+      color: #555;
+    }
+    
+    .style-example {
+      flex-grow: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 6px;
+      margin-top: auto;
+      overflow: hidden;
+      position: relative;
+      z-index: 2;
+      transition: all 0.3s ease;
+    }
+    
+    /* Common example components */
+    .example-UI {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .example-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+      margin-bottom: 12px;
+    }
+    
+    .example-logo {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+    }
+    
+    .example-nav {
+      display: flex;
+      gap: 15px;
+    }
+    
+    .example-content {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    
+    .example-button {
+      align-self: flex-start;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      margin-top: 15px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    
+    /* Scandinavian Style */
+    .scandinavian {
+      background-color: #F7F5F0;
+      color: #444444;
+    }
+    
+    .scandinavian:hover {
+      box-shadow: 0 8px 25px rgba(94, 123, 101, 0.15);
+    }
+    
+    .scandinavian .style-title {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 500;
+      color: #5E7B65;
+    }
+    
+    .scandinavian .feature-tag {
+      background-color: #E8E2D7;
+      color: #5E7B65;
+    }
+    
+    .scandinavian .style-example {
+      background-color: #FFFFFF;
+      border: 1px solid #E8E2D7;
+    }
+    
+    .scandinavian-example {
+      width: 100%;
+      height: 100%;
+      padding: 20px;
+    }
+    
+    .scandinavian-content {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+    
+    .scandinavian-item {
+      background-color: #F7F5F0;
+      height: 80px;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.2s ease;
+    }
+    
+    .scandinavian-item:hover {
+      transform: scale(1.02);
+    }
+    
+    .scandinavian-nav {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+    
+    .scandinavian-logo {
+      width: 40px;
+      height: 40px;
+      background-color: #5E7B65;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+    }
+    
+    .scandinavian-links {
+      display: flex;
+      gap: 20px;
+      color: #5E7B65;
+      font-weight: 500;
+    }
+    
+    .scandinavian-button {
+      background-color: #5E7B65;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin-top: 15px;
+      border-radius: 2px;
+      transition: all 0.2s ease;
+    }
+    
+    .scandinavian-button:hover {
+      background-color: #4a6350;
+    }
+    
+    /* Pastel / Kawaii Style */
+    .kawaii {
+      background-color: #FFF5F8;
+      color: #555;
+    }
+    
+    .kawaii:hover {
+      box-shadow: 0 8px 25px rgba(255, 182, 193, 0.3);
+    }
+    
+    .kawaii .style-title {
+      font-family: 'Caveat', cursive;
+      font-weight: 700;
+      color: #FF8FAB;
+      font-size: 2.2rem;
+    }
+    
+    .kawaii .feature-tag {
+      background-color: #FFEBF0;
+      color: #FF8FAB;
+      border-radius: 25px;
+    }
+    
+    .kawaii .style-example {
+      background-color: #FFFBFD;
+      border: 1px solid #FFE4E8;
+      border-radius: 15px;
+    }
+    
+    .kawaii-example {
+      width: 100%;
+      height: 100%;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .kawaii-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+    
+    .kawaii-logo {
+      font-family: 'Caveat', cursive;
+      font-weight: 700;
+      color: #FF8FAB;
+      font-size: 24px;
+    }
+    
+    .kawaii-nav {
+      display: flex;
+      gap: 15px;
+    }
+    
+    .kawaii-nav-item {
+      width: 25px;
+      height: 25px;
+      background-color: #B5E8E0;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      transition: transform 0.2s ease;
+    }
+    
+    .kawaii-nav-item:hover {
+      transform: scale(1.1);
+    }
+    
+    .kawaii-nav-item:nth-child(2) {
+      background-color: #FFB6C1;
+    }
+    
+    .kawaii-nav-item:nth-child(3) {
+      background-color: #D8BFD8;
+    }
+    
+    .kawaii-card {
+      background-color: white;
+      border-radius: 15px;
+      padding: 15px;
+      margin-bottom: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      transition: transform 0.2s ease;
+      flex-grow: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #FF8FAB;
+      font-family: 'Caveat', cursive;
+      font-size: 18px;
+    }
+    
+    .kawaii-card:hover {
+      transform: scale(1.02);
+    }
+    
+    .kawaii-button {
+      background-color: #FFB6C1;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 25px;
+      font-family: 'Quicksand', sans-serif;
+      font-weight: 600;
+      align-self: center;
+      box-shadow: 0 4px 10px rgba(255, 182, 193, 0.3);
+      transition: all 0.2s ease;
+    }
+    
+    .kawaii-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(255, 182, 193, 0.4);
+    }
+    
+    /* Naturecore Style */
+    .naturecore {
+      background-color: #F5F7F0;
+      color: #3F513A;
+      background-image: url('data:image/svg+xml;utf8,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M20,20 L80,20 L80,80 L20,80 Z" fill="none" stroke="%23E3EADC" stroke-width="0.5"/></svg>');
+    }
+    
+    .naturecore:hover {
+      box-shadow: 0 8px 25px rgba(115, 139, 92, 0.2);
+    }
+    
+    .naturecore .style-title {
+      font-family: 'Libre Baskerville', serif;
+      color: #4A6741;
+    }
+    
+    .naturecore .feature-tag {
+      background-color: #E3EADC;
+      color: #4A6741;
+    }
+    
+    .naturecore .style-example {
+      background-color: #FCFDF9;
+      border: 1px solid #E3EADC;
+    }
+    
+    .naturecore-example {
+      width: 100%;
+      height: 100%;
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .naturecore-card {
+      flex-grow: 1;
+      background-color: #FCFDF9;
+      border: 1px solid #D3C2A6;
+      border-radius: 5px;
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .naturecore-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('data:image/svg+xml;utf8,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M30,30 Q50,10 70,30 T90,50 Q70,70 50,90 T10,50 Q30,30 50,10 Z" fill="%23E3EADC" opacity="0.3"/></svg>');
+      background-size: 100px;
+      opacity: 0.3;
+      z-index: 0;
+    }
+    
+    .naturecore-title {
+      font-family: 'Libre Baskerville', serif;
+      color: #4A6741;
+      font-size: 16px;
+      position: relative;
+      z-index: 1;
+      margin-bottom: 10px;
+    }
+    
+    .naturecore-text {
+      color: #5E4B3E;
+      font-size: 12px;
+      margin-bottom: 15px;
+      position: relative;
+      z-index: 1;
+      line-height: 1.6;
+    }
+    
+    .naturecore-footer {
+      margin-top: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .naturecore-button {
+      background-color: #738B5C;
+      color: white;
+      border: none;
+      padding: 5px 15px;
+      border-radius: 3px;
+      font-size: 12px;
+      transition: all 0.2s ease;
+    }
+    
+    .naturecore-button:hover {
+      background-color: #5E7B4A;
+    }
+    
+    .naturecore-tags {
+      display: flex;
+      gap: 5px;
+    }
+    
+    .naturecore-tag {
+      background-color: #D3C2A6;
+      color: #5E4B3E;
+      font-size: 10px;
+      padding: 2px 8px;
+      border-radius: 10px;
+    }
+    
+    /* Cottagecore Style */
+    .cottagecore {
+      background-color: #FFF8F5;
+      color: #6A5E50;
+      background-image: url('data:image/svg+xml;utf8,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M50,10 Q60,30 50,50 Q40,30 50,10 Z" fill="%23F9EEE2" opacity="0.3"/></svg>');
+      background-size: 100px;
+      background-repeat: repeat;
+    }
+    
+    .cottagecore:hover {
+      box-shadow: 0 8px 25px rgba(200, 169, 133, 0.2);
+    }
+    
+    .cottagecore .style-title {
+      font-family: 'Playfair Display', serif;
+      color: #C8A985;
+    }
+    
+    .cottagecore .feature-tag {
+      background-color: #F9EEE2;
+      color: #C8A985;
+      font-family: 'Playfair Display', serif;
+    }
+    
+    .cottagecore .style-example {
+      background-color: #FFFBF7;
+      border: 1px solid #E5D4C0;
+    }
+    
+    .cottagecore-example {
+      width: 100%;
+      height: 100%;
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .cottagecore-header {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+    
+    .cottagecore-title {
+      font-family: 'Playfair Display', serif;
+      color: #C8A985;
+      font-size: 20px;
+      margin-bottom: 5px;
+    }
+    
+    .cottagecore-subtitle {
+      font-style: italic;
+      color: #D19C97;
+      font-size: 12px;
+    }
+    
+    .cottagecore-content {
+      display: flex;
+      flex-grow: 1;
+      gap: 15px;
+    }
+    
+    .cottagecore-sidebar {
+      width: 30%;
+      background-color: #F9F3ED;
+      border-radius: 5px;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    
+    .cottagecore-sidebar-item {
+      height: 10px;
+      background-color: #E5D4C0;
+      border-radius: 2px;
+    }
+    
+    .cottagecore-main {
+      width: 70%;
+      background-color: #FFFBF7;
+      border-radius: 5px;
+      padding: 10px;
+      border: 1px solid #E5D4C0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      color: #C8A985;
+      font-size: 14px;
+      text-align: center;
+    }
+    
+    .cottagecore-button {
+      background-color: #D19C97;
+      color: white;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 5px;
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      align-self: center;
+      margin-top: 15px;
+      transition: all 0.2s ease;
+    }
+    
+    .cottagecore-button:hover {
+      background-color: #C08A85;
+    }
+    
+    /* Warm Minimalism Style */
+    .warm-minimalism {
+      background-color: #FAF7F2;
+      color: #5D4B3C;
+      background-image: url('data:image/svg+xml;utf8,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="10" width="80" height="80" fill="none" stroke="%23F0E9E0" stroke-width="1"/></svg>');
+    }
+    
+    .warm-minimalism:hover {
+      box-shadow: 0 8px 25px rgba(210, 180, 140, 0.15);
+    }
+    
+    .warm-minimalism .style-title {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      color: #5D4B3C;
+    }
+    
+    .warm-minimalism .feature-tag {
+      background-color: #F0E9E0;
+      color: #A9957B;
+    }
+    
+    .warm-minimalism .style-example {
+      background-color: #FFFEFB;
+      border: 1px solid #F0E9E0;
+    }
+    
+    .warm-min-example {
+      width: 100%;
+      height: 100%;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .warm-min-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 25px;
+    }
+    
+    .warm-min-logo {
+      width: 30px;
+      height: 30px;
+      background-color: #D2B48C;
+      border-radius: 2px;
+    }
+    
+    .warm-min-nav {
+      display: flex;
+      gap: 20px;
+      color: #A9957B;
+      font-size: 12px;
+      font-weight: 300;
+    }
+    
+    .warm-min-content {
+      flex-grow: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .warm-min-center {
+      width: 70%;
+      height: 100px;
+      background-color: #F5F5F5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .warm-min-box {
+      width: 50px;
+      height: 50px;
+      background-color: #D2B48C;
+      transition: transform 0.3s ease;
+    }
+    
+    .warm-min-box:hover {
+      transform: rotate(5deg);
+    }
+    
+    .warm-min-button {
+      background-color: transparent;
+      border: 1px solid #D2B48C;
+      color: #D2B48C;
+      padding: 8px 20px;
+      margin-top: 20px;
+      align-self: center;
+      transition: all 0.2s ease;
+    }
+    
+    .warm-min-button:hover {
+      background-color: #D2B48C;
+      color: white;
+    }
+    
+    /* Dark Academia Style */
+    .dark-academia {
+      background-color: #F5F2EC;
+      color: #3E3730;
+      background-image: url('data:image/svg+xml;utf8,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M10,10 L90,10 L90,90 L10,90 Z" fill="none" stroke="%23E8E4D8" stroke-width="0.5"/></svg>');
+    }
+    
+    .dark-academia:hover {
+      box-shadow: 0 8px 25px rgba(94, 84, 72, 0.2);
+    }
+    
+    .dark-academia .style-title {
+      font-family: 'Playfair Display', serif;
+      color: #3E3730;
+    }
+    
+    .dark-academia .feature-tag {
+      background-color: #E8E4D8;
+      color: #5E5448;
+      font-family: 'Playfair Display', serif;
+    }
+    
+    .dark-academia .style-example {
+      background-color: #F9F7F3;
+      border: 1px solid #E8E4D8;
+    }
+    
+    .dark-academia-example {
+      width: 100%;
+      height: 100%;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    
+    .dark-academia-example::after {
+      content: "✦";
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      color: #BEA99C;
+      font-size: 12px;
+    }
+    
+    .dark-academia-header {
+      text-align: center;
+      margin-bottom: 20px;
+      border-bottom: 1px solid #BEA99C;
+      padding-bottom: 10px;
+    }
+    
+    .dark-academia-title {
+      font-family: 'Playfair Display', serif;
+      color: #3E3730;
+      font-size: 18px;
+      letter-spacing: 1px;
+    }
+    
+    .dark-academia-main {
+      display: flex;
+      gap: 15px;
+      flex-grow: 1;
+    }
+    
+    .dark-academia-sidebar {
+      width: 30%;
+    }
+    
+    .dark-academia-list {
+      list-style-type: none;
+    }
+    
+    .dark-academia-list-item {
+      padding: 5px 0;
+      border-bottom: 1px solid #E8E4D8;
+      color: #5E5448;
+      font-size: 12px;
+      font-family: 'Playfair Display', serif;
+      transition: all 0.2s ease;
+    }
+    
+    .dark-academia-list-item:hover {
+      color: #3E3730;
+    }
+    
+    .dark-academia-content {
+      width: 70%;
+      line-height: 1.6;
+      font-size: 12px;
+      color: #5E5448;
+      font-family: 'Libre Baskerville', serif;
+    }
+    
+    .dark-academia-button {
+      background-color: #3E3730;
+      color: #D5C5B5;
+      border: none;
+      padding: 8px 15px;
+      font-family: 'Playfair Display', serif;
+      align-self: flex-start;
+      margin-top: 15px;
+      font-size: 12px;
+      transition: all 0.2s ease;
+    }
+    
+    .dark-academia-button:hover {
+      background-color: #2E2720;
+    }
+    
+    /* Light Academia Style */
+    .light-academia {
+      background-color: #FDFBF7;
+      color: #5E5448;
+      background-image: url('data:image/svg+xml;utf8,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M20,20 L80,20 L80,80 L20,80 Z" fill="none" stroke="%23F5F2EC" stroke-width="0.5"/></svg>');
+    }
+    
+    .light-academia:hover {
+      box-shadow: 0 8px 25px rgba(213, 197, 181, 0.2);
+    }
+    
+    .light-academia .style-title {
+      font-family: 'Playfair Display', serif;
+      color: #8B7F6B;
+    }
+    
+    .light-academia .feature-tag {
+      background-color: #F5F2EC;
+      color: #8B7F6B;
+      font-family: 'Playfair Display', serif;
+    }
+    
+    .light-academia .style-example {
+      background-color: #FFFDF9;
+      border: 1px solid #F5F2EC;
+    }
+    
+    .light-academia-example {
+      width: 100%;
+      height: 100%;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    
+    .light-academia-example::after {
+      content: "❦";
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      color: #BEA99C;
+      font-size: 12px;
+    }
+    
+    .light-academia-header {
+      text-align: center;
+      margin-bottom: 20px;
+      border-bottom: 1px solid #E8E4D8;
+      padding-bottom: 10px;
+    }
+    
+    .light-academia-title {
+      font-family: 'Playfair Display', serif;
+      color: #8B7F6B;
+      font-size: 18px;
+      letter-spacing: 1px;
+    }
+    
+    .light-academia-main {
+      display: flex;
+      gap: 15px;
+      flex-grow: 1;
+    }
+    
+    .light-academia-card {
+      flex-grow: 1;
+      background-color: #FFFDF9;
+      border: 1px solid #E8E4D8;
+      padding: 15px;
+      font-size: 12px;
+      color: #8B7F6B;
+      position: relative;
+      font-family: 'Libre Baskerville', serif;
+    }
+    
+    .light-academia-card::before {
+      content: "❦";
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      color: #D5C5B5;
+    }
+    
+    .light-academia-button {
+      background-color: #D5C5B5;
+      color: #5E5448;
+      border: none;
+      padding: 8px 15px;
+      font-family: 'Playfair Display', serif;
+      align-self: flex-start;
+      margin-top: 15px;
+      font-size: 12px;
+      transition: all 0.2s ease;
+    }
+    
+    .light-academia-button:hover {
+      background-color: #C5B5A5;
+    }
+    
+    footer {
+      text-align: center;
+      margin-top: 50px;
+      padding: 20px;
+      color: #8D8D8D;
+      font-size: 0.9rem;
+      position: relative;
+    }
+    
+    footer::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #8BAA6F, transparent);
+    }
+    
+    @media (max-width: 768px) {
+      .styles-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 20px;
+      }
+      
+      h1 {
+        font-size: 2.8rem;
+      }
+      
+      .style-card {
+        height: auto;
+        min-height: 350px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Soft & Natural Design Styles</h1>
+      <p class="subtitle">Explore these gentle, calming aesthetics that bring warmth and natural elements to digital and physical spaces. Each style creates its own unique atmosphere through thoughtful color palettes, typography, and visual language.</p>
+    </header>
+    
+    <div class="styles-grid">
+      <!-- Scandinavian -->
+      <div class="style-card scandinavian">
+        <h3 class="style-title">Scandinavian</h3>
+        <p class="style-vibe">Cozy, neat</p>
+        <p class="style-description">A minimalist design philosophy from Nordic countries that emphasizes clean lines, functionality, and connection to nature.</p>
+        <div class="style-features">
+          <span class="feature-tag">Earth tones</span>
+          <span class="feature-tag">Simple icons</span>
+          <span class="feature-tag">Functional</span>
+        </div>
+        <div class="style-example">
+          <div class="scandinavian-example">
+            <div class="scandinavian-nav">
+              <div class="scandinavian-logo">S</div>
+              <div class="scandinavian-links">
+                <span>Home</span>
+                <span>Products</span>
+                <span>About</span>
+              </div>
+            </div>
+            <div class="scandinavian-content">
+              <div class="scandinavian-item"></div>
+              <div class="scandinavian-item"></div>
+              <div class="scandinavian-item"></div>
+              <div class="scandinavian-item"></div>
+            </div>
+            <button class="scandinavian-button">Explore</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Pastel / Kawaii -->
+      <div class="style-card kawaii">
+        <h3 class="style-title">Pastel Kawaii</h3>
+        <p class="style-vibe">Cute, calming</p>
+        <p class="style-description">Adorable aesthetic inspired by Japanese culture featuring soft color palettes and rounded, playful design elements.</p>
+        <div class="style-features">
+          <span class="feature-tag">Soft colors</span>
+          <span class="feature-tag">Rounded UI</span>
+          <span class="feature-tag">Playful</span>
+        </div>
+        <div class="style-example">
+          <div class="kawaii-example">
+            <div class="kawaii-header">
+              <div class="kawaii-logo">Kawaii</div>
+              <div class="kawaii-nav">
+                <div class="kawaii-nav-item">♡</div>
+                <div class="kawaii-nav-item">★</div>
+                <div class="kawaii-nav-item">☺</div>
+              </div>
+            </div>
+            <div class="kawaii-card">Hello Cutie!</div>
+            <button class="kawaii-button">Shop Now</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Naturecore -->
+      <div class="style-card naturecore">
+        <h3 class="style-title">Naturecore</h3>
+        <p class="style-vibe">Earthy, peaceful</p>
+        <p class="style-description">Design approach that celebrates the natural world through organic forms, earthy colors, and botanical elements.</p>
+        <div class="style-features">
+          <span class="feature-tag">Forest themes</span>
+          <span class="feature-tag">Green & brown</span>
+          <span class="feature-tag">Organic</span>
+        </div>
+        <div class="style-example">
+          <div class="naturecore-example">
+            <div class="naturecore-card">
+              <h4 class="naturecore-title">Forest Retreat</h4>
+              <p class="naturecore-text">Connect with the natural world through sustainable design and thoughtful living.</p>
+              <div class="naturecore-footer">
+                <button class="naturecore-button">Explore</button>
+                <div class="naturecore-tags">
+                  <span class="naturecore-tag">eco</span>
+                  <span class="naturecore-tag">natural</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Cottagecore -->
+      <div class="style-card cottagecore">
+        <h3 class="style-title">Cottagecore</h3>
+        <p class="style-vibe">Dreamy, nostalgic</p>
+        <p class="style-description">Romanticized interpretation of rural life celebrating simplicity, tradition, and connection to nature and crafts.</p>
+        <div class="style-features">
+          <span class="feature-tag">Floral patterns</span>
+          <span class="feature-tag">Serif fonts</span>
+          <span class="feature-tag">Warm colors</span>
+        </div>
+        <div class="style-example">
+          <div class="cottagecore-example">
+            <div class="cottagecore-header">
+              <h4 class="cottagecore-title">Garden & Home</h4>
+              <p class="cottagecore-subtitle">A simple life of beauty</p>
+            </div>
+            <div class="cottagecore-content">
+              <div class="cottagecore-sidebar">
+                <div class="cottagecore-sidebar-item"></div>
+                <div class="cottagecore-sidebar-item"></div>
+                <div class="cottagecore-sidebar-item"></div>
+              </div>
+              <div class="cottagecore-main">
+                Tea & Blooms
+              </div>
+            </div>
+            <button class="cottagecore-button">Discover More</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Warm Minimalism -->
+      <div class="style-card warm-minimalism">
+        <h3 class="style-title">Warm Minimalism</h3>
+        <p class="style-vibe">Inviting</p>
+        <p class="style-description">Combines the clarity of minimal design with cozy, warm tones to create spaces that feel both clean and welcoming.</p>
+        <div class="style-features">
+          <span class="feature-tag">Neutral palette</span>
+          <span class="feature-tag">Clean lines</span>
+          <span class="feature-tag">Textured warmth</span>
+        </div>
+        <div class="style-example">
+          <div class="warm-min-example">
+            <div class="warm-min-header">
+              <div class="warm-min-logo"></div>
+              <div class="warm-min-nav">
+                <span>Home</span>
+                <span>Work</span>
+                <span>About</span>
+              </div>
+            </div>
+            <div class="warm-min-content">
+              <div class="warm-min-center">
+                <div class="warm-min-box"></div>
+              </div>
+            </div>
+            <button class="warm-min-button">Explore</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Dark Academia -->
+      <div class="style-card dark-academia">
+        <h3 class="style-title">Dark Academia</h3>
+        <p class="style-vibe">Intellectual, moody</p>
+        <p class="style-description">A literary-inspired aesthetic that evokes old libraries, classical education, and autumnal nostalgia.</p>
+        <div class="style-features">
+          <span class="feature-tag">Leather & wood</span>
+          <span class="feature-tag">Serif typography</span>
+          <span class="feature-tag">Muted tones</span>
+        </div>
+        <div class="style-example">
+          <div class="dark-academia-example">
+            <div class="dark-academia-header">
+              <h4 class="dark-academia-title">The Athenaeum</h4>
+            </div>
+            <div class="dark-academia-main">
+              <div class="dark-academia-sidebar">
+                <ul class="dark-academia-list">
+                  <li class="dark-academia-list-item">Literature</li>
+                  <li class="dark-academia-list-item">Philosophy</li>
+                  <li class="dark-academia-list-item">History</li>
+                </ul>
+              </div>
+              <div class="dark-academia-content">
+                <p>The pursuit of knowledge through classical education and timeless wisdom.</p>
+              </div>
+            </div>
+            <button class="dark-academia-button">Browse Collection</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Light Academia -->
+      <div class="style-card light-academia">
+        <h3 class="style-title">Light Academia</h3>
+        <p class="style-vibe">Elegant, airy</p>
+        <p class="style-description">A brighter counterpart to dark academia that maintains intellectual charm while feeling more optimistic and fresh.</p>
+        <div class="style-features">
+          <span class="feature-tag">Cream & beige</span>
+          <span class="feature-tag">Classic typography</span>
+          <span class="feature-tag">Sunlit spaces</span>
+        </div>
+        <div class="style-example">
+          <div class="light-academia-example">
+            <div class="light-academia-header">
+              <h4 class="light-academia-title">The Reading Room</h4>
+            </div>
+            <div class="light-academia-main">
+              <div class="light-academia-card">
+                <p>A space for quiet contemplation and the joy of learning, bathed in natural light.</p>
+              </div>
+            </div>
+            <button class="light-academia-button">View Catalog</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <footer>
+      <p>Explore more design inspirations and create your perfect aesthetic</p>
+    </footer>
+  </div>
+</body>
+</html>

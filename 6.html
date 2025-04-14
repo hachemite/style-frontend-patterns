@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Retro-Futuristic & Modern Design Styles</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@300;500;700&family=Space+Mono:wght@400;700&family=Major+Mono+Display&family=Archivo:wght@400;700&family=Syne:wght@400;700&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      background-color: #f0f0f0;
+      color: #333;
+      font-family: 'Montserrat', sans-serif;
+      line-height: 1.6;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+    
+    header {
+      text-align: center;
+      margin-bottom: 50px;
+      position: relative;
+    }
+    
+    header::after {
+      content: "";
+      position: absolute;
+      bottom: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 200px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #4a80f0, transparent);
+    }
+    
+    h1 {
+      font-size: 3.5rem;
+      margin-bottom: 15px;
+      color: #222;
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+    }
+    
+    .subtitle {
+      font-size: 1.1rem;
+      color: #666;
+      max-width: 600px;
+      margin: 0 auto;
+      font-weight: 300;
+    }
+    
+    .styles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+    
+    .style-card {
+      border-radius: 8px;
+      padding: 25px;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+      cursor: pointer;
+      height: 600px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      background-color: #fff;
+    }
+    
+    .style-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    .style-title {
+      font-size: 1.8rem;
+      margin-bottom: 5px;
+      z-index: 2;
+      position: relative;
+    }
+    
+    .style-vibe {
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+      margin-bottom: 15px;
+      color: #888;
+      position: relative;
+      z-index: 2;
+      font-weight: 400;
+    }
+    
+    .style-description {
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 2;
+      font-size: 0.95rem;
+      color: #666;
+    }
+    
+    .style-features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 15px;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .feature-tag {
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      display: inline-block;
+      background-color: #f0f0f0;
+      color: #555;
+    }
+    
+    .style-example {
+      flex-grow: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 6px;
+      margin-top: auto;
+      overflow: hidden;
+      position: relative;
+      z-index: 2;
+      transition: all 0.3s ease;
+    }
+    
+    /* Retro-futurism Style */
+    .retro-futurism {
+      background-color: #f5f7ff;
+      color: #1a237e;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .retro-futurism::before {
+      content: "";
+      position: absolute;
+      top: -50px;
+      right: -50px;
+      width: 150px;
+      height: 150px;
+      background-color: #ffeb3b;
+      border-radius: 50%;
+      opacity: 0.1;
+      z-index: 1;
+    }
+    
+    .retro-futurism::after {
+      content: "";
+      position: absolute;
+      bottom: -30px;
+      left: -30px;
+      width: 100px;
+      height: 100px;
+      background-color: #e91e63;
+      border-radius: 50%;
+      opacity: 0.1;
+      z-index: 1;
+    }
+    
+    .retro-futurism .style-title {
+      font-family: 'Orbitron', sans-serif;
+      color: #1a237e;
+      letter-spacing: 1px;
+    }
+    
+    .retro-futurism .feature-tag {
+      background-color: #e8eaf6;
+      color: #1a237e;
+    }
+    
+    .retro-futurism .style-example {
+      background-color: #e8eaf6;
+      border: 1px solid #c5cae9;
+    }
+    
+    .retro-futurism-example {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      padding: 15px;
+    }
+    
+    .retro-futurism-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+    
+    .retro-futurism-logo {
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 700;
+      color: #1a237e;
+      font-size: 18px;
+    }
+    
+    .retro-futurism-year {
+      font-family: 'Space Mono', monospace;
+      background-color: #1a237e;
+      color: white;
+      padding: 2px 8px;
+      font-size: 12px;
+    }
+    
+    .retro-futurism-content {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .retro-futurism-rocket {
+      width: 80px;
+      height: 120px;
+      position: relative;
+      margin-bottom: 15px;
+    }
+    
+    .retro-futurism-rocket-body {
+      width: 40px;
+      height: 100px;
+      background-color: #e91e63;
+      position: absolute;
+      left: 20px;
+      clip-path: polygon(0% 0%, 100% 0%, 80% 100%, 20% 100%);
+    }
+    
+    .retro-futurism-rocket-fin {
+      width: 20px;
+      height: 40px;
+      background-color: #3f51b5;
+      position: absolute;
+      bottom: 0;
+    }
+    
+    .retro-futurism-rocket-fin:nth-child(2) {
+      left: 0;
+      transform: skew(30deg);
+    }
+    
+    .retro-futurism-rocket-fin:nth-child(3) {
+      right: 0;
+      transform: skew(-30deg);
+    }
+    
+    .retro-futurism-rocket-window {
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background-color: #4fc3f7;
+      position: absolute;
+      top: 30px;
+      left: 12.5px;
+      border: 2px solid #1a237e;
+    }
+    
+    .retro-futurism-text {
+      font-family: 'Space Mono', monospace;
+      text-align: center;
+      font-size: 12px;
+      color: #1a237e;
+    }
+    
+    /* AI-core Style */
+    .ai-core {
+      background-color: #0a0a1a;
+      color: #e0e0e0;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .ai-core::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: 
+        radial-gradient(circle at 20% 30%, rgba(0, 150, 255, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(255, 0, 200, 0.15) 0%, transparent 50%);
+      z-index: 1;
+    }
+    
+    .ai-core .style-title {
+      font-family: 'Major Mono Display', monospace;
+      color: #00bcd4;
+    }
+    
+    .ai-core .feature-tag {
+      background-color: rgba(0, 188, 212, 0.2);
+      color: #00bcd4;
+    }
+    
+    .ai-core .style-example {
+      background-color: rgba(10, 10, 30, 0.8);
+      border: 1px solid #00bcd4;
+    }
+    
+    .ai-core-example {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      padding: 15px;
+    }
+    
+    .ai-core-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 15px;
+    }
+    
+    .ai-core-logo {
+      font-family: 'Major Mono Display', monospace;
+      color: #00bcd4;
+      font-size: 14px;
+    }
+    
+    .ai-core-status {
+      color: #ff4081;
+      font-size: 12px;
+      font-family: 'Space Mono', monospace;
+    }
+    
+    .ai-core-grid {
+      flex-grow: 1;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      gap: 5px;
+    }
+    
+    .ai-core-cell {
+      background-color: rgba(0, 188, 212, 0.1);
+      border: 1px solid rgba(0, 188, 212, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .ai-core-cell:nth-child(odd)::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: 
+        linear-gradient(45deg, transparent 45%, rgba(0, 188, 212, 0.3) 50%, transparent 55%),
+        linear-gradient(-45deg, transparent 45%, rgba(0, 188, 212, 0.3) 50%, transparent 55%);
+      background-size: 10px 10px;
+      animation: aiScan 3s linear infinite;
+    }
+    
+    @keyframes aiScan {
+      0% { transform: translateY(-100%); }
+      100% { transform: translateY(100%); }
+    }
+    
+    .ai-core-cell:nth-child(2) {
+      background-color: rgba(255, 64, 129, 0.1);
+      border-color: rgba(255, 64, 129, 0.3);
+    }
+    
+    .ai-core-cell:nth-child(2)::before {
+      background: 
+        linear-gradient(45deg, transparent 45%, rgba(255, 64, 129, 0.3) 50%, transparent 55%),
+        linear-gradient(-45deg, transparent 45%, rgba(255, 64, 129, 0.3) 50%, transparent 55%);
+      background-size: 10px 10px;
+    }
+    
+    .ai-core-cell:nth-child(5) {
+      grid-column: span 3;
+      background-color: rgba(0, 188, 212, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Major Mono Display', monospace;
+      font-size: 10px;
+      color: #00bcd4;
+      text-transform: uppercase;
+    }
+    
+    /* Monochrome Style */
+    .monochrome {
+      background-color: #f5f5f5;
+      color: #333;
+    }
+    
+    .monochrome .style-title {
+      font-family: 'Archivo', sans-serif;
+      font-weight: 700;
+      color: #333;
+    }
+    
+    .monochrome .feature-tag {
+      background-color: #e0e0e0;
+      color: #555;
+    }
+    
+    .monochrome .style-example {
+      background-color: white;
+      border: 1px solid #e0e0e0;
+    }
+    
+    .monochrome-example {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+    }
+    
+    .monochrome-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+    
+    .monochrome-logo {
+      width: 30px;
+      height: 30px;
+      background-color: #333;
+    }
+    
+    .monochrome-nav {
+      display: flex;
+      gap: 15px;
+    }
+    
+    .monochrome-nav-item {
+      width: 10px;
+      height: 10px;
+      background-color: #333;
+      border-radius: 50%;
+    }
+    
+    .monochrome-nav-item:nth-child(2) {
+      background-color: #999;
+    }
+    
+    .monochrome-content {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    
+    .monochrome-line {
+      height: 4px;
+      background-color: #333;
+    }
+    
+    .monochrome-line:nth-child(1) {
+      width: 100%;
+    }
+    
+    .monochrome-line:nth-child(2) {
+      width: 80%;
+    }
+    
+    .monochrome-line:nth-child(3) {
+      width: 60%;
+    }
+    
+    .monochrome-button {
+      background-color: #333;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      margin-top: 15px;
+      align-self: flex-start;
+      font-family: 'Archivo', sans-serif;
+      font-size: 12px;
+    }
+    
+    /* Gradient-heavy Style */
+    .gradient-heavy {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .gradient-heavy::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+      animation: rotate 20s linear infinite;
+      z-index: 1;
+    }
+    
+    @keyframes rotate {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    
+    .gradient-heavy .style-title {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+    
+    .gradient-heavy .feature-tag {
+      background-color: rgba(255,255,255,0.2);
+      color: white;
+    }
+    
+    .gradient-heavy .style-example {
+      background: linear-gradient(to right, #8e2de2, #4a00e0);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+    
+    .gradient-heavy-example {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      padding: 15px;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .gradient-heavy-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 15px;
+    }
+    
+    .gradient-heavy-logo {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 18px;
+    }
+    
+    .gradient-heavy-menu {
+      display: flex;
+      gap: 10px;
+    }
+    
+    .gradient-heavy-menu-item {
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background-color: white;
+      opacity: 0.7;
+    }
+    
+    .gradient-heavy-content {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .gradient-heavy-circle {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: conic-gradient(
+        from 0deg,
+        #ff9a9e 0%,
+        #fad0c4 20%,
+        #fad0c4 40%,
+        #a18cd1 40%,
+        #a18cd1 60%,
+        #fbc2eb 60%,
+        #fbc2eb 80%,
+        #ff9a9e 80%
+      );
+      margin-bottom: 15px;
+      animation: spin 5s linear infinite;
+    }
+    
+    @keyframes spin {
+      100% { transform: rotate(360deg); }
+    }
+    
+    .gradient-heavy-text {
+      font-family: 'Syne', sans-serif;
+      font-size: 14px;
+      text-align: center;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    }
+    
+    /* 3D UI / Isometric Style */
+    .isometric {
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    
+    .isometric .style-title {
+      font-family: 'Archivo', sans-serif;
+      font-weight: 700;
+      color: #333;
+    }
+    
+    .isometric .feature-tag {
+      background-color: #e0e0e0;
+      color: #555;
+    }
+    
+    .isometric .style-example {
+      background-color: white;
+      border: 1px solid #e0e0e0;
+    }
+    
+    .isometric-example {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      perspective: 1000px;
+    }
+    
+    .isometric-cube {
+      width: 60px;
+      height: 60px;
+      position: relative;
+      transform-style: preserve-3d;
+      transform: rotateX(-20deg) rotateY(-30deg);
+      animation: cubeRotate 10s infinite linear;
+    }
+    
+    @keyframes cubeRotate {
+      0% { transform: rotateX(-20deg) rotateY(0deg); }
+      100% { transform: rotateX(-20deg) rotateY(360deg); }
+    }
+    
+    .isometric-side {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border: 2px solid #333;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Archivo', sans-serif;
+      font-weight: 700;
+      font-size: 12px;
+    }
+    
+    .isometric-side:nth-child(1) {
+      background-color: rgba(255, 0, 0, 0.7);
+      transform: translateZ(30px);
+    }
+    
+    .isometric-side:nth-child(2) {
+      background-color: rgba(0, 255, 0, 0.7);
+      transform: rotateY(90deg) translateZ(30px);
+    }
+    
+    .isometric-side:nth-child(3) {
+      background-color: rgba(0, 0, 255, 0.7);
+      transform: rotateY(180deg) translateZ(30px);
+    }
+    
+    .isometric-side:nth-child(4) {
+      background-color: rgba(255, 255, 0, 0.7);
+      transform: rotateY(-90deg) translateZ(30px);
+    }
+    
+    .isometric-side:nth-child(5) {
+      background-color: rgba(255, 0, 255, 0.7);
+      transform: rotateX(90deg) translateZ(30px);
+    }
+    
+    .isometric-side:nth-child(6) {
+      background-color: rgba(0, 255, 255, 0.7);
+      transform: rotateX(-90deg) translateZ(30px);
+    }
+    
+    /* Animated UI / Motion Design Style */
+    .motion-design {
+      background-color: #121212;
+      color: #e0e0e0;
+    }
+    
+    .motion-design .style-title {
+      font-family: 'Archivo', sans-serif;
+      font-weight: 700;
+      color: #00bcd4;
+    }
+    
+    .motion-design .feature-tag {
+      background-color: rgba(0, 188, 212, 0.2);
+      color: #00bcd4;
+    }
+    
+    .motion-design .style-example {
+      background-color: #1e1e1e;
+      border: 1px solid #333;
+    }
+    
+    .motion-design-example {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      padding: 15px;
+    }
+    
+    .motion-design-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 15px;
+    }
+    
+    .motion-design-logo {
+      width: 30px;
+      height: 30px;
+      background-color: #00bcd4;
+      border-radius: 50%;
+    }
+    
+    .motion-design-nav {
+      display: flex;
+      gap: 10px;
+    }
+    
+    .motion-design-nav-item {
+      width: 10px;
+      height: 10px;
+      background-color: #333;
+      border-radius: 50%;
+    }
+    
+    .motion-design-nav-item:nth-child(1) {
+      animation: pulse 2s infinite;
+    }
+    
+    .motion-design-nav-item:nth-child(2) {
+      animation: pulse 2s infinite 0.5s;
+    }
+    
+    .motion-design-nav-item:nth-child(3) {
+      animation: pulse 2s infinite 1s;
+    }
+    
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); background-color: #333; }
+      50% { transform: scale(1.2); background-color: #00bcd4; }
+    }
+    
+    .motion-design-content {
+      flex-grow: 1;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .motion-design-card {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: #333;
+      border-radius: 5px;
+      display: flex;
+      flex-direction: column;
+      padding: 10px;
+      animation: slideIn 6s infinite;
+    }
+    
+    .motion-design-card:nth-child(2) {
+      animation-delay: 2s;
+    }
+    
+    .motion-design-card:nth-child(3) {
+      animation-delay: 4s;
+    }
+    
+    @keyframes slideIn {
+      0% { transform: translateX(100%); opacity: 0; }
+      10% { transform: translateX(0); opacity: 1; }
+      30% { transform: translateX(0); opacity: 1; }
+      40% { transform: translateX(-100%); opacity: 0; }
+      100% { transform: translateX(-100%); opacity: 0; }
+    }
+    
+    .motion-design-card-header {
+      height: 10px;
+      width: 50%;
+      background-color: #00bcd4;
+      margin-bottom: 10px;
+    }
+    
+    .motion-design-card-line {
+      height: 5px;
+      width: 100%;
+      background-color: #555;
+      margin-bottom: 5px;
+    }
+    
+    .motion-design-card-line:nth-child(2) {
+      width: 80%;
+    }
+    
+    .motion-design-card-line:nth-child(3) {
+      width: 60%;
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2.5rem;
+      }
+      
+      .styles-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .style-card {
+        height: auto;
+        min-height: 300px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Retro-Futuristic & Modern Design Styles</h1>
+      <p class="subtitle">Exploring visual styles that blend nostalgia with cutting-edge digital aesthetics</p>
+    </header>
+    
+    <div class="styles-grid">
+      <!-- Retro-futurism -->
+      <div class="style-card retro-futurism">
+        <h3 class="style-title">Retro-futurism</h3>
+        <p class="style-vibe">Tomorrowland vibes</p>
+        <p class="style-description">50s-70s view of the future with atomic age aesthetics and space age optimism.</p>
+        <div class="style-features">
+          <span class="feature-tag">Googie architecture</span>
+          <span class="feature-tag">Sputnik era</span>
+          <span class="feature-tag">Space age</span>
+        </div>
+        <div class="style-example">
+          <div class="retro-futurism-example">
+            <div class="retro-futurism-header">
+              <div class="retro-futurism-logo">SPACE CORP</div>
+              <div class="retro-futurism-year">2065</div>
+            </div>
+            <div class="retro-futurism-content">
+              <div class="retro-futurism-rocket">
+                <div class="retro-futurism-rocket-body"></div>
+                <div class="retro-futurism-rocket-fin"></div>
+                <div class="retro-futurism-rocket-fin"></div>
+                <div class="retro-futurism-rocket-window"></div>
+              </div>
+              <div class="retro-futurism-text">TO THE MOON AND BEYOND</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- AI-core -->
+      <div class="style-card ai-core">
+        <h3 class="style-title">AI-core</h3>
+        <p class="style-vibe">Abstract, digital</p>
+        <p class="style-description">Abstract shapes, neural patterns, and glowing lines that visualize machine intelligence.</p>
+        <div class="style-features">
+          <span class="feature-tag">Neural networks</span>
+          <span class="feature-tag">Digital abstraction</span>
+          <span class="feature-tag">Glowing elements</span>
+        </div>
+        <div class="style-example">
+          <div class="ai-core-example">
+            <div class="ai-core-header">
+              <div class="ai-core-logo">NEURAL_GRID</div>
+              <div class="ai-core-status">ACTIVE</div>
+            </div>
+            <div class="ai-core-grid">
+              <div class="ai-core-cell"></div>
+              <div class="ai-core-cell"></div>
+              <div class="ai-core-cell"></div>
+              <div class="ai-core-cell"></div>
+              <div class="ai-core-cell">PROCESSING</div>
+              <div class="ai-core-cell"></div>
+              <div class="ai-core-cell"></div>
+              <div class="ai-core-cell"></div>
+              <div class="ai-core-cell"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Monochrome -->
+      <div class="style-card monochrome">
+        <h3 class="style-title">Monochrome</h3>
+        <p class="style-vibe">Focused, elegant</p>
+        <p class="style-description">Uses one hue with tonal variation to create sophisticated, minimalist interfaces.</p>
+        <div class="style-features">
+          <span class="feature-tag">Single hue</span>
+          <span class="feature-tag">Tonal variation</span>
+          <span class="feature-tag">Minimalist</span>
+        </div>
+        <div class="style-example">
+          <div class="monochrome-example">
+            <div class="monochrome-header">
+              <div class="monochrome-logo"></div>
+              <div class="monochrome-nav">
+                <div class="monochrome-nav-item"></div>
+                <div class="monochrome-nav-item"></div>
+                <div class="monochrome-nav-item"></div>
+              </div>
+            </div>
+            <div class="monochrome-content">
+              <div class="monochrome-line"></div>
+              <div class="monochrome-line"></div>
+              <div class="monochrome-line"></div>
+            </div>
+            <button class="monochrome-button">CONTINUE</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Gradient-heavy -->
+      <div class="style-card gradient-heavy">
+        <h3 class="style-title">Gradient-heavy</h3>
+        <p class="style-vibe">Stylish, smooth</p>
+        <p class="style-description">Backgrounds and elements use fluid gradients to create depth and visual interest.</p>
+        <div class="style-features">
+          <span class="feature-tag">Fluid colors</span>
+          <span class="feature-tag">Depth</span>
+          <span class="feature-tag">Modern</span>
+        </div>
+        <div class="style-example">
+          <div class="gradient-heavy-example">
+            <div class="gradient-heavy-header">
+              <div class="gradient-heavy-logo">GRADIENT</div>
+              <div class="gradient-heavy-menu">
+                <div class="gradient-heavy-menu-item"></div>
+                <div class="gradient-heavy-menu-item"></div>
+                <div class="gradient-heavy-menu-item"></div>
+              </div>
+            </div>
+            <div class="gradient-heavy-content">
+              <div class="gradient-heavy-circle"></div>
+              <div class="gradient-heavy-text">SMOOTH COLOR TRANSITIONS</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 3D UI / Isometric -->
+      <div class="style-card isometric">
+        <h3 class="style-title">3D UI / Isometric</h3>
+        <p class="style-vibe">Depth, interaction</p>
+        <p class="style-description">3D icons or full scenes in flat design that create spatial relationships.</p>
+        <div class="style-features">
+          <span class="feature-tag">Perspective</span>
+          <span class="feature-tag">Depth cues</span>
+          <span class="feature-tag">Spatial UI</span>
+        </div>
+        <div class="style-example">
+          <div class="isometric-example">
+            <div class="isometric-cube">
+              <div class="isometric-side">FRONT</div>
+              <div class="isometric-side">RIGHT</div>
+              <div class="isometric-side">BACK</div>
+              <div class="isometric-side">LEFT</div>
+              <div class="isometric-side">TOP</div>
+              <div class="isometric-side">BOTTOM</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Animated UI / Motion Design -->
+      <div class="style-card motion-design">
+        <h3 class="style-title">Animated UI</h3>
+        <p class="style-vibe">Dynamic</p>
+        <p class="style-description">Continuous micro-interactions and smooth transitions that bring interfaces to life.</p>
+        <div class="style-features">
+          <span class="feature-tag">Micro-interactions</span>
+          <span class="feature-tag">Smooth transitions</span>
+          <span class="feature-tag">Dynamic</span>
+        </div>
+        <div class="style-example">
+          <div class="motion-design-example">
+            <div class="motion-design-header">
+              <div class="motion-design-logo"></div>
+              <div class="motion-design-nav">
+                <div class="motion-design-nav-item"></div>
+                <div class="motion-design-nav-item"></div>
+                <div class="motion-design-nav-item"></div>
+              </div>
+            </div>
+            <div class="motion-design-content">
+              <div class="motion-design-card">
+                <div class="motion-design-card-header"></div>
+                <div class="motion-design-card-line"></div>
+                <div class="motion-design-card-line"></div>
+                <div class="motion-design-card-line"></div>
+              </div>
+              <div class="motion-design-card">
+                <div class="motion-design-card-header"></div>
+                <div class="motion-design-card-line"></div>
+                <div class="motion-design-card-line"></div>
+                <div class="motion-design-card-line"></div>
+              </div>
+              <div class="motion-design-card">
+                <div class="motion-design-card-header"></div>
+                <div class="motion-design-card-line"></div>
+                <div class="motion-design-card-line"></div>
+                <div class="motion-design-card-line"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,967 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modern Design Styles Showcase</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;700&family=Inter:wght@300;400;700&family=Roboto+Mono&family=IBM+Plex+Mono:wght@400;700&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      background-color: #f0f0f0;
+      color: #202020;
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+    
+    header {
+      text-align: center;
+      margin-bottom: 50px;
+      position: relative;
+    }
+    
+    h1 {
+      font-size: 3.5rem;
+      margin-bottom: 15px;
+      color: #222;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+    }
+    
+    .subtitle {
+      font-size: 1.1rem;
+      color: #666;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .styles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+    
+    .style-card {
+      border-radius: 12px;
+      padding: 25px;
+      transition: all 0.4s ease;
+      cursor: pointer;
+      height: 550px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    .style-title {
+      font-size: 1.8rem;
+      margin-bottom: 5px;
+      z-index: 2;
+      position: relative;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+    }
+    
+    .style-vibe {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 15px;
+      color: #888;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .style-description {
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .style-example {
+      flex-grow: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      margin-top: auto;
+      position: relative;
+      z-index: 2;
+      overflow: hidden;
+    }
+
+    /* Retro-futurism Style */
+    .retro-futurism {
+      background: linear-gradient(135deg, #ffc266, #ff6b6b);
+      color: #222;
+    }
+    
+    .retro-futurism::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 70% 30%, rgba(255, 255, 255, 0.3), transparent 70%);
+      z-index: 1;
+    }
+    
+    .retro-futurism:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(255, 107, 107, 0.3);
+    }
+    
+    .retro-futurism .style-title {
+      color: #fff;
+      text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
+    }
+    
+    .retro-futurism .style-vibe {
+      color: #fff;
+      font-weight: bold;
+    }
+    
+    .retro-futurism .style-description {
+      color: #fff;
+      text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);
+    }
+    
+    .retro-futurism .style-example {
+      background-color: rgba(255, 255, 255, 0.2);
+      border: 2px solid #fff;
+    }
+    
+    .retro-future-example {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .retro-future-rocket {
+      width: 80px;
+      height: 140px;
+      position: relative;
+    }
+    
+    .rocket-body {
+      position: absolute;
+      width: 30px;
+      height: 80px;
+      background-color: #fff;
+      border-radius: 15px 15px 5px 5px;
+      top: 30px;
+      left: 25px;
+    }
+    
+    .rocket-head {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      background-color: #ff6b6b;
+      border-radius: 50% 50% 0 0;
+      top: 0;
+      left: 25px;
+    }
+    
+    .rocket-window {
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      background-color: #87ceeb;
+      border-radius: 50%;
+      border: 2px solid #fff;
+      top: 45px;
+      left: 32.5px;
+    }
+    
+    .rocket-fin {
+      position: absolute;
+      width: 20px;
+      height: 30px;
+      background-color: #ff6b6b;
+      top: 70px;
+    }
+    
+    .rocket-fin.left {
+      left: 5px;
+      clip-path: polygon(0 0, 100% 50%, 100% 100%, 0 100%);
+    }
+    
+    .rocket-fin.right {
+      right: 5px;
+      clip-path: polygon(0 50%, 100% 0, 100% 100%, 0 100%);
+    }
+    
+    .rocket-flame {
+      position: absolute;
+      width: 30px;
+      height: 40px;
+      background: linear-gradient(to bottom, #ff6b6b, #ffc266);
+      border-radius: 0 0 15px 15px;
+      top: 110px;
+      left: 25px;
+      animation: flame 0.5s infinite alternate;
+    }
+    
+    @keyframes flame {
+      0% { height: 30px; top: 110px; }
+      100% { height: 50px; top: 110px; }
+    }
+    
+    .retro-future-stars {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+    
+    .star {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background-color: #fff;
+      border-radius: 50%;
+    }
+    
+    .star:nth-child(1) { top: 20%; left: 10%; }
+    .star:nth-child(2) { top: 30%; left: 80%; }
+    .star:nth-child(3) { top: 70%; left: 15%; }
+    .star:nth-child(4) { top: 80%; left: 70%; }
+    .star:nth-child(5) { top: 10%; left: 60%; }
+    .star:nth-child(6) { top: 50%; left: 30%; }
+    .star:nth-child(7) { top: 60%; left: 85%; }
+    .star:nth-child(8) { top: 15%; left: 40%; }
+
+    /* AI-core Style */
+    .ai-core {
+      background-color: #151c26;
+      color: #e0e0e0;
+    }
+    
+    .ai-core::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 70% 30%, rgba(64, 223, 251, 0.1), transparent 70%);
+      z-index: 1;
+    }
+    
+    .ai-core:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(64, 223, 251, 0.2);
+    }
+    
+    .ai-core .style-title {
+      color: #40dffa;
+      font-family: 'IBM Plex Mono', monospace;
+    }
+    
+    .ai-core .style-vibe {
+      color: #a0a0a0;
+    }
+    
+    .ai-core .style-example {
+      background-color: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(64, 223, 251, 0.3);
+    }
+    
+    .ai-core-example {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    
+    .neural-network {
+      width: 80%;
+      height: 80%;
+      position: relative;
+    }
+    
+    .node {
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      background-color: #40dffa;
+      border-radius: 50%;
+      box-shadow: 0 0 10px rgba(64, 223, 251, 0.7);
+    }
+    
+    .node:nth-child(1) { top: 20%; left: 20%; }
+    .node:nth-child(2) { top: 30%; left: 50%; }
+    .node:nth-child(3) { top: 20%; left: 80%; }
+    .node:nth-child(4) { top: 50%; left: 35%; }
+    .node:nth-child(5) { top: 50%; left: 65%; }
+    .node:nth-child(6) { top: 80%; left: 20%; }
+    .node:nth-child(7) { top: 80%; left: 50%; }
+    .node:nth-child(8) { top: 80%; left: 80%; }
+    
+    .connection {
+      position: absolute;
+      height: 2px;
+      background: linear-gradient(to right, #40dffa, rgba(64, 223, 251, 0.3));
+      transform-origin: left center;
+    }
+    
+    .connection:nth-child(9) {
+      width: 70px;
+      top: 22%;
+      left: 24%;
+      transform: rotate(25deg);
+    }
+    
+    .connection:nth-child(10) {
+      width: 75px;
+      top: 22%;
+      left: 22%;
+      transform: rotate(-25deg);
+    }
+    
+    .connection:nth-child(11) {
+      width: 65px;
+      top: 52%;
+      left: 38%;
+      transform: rotate(30deg);
+    }
+    
+    .connection:nth-child(12) {
+      width: 65px;
+      top: 52%;
+      left: 38%;
+      transform: rotate(-30deg);
+    }
+    
+    .connection:nth-child(13) {
+      width: 70px;
+      top: 52%;
+      left: 68%;
+      transform: rotate(30deg);
+    }
+    
+    .connection:nth-child(14) {
+      width: 70px;
+      top: 52%;
+      left: 68%;
+      transform: rotate(-30deg);
+    }
+    
+    .pulse {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      background-color: rgba(64, 223, 251, 0.8);
+      border-radius: 50%;
+      animation: pulse 3s infinite;
+    }
+    
+    .pulse:nth-child(15) {
+      top: 22%;
+      left: 22%;
+      animation-delay: 0s;
+    }
+    
+    .pulse:nth-child(16) {
+      top: 22%;
+      left: 78%;
+      animation-delay: 1s;
+    }
+    
+    .pulse:nth-child(17) {
+      top: 78%;
+      left: 22%;
+      animation-delay: 2s;
+    }
+    
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: scale(3);
+        opacity: 0;
+      }
+    }
+
+    /* Monochrome Style */
+    .monochrome {
+      background-color: #222;
+      color: #f5f5f5;
+    }
+    
+    .monochrome:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    }
+    
+    .monochrome .style-title {
+      color: #fff;
+    }
+    
+    .monochrome .style-vibe {
+      color: #aaa;
+    }
+    
+    .monochrome .style-example {
+      background-color: #2a2a2a;
+    }
+    
+    .monochrome-example {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+    }
+    
+    .mono-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      gap: 10px;
+      width: 100%;
+      height: 100%;
+    }
+    
+    .mono-tile {
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .mono-tile:nth-child(1) { background-color: #f5f5f5; color: #222; }
+    .mono-tile:nth-child(2) { background-color: #e0e0e0; color: #222; }
+    .mono-tile:nth-child(3) { background-color: #cccccc; color: #222; }
+    .mono-tile:nth-child(4) { background-color: #b3b3b3; color: #222; }
+    .mono-tile:nth-child(5) { background-color: #999999; color: #fff; }
+    .mono-tile:nth-child(6) { background-color: #808080; color: #fff; }
+    .mono-tile:nth-child(7) { background-color: #666666; color: #fff; }
+    .mono-tile:nth-child(8) { background-color: #4d4d4d; color: #fff; }
+    .mono-tile:nth-child(9) { background-color: #333333; color: #fff; }
+
+    /* Gradient-heavy Style */
+    .gradient-heavy {
+      background: linear-gradient(135deg, #6e48aa, #9d50bb, #6e48aa);
+      background-size: 200% 200%;
+      animation: gradientBG 15s ease infinite;
+      color: #fff;
+    }
+    
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    
+    .gradient-heavy:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(158, 87, 187, 0.4);
+    }
+    
+    .gradient-heavy .style-example {
+      background-color: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(5px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    .gradient-example {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .gradient-circles {
+      position: relative;
+      width: 80%;
+      height: 80%;
+    }
+    
+    .gradient-circle {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(5px);
+    }
+    
+    .gradient-circle:nth-child(1) {
+      width: 100px;
+      height: 100px;
+      background: linear-gradient(to right, #f953c6, #b91d73);
+      top: 20%;
+      left: 30%;
+      animation: floatCircle 7s ease-in-out infinite;
+    }
+    
+    .gradient-circle:nth-child(2) {
+      width: 70px;
+      height: 70px;
+      background: linear-gradient(to right, #4facfe, #00f2fe);
+      top: 50%;
+      left: 60%;
+      animation: floatCircle 5s ease-in-out infinite 1s;
+    }
+    
+    .gradient-circle:nth-child(3) {
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(to right, #43e97b, #38f9d7);
+      top: 70%;
+      left: 30%;
+      animation: floatCircle 6s ease-in-out infinite 2s;
+    }
+    
+    @keyframes floatCircle {
+      0%, 100% { transform: translateY(0) translateX(0); }
+      50% { transform: translateY(-20px) translateX(10px); }
+    }
+
+    /* 3D UI / Isometric Style */
+    .isometric {
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    
+    .isometric:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    }
+    
+    .isometric .style-example {
+      background-color: #eaeaea;
+    }
+    
+    .isometric-example {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .isometric-container {
+      width: 150px;
+      height: 150px;
+      position: relative;
+      transform-style: preserve-3d;
+      transform: rotateX(55deg) rotateZ(-45deg);
+    }
+    
+    .isometric-cube {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      transform-style: preserve-3d;
+    }
+    
+    .isometric-cube:nth-child(1) {
+      transform: translate3d(0, 0, 0);
+    }
+    
+    .isometric-cube:nth-child(2) {
+      transform: translate3d(60px, 0, 0);
+    }
+    
+    .isometric-cube:nth-child(3) {
+      transform: translate3d(0, 60px, 0);
+    }
+    
+    .isometric-cube:nth-child(4) {
+      transform: translate3d(60px, 60px, 0);
+    }
+    
+    .cube-face {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+    }
+    
+    .cube-face.top {
+      background-color: #6c5ce7;
+      transform: rotateX(90deg) translateZ(25px);
+    }
+    
+    .cube-face.front {
+      background-color: #a29bfe;
+      transform: translateZ(25px);
+    }
+    
+    .cube-face.right {
+      background-color: #5a52c4;
+      transform: rotateY(90deg) translateZ(25px);
+    }
+    
+    .isometric-cube:nth-child(2) .cube-face.top { background-color: #ff7675; }
+    .isometric-cube:nth-child(2) .cube-face.front { background-color: #fab1a0; }
+    .isometric-cube:nth-child(2) .cube-face.right { background-color: #e84d4d; }
+    
+    .isometric-cube:nth-child(3) .cube-face.top { background-color: #55efc4; }
+    .isometric-cube:nth-child(3) .cube-face.front { background-color: #81ecec; }
+    .isometric-cube:nth-child(3) .cube-face.right { background-color: #00cec9; }
+    
+    .isometric-cube:nth-child(4) .cube-face.top { background-color: #fdcb6e; }
+    .isometric-cube:nth-child(4) .cube-face.front { background-color: #ffeaa7; }
+    .isometric-cube:nth-child(4) .cube-face.right { background-color: #f1c40f; }
+
+    /* Animated UI / Motion Design */
+    .animated-ui {
+      background-color: #3498db;
+      color: #fff;
+    }
+    
+    .animated-ui:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(52, 152, 219, 0.3);
+    }
+    
+    .animated-ui .style-example {
+      background-color: rgba(255, 255, 255, 0.1);
+      overflow: hidden;
+    }
+    
+    .motion-example {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 15px;
+    }
+    
+    .motion-loader {
+      width: 60px;
+      height: 60px;
+      position: relative;
+      margin-bottom: 20px;
+    }
+    
+    .motion-circle {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border: 4px solid transparent;
+      border-top-color: #fff;
+      border-radius: 50%;
+      animation: spin 1.5s linear infinite;
+    }
+    
+    .motion-circle:nth-child(2) {
+      border-top-color: transparent;
+      border-right-color: #fff;
+      animation-duration: 2s;
+    }
+    
+    .motion-circle:nth-child(3) {
+      border-top-color: transparent;
+      border-bottom-color: #fff;
+      animation-duration: 2.5s;
+    }
+    
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    
+    .motion-buttons {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+    }
+    
+    .motion-button {
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.5);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .motion-button::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: 50%;
+      transform: scale(0);
+      animation: pulseButton 2s infinite;
+    }
+    
+    .motion-button:nth-child(2)::after { animation-delay: 0.6s; }
+    .motion-button:nth-child(3)::after { animation-delay: 1.2s; }
+    
+    @keyframes pulseButton {
+      0% { transform: scale(0); opacity: 1; }
+      100% { transform: scale(2.5); opacity: 0; }
+    }
+    
+    .motion-bars {
+      display: flex;
+      align-items: flex-end;
+      height: 40px;
+      gap: 5px;
+      margin-top: 10px;
+    }
+    
+    .motion-bar {
+      width: 6px;
+      background-color: #fff;
+      border-radius: 3px;
+      animation: equalize 1s infinite alternate;
+    }
+    
+    .motion-bar:nth-child(1) { height: 40%; animation-delay: 0.0s; }
+    .motion-bar:nth-child(2) { height: 60%; animation-delay: 0.2s; }
+    .motion-bar:nth-child(3) { height: 80%; animation-delay: 0.4s; }
+    .motion-bar:nth-child(4) { height: 40%; animation-delay: 0.6s; }
+    .motion-bar:nth-child(5) { height: 20%; animation-delay: 0.8s; }
+    
+    @keyframes equalize {
+      0% { height: 10%; }
+      100% { height: 100%; }
+    }
+
+    /* Media Queries */
+    @media (max-width: 1200px) {
+      .styles-grid {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      }
+    }
+
+    @media (max-width: 768px) {
+      .styles-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      }
+      
+      h1 {
+        font-size: 2.5rem;
+      }
+      
+      .style-card {
+        height: 800px;
+      }
+      
+      .style-title {
+        font-size: 1.5rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 2rem;
+      }
+      
+      .styles-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .style-card {
+        height: 280px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Modern Design Styles</h1>
+      <p class="subtitle">Explore the latest trends in UI/UX design that are shaping digital experiences today.</p>
+    </header>
+    
+    <div class="styles-grid">
+      <!-- Retro-futurism Card -->
+      <div class="style-card retro-futurism">
+        <h2 class="style-title">Retro-futurism</h2>
+        <p class="style-vibe">Tomorrowland vibes</p>
+        <p class="style-description">A nostalgic vision of the future from the 50s-70s lens, featuring optimistic space-age aesthetics.</p>
+        <div class="style-example">
+          <div class="retro-future-example">
+            <div class="retro-future-rocket">
+              <div class="rocket-head"></div>
+              <div class="rocket-body"></div>
+              <div class="rocket-window"></div>
+              <div class="rocket-fin left"></div>
+              <div class="rocket-fin right"></div>
+              <div class="rocket-flame"></div>
+            </div>
+            <div class="retro-future-stars">
+              <div class="star"></div>
+              <div class="star"></div>
+              <div class="star"></div>
+              <div class="star"></div>
+              <div class="star"></div>
+              <div class="star"></div>
+              <div class="star"></div>
+              <div class="star"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- AI-core Card -->
+      <div class="style-card ai-core">
+        <h2 class="style-title">AI-core</h2>
+        <p class="style-vibe">Abstract, digital</p>
+        <p class="style-description">Visualizing artificial intelligence concepts with neural patterns and abstract data representations.</p>
+        <div class="style-example">
+          <div class="ai-core-example">
+            <div class="neural-network">
+              <div class="node"></div>
+              <div class="node"></div>
+              <div class="node"></div>
+              <div class="node"></div>
+              <div class="node"></div>
+              <div class="node"></div>
+              <div class="node"></div>
+              <div class="node"></div>
+              <div class="connection"></div>
+              <div class="connection"></div>
+              <div class="connection"></div>
+              <div class="connection"></div>
+              <div class="connection"></div>
+              <div class="connection"></div>
+              <div class="pulse"></div>
+              <div class="pulse"></div>
+              <div class="pulse"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Monochrome Card -->
+      <div class="style-card monochrome">
+        <h2 class="style-title">Monochrome</h2>
+        <p class="style-vibe">Focused, elegant</p>
+        <p class="style-description">A refined approach using a single color with multiple tonal variations to create depth and hierarchy.</p>
+        <div class="style-example">
+          <div class="monochrome-example">
+            <div class="mono-grid">
+              <div class="mono-tile">100%</div>
+              <div class="mono-tile">90%</div>
+              <div class="mono-tile">80%</div>
+              <div class="mono-tile">70%</div>
+              <div class="mono-tile">60%</div>
+              <div class="mono-tile">50%</div>
+              <div class="mono-tile">40%</div>
+              <div class="mono-tile">30%</div>
+              <div class="mono-tile">20%</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Gradient-heavy Card -->
+      <div class="style-card gradient-heavy">
+        <h2 class="style-title">Gradient-heavy</h2>
+        <p class="style-vibe">Stylish, smooth</p>
+        <p class="style-description">Vibrant color transitions create depth and dimension across backgrounds and UI elements.</p>
+        <div class="style-example">
+          <div class="gradient-example">
+            <div class="gradient-circles">
+              <div class="gradient-circle"></div>
+
+
+
+              <div class="gradient-circle"></div>
+              <div class="gradient-circle"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 3D UI / Isometric Style -->
+      <div class="style-card isometric">
+        <h2 class="style-title">Isometric</h2>
+        <p class="style-vibe">Dimensional, clean</p>
+        <p class="style-description">Three-dimensional representation on a 2D plane, creating depth through isometric projection.</p>
+        <div class="style-example">
+          <div class="isometric-example">
+            <div class="isometric-container">
+              <div class="isometric-cube">
+                <div class="cube-face top"></div>
+                <div class="cube-face front"></div>
+                <div class="cube-face right"></div>
+              </div>
+              <div class="isometric-cube">
+                <div class="cube-face top"></div>
+                <div class="cube-face front"></div>
+                <div class="cube-face right"></div>
+              </div>
+              <div class="isometric-cube">
+                <div class="cube-face top"></div>
+                <div class="cube-face front"></div>
+                <div class="cube-face right"></div>
+              </div>
+              <div class="isometric-cube">
+                <div class="cube-face top"></div>
+                <div class="cube-face front"></div>
+                <div class="cube-face right"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Animated UI / Motion Design -->
+      <div class="style-card animated-ui">
+        <h2 class="style-title">Animated UI</h2>
+        <p class="style-vibe">Dynamic, engaging</p>
+        <p class="style-description">Purposeful motion and transitions bring interfaces to life, enhancing user experience.</p>
+        <div class="style-example">
+          <div class="motion-example">
+            <div class="motion-loader">
+              <div class="motion-circle"></div>
+              <div class="motion-circle"></div>
+              <div class="motion-circle"></div>
+            </div>
+            <div class="motion-bars">
+              <div class="motion-bar"></div>
+              <div class="motion-bar"></div>
+              <div class="motion-bar"></div>
+              <div class="motion-bar"></div>
+              <div class="motion-bar"></div>
+            </div>
+            <div class="motion-buttons">
+              <div class="motion-button"></div>
+              <div class="motion-button"></div>
+              <div class="motion-button"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</body>
+</html>
+</html>

@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dark & Edgy Design Styles</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Courier+Prime:wght@400;700&family=UnifrakturMaguntia&family=Orbitron:wght@400;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      background-color: #121212;
+      color: #e0e0e0;
+      font-family: 'Courier Prime', monospace;
+      line-height: 1.6;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+    
+    header {
+      text-align: center;
+      margin-bottom: 50px;
+      position: relative;
+    }
+    
+    header::after {
+      content: "";
+      position: absolute;
+      bottom: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 200px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #ff2a6d, transparent);
+    }
+    
+    h1 {
+      font-size: 3.5rem;
+      margin-bottom: 15px;
+      color: #ffffff;
+      font-family: 'Bebas Neue', sans-serif;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+    
+    .subtitle {
+      font-size: 1.1rem;
+      color: #9e9e9e;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .styles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+    
+    .style-card {
+      border-radius: 4px;
+      padding: 25px;
+      transition: all 0.4s ease;
+      cursor: pointer;
+      height: 500px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .style-title {
+      font-size: 1.8rem;
+      margin-bottom: 5px;
+      z-index: 2;
+      position: relative;
+    }
+    
+    .style-vibe {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 15px;
+      color: #888;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .style-description {
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .style-example {
+      flex-grow: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 2px;
+      margin-top: auto;
+      position: relative;
+      z-index: 2;
+    }
+    
+    /* Brutalism Style */
+    .brutalism {
+      background-color: #ff0;
+      color: #000;
+      box-shadow: 15px 15px 0 #000;
+      border: 3px solid #000;
+      transform-origin: center;
+      transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    
+    .brutalism:hover {
+      transform: rotate(-1deg) scale(1.02);
+    }
+    
+    .brutalism .style-title {
+      font-family: 'Courier Prime', monospace;
+      font-weight: bold;
+      font-size: 2.2rem;
+      text-transform: uppercase;
+    }
+    
+    .brutalism .style-example {
+      background-color: #e2e2e2;
+      padding: 10px;
+      border: 2px solid #000;
+    }
+    
+    .brutalism-example {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .brutalism-header {
+      background-color: blue;
+      color: white;
+      padding: 10px;
+      font-size: 18px;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    
+    .brutalism-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    
+    .brutalism-box {
+      width: calc(33.33% - 7px);
+      aspect-ratio: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 20px;
+      border: 2px solid #000;
+    }
+    
+    .brutalism-box:nth-child(1) {
+      background-color: #ff0000;
+    }
+    
+    .brutalism-box:nth-child(2) {
+      background-color: #00ff00;
+      color: #000;
+    }
+    
+    .brutalism-box:nth-child(3) {
+      background-color: #0000ff;
+    }
+    
+    .brutalism-box:nth-child(4) {
+      background-color: #ff00ff;
+    }
+    
+    .brutalism-box:nth-child(5) {
+      background-color: #000;
+    }
+    
+    .brutalism-box:nth-child(6) {
+      background-color: #fff;
+      color: #000;
+    }
+    
+    /* Post-Brutalism Style */
+    .post-brutalism {
+      background-color: #f8f8f8;
+      color: #111;
+      border-radius: 0;
+      border-left: 10px solid #ff4d00;
+    }
+    
+    .post-brutalism:hover {
+      background-color: #f0f0f0;
+    }
+    
+    .post-brutalism .style-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.4rem;
+      letter-spacing: 1px;
+    }
+    
+    .post-brutalism .style-vibe {
+      color: #ff4d00;
+    }
+    
+    .post-brutalism .style-example {
+      background-color: #fff;
+      border: 1px solid #ddd;
+    }
+    
+    .post-brutalism-example {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .post-brutalism-menu {
+      display: flex;
+      margin-bottom: 15px;
+      border-bottom: 3px solid #ff4d00;
+    }
+    
+    .post-brutalism-menu-item {
+      padding: 8px 15px;
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: 12px;
+      letter-spacing: 1px;
+    }
+    
+    .post-brutalism-menu-item:nth-child(2) {
+      background-color: #ff4d00;
+      color: white;
+    }
+    
+    .post-brutalism-content {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 15px;
+    }
+    
+    .post-brutalism-main {
+      background-color: #eeeeee;
+      padding: 15px;
+      height: 100%;
+    }
+    
+    .post-brutalism-sidebar {
+      background-color: #ff4d00;
+      padding: 15px;
+      color: white;
+      font-weight: bold;
+    }
+    
+    /* Dark Mode Style */
+    .dark-mode {
+      background-color: #121212;
+      color: #e0e0e0;
+      border: 1px solid #333;
+    }
+    
+    .dark-mode:hover {
+      background-color: #1a1a1a;
+    }
+    
+    .dark-mode .style-title {
+      color: #fff;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+    
+    .dark-mode .style-vibe {
+      color: #0496ff;
+    }
+    
+    .dark-mode .style-example {
+      background-color: #1e1e1e;
+      border-radius: 8px;
+    }
+    
+    .dark-mode-example {
+      width: 100%;
+      height: 100%;
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .dark-mode-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+    
+    .dark-mode-logo {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background-color: #0496ff;
+    }
+    
+    .dark-mode-nav {
+      display: flex;
+      gap: 10px;
+    }
+    
+    .dark-mode-nav-item {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: #333;
+    }
+    
+    .dark-mode-nav-item:nth-child(2) {
+      background-color: #0496ff;
+    }
+    
+    .dark-mode-content {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    
+    .dark-mode-bar {
+      height: 10px;
+      border-radius: 5px;
+      background-color: #333;
+    }
+    
+    .dark-mode-bar:nth-child(1) {
+      width: 100%;
+    }
+    
+    .dark-mode-bar:nth-child(2) {
+      width: 80%;
+    }
+    
+    .dark-mode-bar:nth-child(3) {
+      width: 60%;
+    }
+    
+    /* Cyberpunk Style */
+    .cyberpunk {
+      background-color: #0c0c14;
+      border: 1px solid #ff2a6d;
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .cyberpunk::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, rgba(255, 42, 109, 0.1), rgba(15, 245, 255, 0.1));
+      z-index: 1;
+    }
+    
+    .cyberpunk::after {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: repeating-linear-gradient(
+        45deg,
+        rgba(255, 42, 109, 0.1),
+        rgba(15, 245, 255, 0.1) 10px,
+        transparent 10px,
+        transparent 20px
+      );
+      animation: glitch 10s linear infinite;
+      opacity: 0.1;
+      z-index: 1;
+    }
+    
+    @keyframes glitch {
+      0% {
+        transform: translate(0);
+      }
+      20% {
+        transform: translate(-5px, 5px);
+      }
+      40% {
+        transform: translate(-5px, -5px);
+      }
+      60% {
+        transform: translate(5px, 5px);
+      }
+      80% {
+        transform: translate(5px, -5px);
+      }
+      100% {
+        transform: translate(0);
+      }
+    }
+    
+    .cyberpunk:hover .cyberpunk-example {
+      transform: scale(1.05);
+    }
+    
+    .cyberpunk .style-title {
+      font-family: 'Orbitron', sans-serif;
+      color: #ff2a6d;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    
+    .cyberpunk .style-vibe {
+      color: #0ff5ff;
+    }
+    
+    .cyberpunk .style-description {
+      text-shadow: 0 0 5px rgba(255, 42, 109, 0.5);
+    }
+    
+    .cyberpunk .style-example {
+      background-color: rgba(12, 12, 20, 0.8);
+      border: 1px solid #ff2a6d;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .cyberpunk-example {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 15px;
+      transition: transform 0.3s ease;
+    }
+    
+    .cyberpunk-title {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 22px;
+      color: #ff2a6d;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+      text-shadow: 0 0 10px rgba(255, 42, 109, 0.8);
+      position: relative;
+      letter-spacing: 2px;
+    }
+    
+    .cyberpunk-title::before {
+      content: "SYSTEM";
+      position: absolute;
+      left: 2px;
+      top: 2px;
+      color: #0ff5ff;
+      opacity: 0.6;
+      z-index: -1;
+    }
+    
+    .cyberpunk-button {
+      background-color: transparent;
+      border: 1px solid #ff2a6d;
+      color: #ff2a6d;
+      padding: 8px 20px;
+      font-family: 'Orbitron', sans-serif;
+      text-transform: uppercase;
+      font-size: 12px;
+      letter-spacing: 2px;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      margin-top: 10px;
+    }
+    
+    .cyberpunk-button::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 42, 109, 0.3), transparent);
+      transition: all 0.3s ease;
+    }
+    
+    .cyberpunk-button:hover::after {
+      left: 100%;
+    }
+    
+    /* Neo-noir Style */
+    .neo-noir {
+      background-color: #0a0a0a;
+      background-image: linear-gradient(135deg, #0a0a0a 0%, #1f1f1f 100%);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+    }
+    
+    .neo-noir:hover {
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8);
+    }
+    
+    .neo-noir .style-title {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      color: #fff;
+      position: relative;
+      display: inline-block;
+    }
+    
+    .neo-noir .style-title::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      width: 30%;
+      height: 1px;
+      background: linear-gradient(90deg, #e84c3d, transparent);
+    }
+    
+    .neo-noir .style-vibe {
+      color: #e84c3d;
+    }
+    
+    .neo-noir .style-example {
+      background-color: #0a0a0a;
+      border: 1px solid #222;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    }
+    
+    .neo-noir-example {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .neo-noir-card {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 20px;
+      background: linear-gradient(0deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.1) 100%);
+      position: relative;
+    }
+    
+    .neo-noir-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('/api/placeholder/400/320') center/cover no-repeat;
+      z-index: -1;
+      opacity: 0.7;
+    }
+    
+    .neo-noir-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      color: #fff;
+      margin-bottom: 5px;
+    }
+    
+    .neo-noir-subtitle {
+      font-size: 12px;
+      color: #e84c3d;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    
+    /* Gothic Web Style */
+    .gothic {
+      background-color: #000;
+      border: 5px double #800;
+      position: relative;
+    }
+    
+    .gothic::before {
+      content: "";
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      right: 5px;
+      bottom: 5px;
+      border: 1px solid #800;
+      z-index: 1;
+      pointer-events: none;
+    }
+    
+    .gothic:hover {
+      box-shadow: 0 0 20px rgba(128, 0, 0, 0.5);
+    }
+    
+    .gothic .style-title {
+      font-family: 'UnifrakturMaguntia', cursive;
+      color: #800;
+      font-size: 2.2rem;
+    }
+    
+    .gothic .style-vibe {
+      color: #800;
+      font-family: 'Playfair Display', serif;
+    }
+    
+    .gothic .style-description {
+      color: #ccc;
+    }
+    
+    .gothic .style-example {
+      background-color: #0a0a0a;
+      border: 1px solid #800;
+    }
+    
+    .gothic-example {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 15px;
+      position: relative;
+    }
+    
+    .gothic-example::before {
+      content: "";
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      right: 10px;
+      bottom: 10px;
+      border: 1px solid #800;
+      pointer-events: none;
+    }
+    
+    .gothic-ornament {
+      width: 50px;
+      height: 50px;
+      margin-bottom: 15px;
+      position: relative;
+    }
+    
+    .gothic-ornament::before,
+    .gothic-ornament::after {
+      content: "✠";
+      position: absolute;
+      color: #800;
+      font-size: 30px;
+    }
+    
+    .gothic-ornament::before {
+      top: 0;
+      left: 0;
+    }
+    
+    .gothic-ornament::after {
+      bottom: 0;
+      right: 0;
+    }
+    
+    .gothic-text {
+      font-family: 'UnifrakturMaguntia', cursive;
+      color: #800;
+      text-align: center;
+      margin-bottom: 10px;
+      font-size: 20px;
+    }
+    
+    .gothic-menu {
+      display: flex;
+      gap: 15px;
+      margin-top: 10px;
+    }
+    
+    .gothic-menu-item {
+      color: #ccc;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      position: relative;
+      padding-bottom: 2px;
+    }
+    
+    .gothic-menu-item::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 1px;
+      background-color: #800;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Dark & Edgy Design Styles</h1>
+      <p class="subtitle">Explore the darker side of web design with these bold, unconventional aesthetics.</p>
+    </header>
+    
+    <div class="styles-grid">
+      <!-- Brutalism -->
+      <div class="style-card brutalism">
+        <h3 class="style-title">BRUTALISM</h3>
+        <p class="style-vibe">Raw, rebellious</p>
+        <p class="style-description">Anti-design, rough layouts, clashing colors.</p>
+        <div class="style-example">
+          <div class="brutalism-example">
+            <div class="brutalism-header">WELCOME.HTML</div>
+            <div class="brutalism-content">
+              <div class="brutalism-box">1</div>
+              <div class="brutalism-box">2</div>
+              <div class="brutalism-box">3</div>
+              <div class="brutalism-box">4</div>
+              <div class="brutalism-box">5</div>
+              <div class="brutalism-box">6</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Post-Brutalism -->
+      <div class="style-card post-brutalism">
+        <h3 class="style-title">Post-Brutalism</h3>
+        <p class="style-vibe">Edgy but usable</p>
+        <p class="style-description">Brutalism + better UX.</p>
+        <div class="style-example">
+          <div class="post-brutalism-example">
+            <div class="post-brutalism-menu">
+              <div class="post-brutalism-menu-item">Home</div>
+              <div class="post-brutalism-menu-item">Work</div>
+              <div class="post-brutalism-menu-item">About</div>
+              <div class="post-brutalism-menu-item">Contact</div>
+            </div>
+            <div class="post-brutalism-content">
+              <div class="post-brutalism-main"></div>
+              <div class="post-brutalism-sidebar"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Dark Mode -->
+      <div class="style-card dark-mode">
+        <h3 class="style-title">Dark Mode</h3>
+        <p class="style-vibe">Cool, modern</p>
+        <p class="style-description">Everything in black or dark gray.</p>
+        <div class="style-example">
+          <div class="dark-mode-example">
+            <div class="dark-mode-header">
+              <div class="dark-mode-logo"></div>
+              <div class="dark-mode-nav">
+                <div class="dark-mode-nav-item"></div>
+                <div class="dark-mode-nav-item"></div>
+                <div class="dark-mode-nav-item"></div>
+              </div>
+            </div>
+            <div class="dark-mode-content">
+              <div class="dark-mode-bar"></div>
+              <div class="dark-mode-bar"></div>
+              <div class="dark-mode-bar"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Cyberpunk -->
+      <div class="style-card cyberpunk">
+        <h3 class="style-title">Cyberpunk</h3>
+        <p class="style-vibe">Futuristic, neon</p>
+        <p class="style-description">Glitch effects, bold type, purples/pinks on black.</p>
+        <div class="style-example">
+          <div class="cyberpunk-example">
+            <div class="cyberpunk-title">SYSTEM</div>
+            <div class="cyberpunk-button">Access</div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Neo-noir -->
+      <div class="style-card neo-noir">
+        <h3 class="style-title">Neo-noir</h3>
+        <p class="style-vibe">Moody, cinematic</p>
+        <p class="style-description">Dark themes with elegant lighting and gradients.</p>
+        <div class="style-example">
+          <div class="neo-noir-example">
+            <div class="neo-noir-card">
+              <h4 class="neo-noir-title">Night City</h4>
+              <p class="neo-noir-subtitle">After Hours</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Gothic Web -->
+      <div class="style-card gothic">
+        <h3 class="style-title">Gothic Web</h3>
+        <p class="style-vibe">Mystical, romantic</p>
+        <p class="style-description">Ornate fonts, black/red palettes, medieval motifs.</p>
+        <div class="style-example">
+          <div class="gothic-example">
+            <div class="gothic-ornament"></div>
+            <div class="gothic-text">Sanctum</div>
+            <div class="gothic-menu">
+              <div class="gothic-menu-item">Crypts</div>
+              <div class="gothic-menu-item">Tomes</div>
+              <div class="gothic-menu-item">Relics</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

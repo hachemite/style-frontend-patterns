@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Industry-Specific Design Styles</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;500;700&family=Bebas+Neue&family=Oswald:wght@300;500&family=Inter:wght@300;500;700&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      background-color: #f5f7fa;
+      color: #333;
+      font-family: 'Roboto', sans-serif;
+      line-height: 1.6;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+    
+    header {
+      text-align: center;
+      margin-bottom: 50px;
+      position: relative;
+    }
+    
+    header::after {
+      content: "";
+      position: absolute;
+      bottom: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 200px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #4a80f0, transparent);
+    }
+    
+    h1 {
+      font-size: 3.5rem;
+      margin-bottom: 15px;
+      color: #222;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+    }
+    
+    .subtitle {
+      font-size: 1.1rem;
+      color: #666;
+      max-width: 600px;
+      margin: 0 auto;
+      font-weight: 300;
+    }
+    
+    .styles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+    
+    .style-card {
+      border-radius: 8px;
+      padding: 25px;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+      cursor: pointer;
+      height: 600px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      background-color: #fff;
+    }
+    
+    .style-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    .style-title {
+      font-size: 1.8rem;
+      margin-bottom: 5px;
+      z-index: 2;
+      position: relative;
+    }
+    
+    .style-vibe {
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+      margin-bottom: 15px;
+      color: #888;
+      position: relative;
+      z-index: 2;
+      font-weight: 400;
+    }
+    
+    .style-description {
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 2;
+      font-size: 0.95rem;
+      color: #666;
+    }
+    
+    .style-features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 15px;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .feature-tag {
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      display: inline-block;
+      background-color: #f0f0f0;
+      color: #555;
+    }
+    
+    .style-example {
+      flex-grow: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 6px;
+      margin-top: auto;
+      overflow: hidden;
+      position: relative;
+      z-index: 2;
+      transition: all 0.3s ease;
+    }
+
+    /* Corporate / SaaS Style */
+    .corporate {
+      background-color: #f8fafd;
+      color: #1a3e72;
+    }
+    
+    .corporate .style-title {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      color: #1a3e72;
+    }
+    
+    .corporate .feature-tag {
+      background-color: #e1e9f7;
+      color: #1a3e72;
+    }
+    
+    .corporate .style-example {
+      background-color: white;
+      border: 1px solid #d6e0f0;
+    }
+    
+    .corporate-example {
+      width: 100%;
+      height: 100%;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .corporate-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+    
+    .corporate-logo {
+      width: 30px;
+      height: 30px;
+      background-color: #1a3e72;
+      border-radius: 4px;
+    }
+    
+    .corporate-nav {
+      display: flex;
+      gap: 15px;
+      color: #1a3e72;
+      font-size: 12px;
+      font-weight: 500;
+    }
+    
+    .corporate-content {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    
+    .corporate-headline {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      color: #1a3e72;
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+    
+    .corporate-subhead {
+      font-size: 12px;
+      color: #4a6fa5;
+      margin-bottom: 20px;
+    }
+    
+    .corporate-button {
+      background-color: #1a3e72;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 4px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 500;
+      font-size: 12px;
+      align-self: flex-start;
+    }
+
+    /* Tech / Startup Style */
+    .tech-startup {
+      background: linear-gradient(135deg, #f5f7ff 0%, #f9f5ff 100%);
+      color: #3a1c71;
+    }
+    
+    .tech-startup .style-title {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      color: #3a1c71;
+    }
+    
+    .tech-startup .feature-tag {
+      background-color: #ede7f6;
+      color: #3a1c71;
+    }
+    
+    .tech-startup .style-example {
+      background-color: white;
+      border: 1px solid #e1d5f0;
+    }
+    
+    .tech-startup-example {
+      width: 100%;
+      height: 100%;
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .tech-startup-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 15px;
+    }
+    
+    .tech-startup-logo {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      color: #3a1c71;
+      font-size: 18px;
+    }
+    
+    .tech-startup-nav {
+      display: flex;
+      gap: 10px;
+    }
+    
+    .tech-startup-nav-item {
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background-color: #d1c4e9;
+    }
+    
+    .tech-startup-nav-item:nth-child(1) {
+      background-color: #3a1c71;
+    }
+    
+    .tech-startup-content {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .tech-startup-illustration {
+      width: 100px;
+      height: 100px;
+      background: linear-gradient(135deg, #3a1c71 0%, #d1c4e9 100%);
+      border-radius: 20px;
+      margin-bottom: 15px;
+      transform: rotate(45deg);
+    }
+    
+    .tech-startup-button {
+      background: linear-gradient(to right, #3a1c71, #7b5cb6);
+      color: white;
+      border: none;
+      padding: 8px 20px;
+      border-radius: 20px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      box-shadow: 0 4px 10px rgba(58, 28, 113, 0.2);
+    }
+
+    /* Portfolio Style */
+    .portfolio {
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    
+    .portfolio .style-title {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      color: #333;
+    }
+    
+    .portfolio .feature-tag {
+      background-color: #e0e0e0;
+      color: #555;
+    }
+    
+    .portfolio .style-example {
+      background-color: white;
+      border: 1px solid #e0e0e0;
+    }
+    
+    .portfolio-example {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .portfolio-image {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+      position: relative;
+    }
+    
+    .portfolio-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 20px;
+      background: linear-gradient(0deg, rgba(0,0,0,0.8) 0%, transparent 100%);
+      color: white;
+    }
+    
+    .portfolio-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      margin-bottom: 5px;
+    }
+    
+    .portfolio-title {
+      font-size: 12px;
+      opacity: 0.8;
+    }
+
+    /* Editorial / Magazine Style */
+    .editorial {
+      background-color: #f8f5f2;
+      color: #222;
+    }
+    
+    .editorial .style-title {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      color: #222;
+    }
+    
+    .editorial .feature-tag {
+      background-color: #e8e5e2;
+      color: #555;
+    }
+    
+    .editorial .style-example {
+      background-color: white;
+      border: 1px solid #e0dcd8;
+    }
+    
+    .editorial-example {
+      width: 100%;
+      height: 100%;
+      padding: 15px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto 1fr;
+      gap: 10px;
+    }
+    
+    .editorial-headline {
+      grid-column: span 2;
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      line-height: 1.2;
+      border-bottom: 1px solid #e0dcd8;
+      padding-bottom: 10px;
+    }
+    
+    .editorial-column {
+      font-size: 10px;
+      line-height: 1.6;
+    }
+    
+    .editorial-column:first-letter {
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
+      float: left;
+      line-height: 0.8;
+      margin-right: 5px;
+    }
+
+    /* E-commerce Style */
+    .ecommerce {
+      background-color: #fff;
+      color: #333;
+    }
+    
+    .ecommerce .style-title {
+      font-family: 'Roboto', sans-serif;
+      font-weight: 700;
+      color: #333;
+    }
+    
+    .ecommerce .feature-tag {
+      background-color: #f0f0f0;
+      color: #555;
+    }
+    
+    .ecommerce .style-example {
+      background-color: #f9f9f9;
+      border: 1px solid #e0e0e0;
+    }
+    
+    .ecommerce-example {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .ecommerce-product {
+      flex-grow: 1;
+      background-color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    
+    .ecommerce-image {
+      width: 80%;
+      height: 60%;
+      background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+      margin-bottom: 10px;
+    }
+    
+    .ecommerce-details {
+      width: 80%;
+      text-align: center;
+    }
+    
+    .ecommerce-name {
+      font-family: 'Roboto', sans-serif;
+      font-weight: 500;
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+    
+    .ecommerce-price {
+      font-weight: 700;
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+    
+    .ecommerce-button {
+      background-color: #4a80f0;
+      color: white;
+      border: none;
+      padding: 8px 20px;
+      border-radius: 4px;
+      font-family: 'Roboto', sans-serif;
+      font-weight: 500;
+      font-size: 12px;
+    }
+
+    /* Dashboard UI Style */
+    .dashboard {
+      background-color: #f5f7fa;
+      color: #333;
+    }
+    
+    .dashboard .style-title {
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      color: #333;
+    }
+    
+    .dashboard .feature-tag {
+      background-color: #e0e6ed;
+      color: #555;
+    }
+    
+    .dashboard .style-example {
+      background-color: white;
+      border: 1px solid #e0e6ed;
+    }
+    
+    .dashboard-example {
+      width: 100%;
+      height: 100%;
+      padding: 15px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: auto repeat(3, 1fr);
+      gap: 8px;
+    }
+    
+    .dashboard-header {
+      grid-column: span 4;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #e0e6ed;
+    }
+    
+    .dashboard-title {
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+    }
+    
+    .dashboard-menu {
+      display: flex;
+      gap: 10px;
+    }
+    
+    .dashboard-menu-item {
+      width: 10px;
+      height: 10px;
+      background-color: #e0e6ed;
+      border-radius: 50%;
+    }
+    
+    .dashboard-menu-item:nth-child(1) {
+      background-color: #4a80f0;
+    }
+    
+    .dashboard-card {
+      background-color: #f5f7fa;
+      border-radius: 4px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 5px;
+    }
+    
+    .dashboard-card:nth-child(2) {
+      grid-column: span 2;
+      grid-row: span 2;
+      background: linear-gradient(135deg, #f5f7fa 0%, #e0e6ed 100%);
+    }
+    
+    .dashboard-card-title {
+      font-size: 10px;
+      margin-bottom: 5px;
+    }
+    
+    .dashboard-card-value {
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    /* Gaming / Esports Style */
+    .gaming {
+      background-color: #0a0a12;
+      color: #e0e0e0;
+    }
+    
+    .gaming .style-title {
+      font-family: 'Bebas Neue', sans-serif;
+      color: #ff2a6d;
+      letter-spacing: 1px;
+    }
+    
+    .gaming .feature-tag {
+      background-color: rgba(255, 42, 109, 0.2);
+      color: #ff2a6d;
+    }
+    
+    .gaming .style-example {
+      background-color: #12121a;
+      border: 1px solid #ff2a6d;
+    }
+    
+    .gaming-example {
+      width: 100%;
+      height: 100%;
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    
+    .gaming-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 15px;
+    }
+    
+    .gaming-logo {
+      font-family: 'Bebas Neue', sans-serif;
+      color: #ff2a6d;
+      font-size: 18px;
+      letter-spacing: 1px;
+    }
+    
+    .gaming-nav {
+      display: flex;
+      gap: 10px;
+    }
+    
+    .gaming-nav-item {
+      width: 15px;
+      height: 15px;
+      background-color: #333;
+      border-radius: 2px;
+    }
+    
+    .gaming-nav-item:nth-child(1) {
+      background-color: #ff2a6d;
+    }
+    
+    .gaming-content {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .gaming-button {
+      background-color: transparent;
+      border: 2px solid #ff2a6d;
+      color: #ff2a6d;
+      padding: 8px 20px;
+      font-family: 'Bebas Neue', sans-serif;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .gaming-button::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 42, 109, 0.3), transparent);
+      transition: all 0.3s ease;
+    }
+    
+    .gaming-button:hover::before {
+      left: 100%;
+    }
+    
+    .gaming-stats {
+      display: flex;
+      gap: 15px;
+      margin-top: 15px;
+    }
+    
+    .gaming-stat {
+      text-align: center;
+    }
+    
+    .gaming-stat-value {
+      font-family: 'Oswald', sans-serif;
+      font-weight: 500;
+      color: #ff2a6d;
+      font-size: 18px;
+    }
+    
+    .gaming-stat-label {
+      font-size: 10px;
+      opacity: 0.7;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2.5rem;
+      }
+      
+      .styles-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .style-card {
+        height: auto;
+        min-height: 300px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Industry-Specific Design Styles</h1>
+      <p class="subtitle">Tailored aesthetics for different business sectors and digital experiences</p>
+    </header>
+    
+    <div class="styles-grid">
+      <!-- Corporate / SaaS -->
+      <div class="style-card corporate">
+        <h3 class="style-title">Corporate / SaaS</h3>
+        <p class="style-vibe">Trustworthy, efficient</p>
+        <p class="style-description">Professional interfaces with blue tones, clean layouts, and clear call-to-action buttons.</p>
+        <div class="style-features">
+          <span class="feature-tag">Blue tones</span>
+          <span class="feature-tag">Clean layout</span>
+          <span class="feature-tag">Clear CTAs</span>
+        </div>
+        <div class="style-example">
+          <div class="corporate-example">
+            <div class="corporate-header">
+              <div class="corporate-logo"></div>
+              <div class="corporate-nav">
+                <span>Product</span>
+                <span>Solutions</span>
+                <span>Pricing</span>
+              </div>
+            </div>
+            <div class="corporate-content">
+              <h4 class="corporate-headline">Streamline Your Workflow</h4>
+              <p class="corporate-subhead">Our enterprise solution increases productivity by 40%</p>
+              <button class="corporate-button">Request Demo</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Tech / Startup -->
+      <div class="style-card tech-startup">
+        <h3 class="style-title">Tech / Startup</h3>
+        <p class="style-vibe">Fresh, innovative</p>
+        <p class="style-description">Bold typography, vibrant gradients, and custom illustrations that communicate innovation.</p>
+        <div class="style-features">
+          <span class="feature-tag">Bold type</span>
+          <span class="feature-tag">Vibrant colors</span>
+          <span class="feature-tag">Illustrations</span>
+        </div>
+        <div class="style-example">
+          <div class="tech-startup-example">
+            <div class="tech-startup-header">
+              <div class="tech-startup-logo">INNOVATE</div>
+              <div class="tech-startup-nav">
+                <div class="tech-startup-nav-item"></div>
+                <div class="tech-startup-nav-item"></div>
+                <div class="tech-startup-nav-item"></div>
+              </div>
+            </div>
+            <div class="tech-startup-content">
+              <div class="tech-startup-illustration"></div>
+              <button class="tech-startup-button">Join the Future</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Portfolio -->
+      <div class="style-card portfolio">
+        <h3 class="style-title">Portfolio</h3>
+        <p class="style-vibe">Personal, creative</p>
+        <p class="style-description">Large imagery with bio focus and minimal navigation to showcase creative work.</p>
+        <div class="style-features">
+          <span class="feature-tag">Large imagery</span>
+          <span class="feature-tag">Bio focus</span>
+          <span class="feature-tag">Minimal nav</span>
+        </div>
+        <div class="style-example">
+          <div class="portfolio-example">
+            <div class="portfolio-image">
+              <div class="portfolio-overlay">
+                <div class="portfolio-name">Alex Johnson</div>
+                <div class="portfolio-title">Digital Designer & Photographer</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Editorial / Magazine -->
+      <div class="style-card editorial">
+        <h3 class="style-title">Editorial / Magazine</h3>
+        <p class="style-vibe">Structured, elegant</p>
+        <p class="style-description">Big headlines with grid layouts optimized for storytelling and content hierarchy.</p>
+        <div class="style-features">
+          <span class="feature-tag">Big headlines</span>
+          <span class="feature-tag">Grid layout</span>
+          <span class="feature-tag">Storytelling</span>
+        </div>
+        <div class="style-example">
+          <div class="editorial-example">
+            <h4 class="editorial-headline">The Future of Digital Design in a Post-Pandemic World</h4>
+            <div class="editorial-column">
+              The rapid shift to remote work has fundamentally changed how we approach digital experiences. Designers are now creating interfaces that prioritize clarity and accessibility over flashy aesthetics.
+            </div>
+            <div class="editorial-column">
+              This new paradigm emphasizes functional beauty - designs that work seamlessly across devices while maintaining visual appeal. The result is a more inclusive digital landscape.
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- E-commerce -->
+      <div class="style-card ecommerce">
+        <h3 class="style-title">E-commerce</h3>
+        <p class="style-vibe">Clean, persuasive</p>
+        <p class="style-description">Product-centric layouts with strong CTAs and white backgrounds to highlight merchandise.</p>
+        <div class="style-features">
+          <span class="feature-tag">Product focus</span>
+          <span class="feature-tag">Strong CTAs</span>
+          <span class="feature-tag">White space</span>
+        </div>
+        <div class="style-example">
+          <div class="ecommerce-example">
+            <div class="ecommerce-product">
+              <div class="ecommerce-image"></div>
+              <div class="ecommerce-details">
+                <div class="ecommerce-name">Premium Wireless Headphones</div>
+                <div class="ecommerce-price">$199.99</div>
+                <button class="ecommerce-button">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Dashboard UI -->
+      <div class="style-card dashboard">
+        <h3 class="style-title">Dashboard UI</h3>
+        <p class="style-vibe">Functional</p>
+        <p class="style-description">Data-heavy interfaces with charts, cards, and responsive grids for analytics.</p>
+        <div class="style-features">
+          <span class="feature-tag">Data visualization</span>
+          <span class="feature-tag">Cards</span>
+          <span class="feature-tag">Responsive grid</span>
+        </div>
+        <div class="style-example">
+          <div class="dashboard-example">
+            <div class="dashboard-header">
+              <div class="dashboard-title">Analytics Dashboard</div>
+              <div class="dashboard-menu">
+                <div class="dashboard-menu-item"></div>
+                <div class="dashboard-menu-item"></div>
+                <div class="dashboard-menu-item"></div>
+              </div>
+            </div>
+            <div class="dashboard-card">
+              <div class="dashboard-card-title">Users</div>
+              <div class="dashboard-card-value">1,240</div>
+            </div>
+            <div class="dashboard-card">
+              <div class="dashboard-card-title">Revenue</div>
+              <div class="dashboard-card-value">$12,405</div>
+            </div>
+            <div class="dashboard-card">
+              <div class="dashboard-card-title">Sessions</div>
+              <div class="dashboard-card-value">3,892</div>
+            </div>
+            <div class="dashboard-card">
+              <div class="dashboard-card-title">Conversion</div>
+              <div class="dashboard-card-value">2.4%</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Gaming / Esports -->
+      <div class="style-card gaming">
+        <h3 class="style-title">Gaming / Esports</h3>
+        <p class="style-vibe">Energetic, intense</p>
+        <p class="style-description">Bold UI elements with glowing effects and custom cursors for immersive experiences.</p>
+        <div class="style-features">
+          <span class="feature-tag">Bold UI</span>
+          <span class="feature-tag">Glowing elements</span>
+          <span class="feature-tag">Custom cursors</span>
+        </div>
+        <div class="style-example">
+          <div class="gaming-example">
+            <div class="gaming-header">
+              <div class="gaming-logo">NEXUS</div>
+              <div class="gaming-nav">
+                <div class="gaming-nav-item"></div>
+                <div class="gaming-nav-item"></div>
+                <div class="gaming-nav-item"></div>
+              </div>
+            </div>
+            <div class="gaming-content">
+              <button class="gaming-button">Play Now</button>
+              <div class="gaming-stats">
+                <div class="gaming-stat">
+                  <div class="gaming-stat-value">24K</div>
+                  <div class="gaming-stat-label">Players</div>
+                </div>
+                <div class="gaming-stat">
+                  <div class="gaming-stat-value">1.2M</div>
+                  <div class="gaming-stat-label">Matches</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

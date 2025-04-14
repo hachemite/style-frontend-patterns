@@ -1,0 +1,1379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bold & Expressive Design Styles</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Bungee+Shade&family=Monoton&family=Rubik:wght@300;400;700&family=VT323&family=Special+Elite&family=Russo+One&family=Archivo:wght@400;700&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      background-color: #121212;
+      color: #e0e0e0;
+      font-family: 'Courier Prime', monospace;
+      line-height: 1.6;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+    
+    header {
+      text-align: center;
+      margin-bottom: 50px;
+      position: relative;
+    }
+    
+    header::after {
+      content: "";
+      position: absolute;
+      bottom: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 200px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #ff2a6d, transparent);
+    }
+    
+    h1 {
+      font-size: 3.5rem;
+      margin-bottom: 15px;
+      color: #ffffff;
+      font-family: 'Bebas Neue', sans-serif;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+    
+    .subtitle {
+      font-size: 1.1rem;
+      color: #9e9e9e;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .styles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+    
+    .style-card {
+      border-radius: 4px;
+      padding: 25px;
+      transition: all 0.4s ease;
+      cursor: pointer;
+      height: 500px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .style-title {
+      font-size: 1.8rem;
+      margin-bottom: 5px;
+      z-index: 2;
+      position: relative;
+    }
+    
+    .style-vibe {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 15px;
+      color: #888;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .style-description {
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .style-example {
+      flex-grow: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 2px;
+      margin-top: auto;
+      position: relative;
+      z-index: 2;
+    }
+    
+    /* Maximalism Style */
+    .maximalism {
+      background: linear-gradient(135deg, #ff6b6b, #6b47ff);
+      border: 8px solid;
+      border-image: linear-gradient(to right, gold, purple, teal, orange) 1;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .maximalism::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      z-index: 1;
+    }
+    
+    .maximalism:hover {
+      transform: rotate(1deg) scale(1.02);
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+    }
+    
+    .maximalism .style-title {
+      font-family: 'Abril Fatface', cursive;
+      color: #ffde00;
+      text-shadow: 3px 3px 0 #ff00ff, -3px -3px 0 #00ffff;
+      font-size: 2.2rem;
+    }
+    
+    .maximalism .style-vibe {
+      color: white;
+      font-weight: bold;
+      text-shadow: 1px 1px 0 black;
+    }
+    
+    .maximalism .style-description {
+      color: white;
+      font-weight: bold;
+      text-shadow: 1px 1px 0 black;
+    }
+    
+    .maximalism .style-example {
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(5px);
+      border: 4px dotted gold;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+    }
+    
+    .maximalism-example {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+    }
+    
+    .maximalism-header {
+      font-family: 'Bungee Shade', cursive;
+      font-size: 24px;
+      color: #ffde00;
+      margin-bottom: 10px;
+      text-align: center;
+      transform: rotate(-3deg);
+    }
+    
+    .maximalism-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      gap: 5px;
+      width: 100%;
+      height: 100%;
+    }
+    
+    .maximalism-cell {
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 12px;
+      text-transform: uppercase;
+      animation: colorChange 5s infinite alternate;
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .maximalism-cell:nth-child(odd)::before {
+      content: "";
+      position: absolute;
+      width: 200%;
+      height: 200%;
+      background: repeating-linear-gradient(45deg, rgba(255,255,255,0.1), rgba(255,255,255,0.1) 10px, transparent 10px, transparent 20px);
+      animation: move 10s linear infinite;
+    }
+    
+    @keyframes move {
+      0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+      }
+      100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+      }
+    }
+    
+    @keyframes colorChange {
+      0% { background-color: #ff5252; }
+      25% { background-color: #ffeb3b; }
+      50% { background-color: #2196f3; }
+      75% { background-color: #4caf50; }
+      100% { background-color: #9c27b0; }
+    }
+    
+    /* Futurism Style */
+    .futurism {
+      background-color: #050525;
+      background-image: linear-gradient(135deg, #050525 0%, #0a0a3a 100%);
+      border: 1px solid #4dabf7;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .futurism::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: radial-gradient(circle at 30% 40%, rgba(77, 171, 247, 0.2) 0%, transparent 50%);
+      z-index: 1;
+    }
+    
+    .futurism::after {
+      content: "";
+      position: absolute;
+      bottom: -50%;
+      right: -50%;
+      width: 100%;
+      height: 100%;
+      background-image: radial-gradient(circle, rgba(77, 171, 247, 0.2) 0%, transparent 60%);
+      z-index: 1;
+    }
+    
+    .futurism:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(77, 171, 247, 0.3);
+    }
+    
+    .futurism .style-title {
+      font-family: 'Russo One', sans-serif;
+      color: white;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    
+    .futurism .style-vibe {
+      color: #4dabf7;
+    }
+    
+    .futurism .style-example {
+      background-color: rgba(10, 10, 50, 0.8);
+      border: 1px solid #4dabf7;
+      box-shadow: 0 0 15px rgba(77, 171, 247, 0.3);
+    }
+    
+    .futurism-example {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      padding: 15px;
+    }
+    
+    .futurism-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 15px;
+    }
+    
+    .futurism-logo {
+      width: 40px;
+      height: 40px;
+      background-color: transparent;
+      border: 2px solid #4dabf7;
+      position: relative;
+      transform: rotate(45deg);
+    }
+    
+    .futurism-logo::before {
+      content: "";
+      position: absolute;
+      width: 50%;
+      height: 50%;
+      background-color: #4dabf7;
+      top: 25%;
+      left: 25%;
+    }
+    
+    .futurism-badge {
+      background-color: #4dabf7;
+      color: #050525;
+      padding: 2px 8px;
+      font-family: 'Russo One', sans-serif;
+      font-size: 10px;
+      text-transform: uppercase;
+      clip-path: polygon(0 0, 100% 0, 90% 100%, 0 100%);
+    }
+    
+    .futurism-panels {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      flex-grow: 1;
+    }
+    
+    .futurism-panel {
+      height: 15px;
+      width: 100%;
+      background-color: rgba(77, 171, 247, 0.1);
+      display: flex;
+      align-items: center;
+      padding: 0 5px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .futurism-panel::before {
+      content: "";
+      position: absolute;
+      height: 100%;
+      width: 60%;
+      background-color: rgba(77, 171, 247, 0.3);
+      animation: scan 3s ease-in-out infinite;
+    }
+    
+    @keyframes scan {
+      0%, 100% { left: -60%; }
+      50% { left: 100%; }
+    }
+    
+    .futurism-buttons {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    
+    .futurism-button {
+      width: 20px;
+      height: 20px;
+      background-color: transparent;
+      border: 1px solid #4dabf7;
+      position: relative;
+    }
+    
+    .futurism-button::before {
+      content: "";
+      position: absolute;
+      width: 60%;
+      height: 60%;
+      background-color: #4dabf7;
+      top: 20%;
+      left: 20%;
+      opacity: 0.6;
+    }
+    
+    /* Psychedelic / Trippy Style */
+    .psychedelic {
+      background: linear-gradient(
+        90deg,
+        rgba(255,0,0,1) 0%,
+        rgba(255,154,0,1) 10%,
+        rgba(208,222,33,1) 20%,
+        rgba(79,220,74,1) 30%,
+        rgba(63,218,216,1) 40%,
+        rgba(47,201,226,1) 50%,
+        rgba(28,127,238,1) 60%,
+        rgba(95,21,242,1) 70%,
+        rgba(186,12,248,1) 80%,
+        rgba(251,7,217,1) 90%,
+        rgba(255,0,0,1) 100%
+      );
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .psychedelic::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url("data:image/svg+xml,%3Csvg viewBox='0 0 1000 1000' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.2'/%3E%3C/svg%3E");
+      opacity: 0.3;
+      z-index: 1;
+      mix-blend-mode: overlay;
+    }
+    
+    .psychedelic:hover {
+      animation: hueRotate 2s linear infinite;
+    }
+    
+    @keyframes hueRotate {
+      0% { filter: hue-rotate(0deg); }
+      100% { filter: hue-rotate(360deg); }
+    }
+    
+    .psychedelic .style-title {
+      font-family: 'Monoton', cursive;
+      color: white;
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+      font-size: 2.2rem;
+    }
+    
+    .psychedelic .style-vibe {
+      color: white;
+      text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+      font-weight: bold;
+    }
+    
+    .psychedelic .style-description {
+      color: white;
+      text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+      font-weight: bold;
+    }
+    
+    .psychedelic .style-example {
+      background-color: rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      overflow: hidden;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    }
+    
+    .psychedelic-example {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .psychedelic-eye {
+      width: 80%;
+      height: 80%;
+      border-radius: 50%;
+      background: radial-gradient(
+        circle,
+        #000 10%,
+        #6b47ff 10%,
+        #6b47ff 30%,
+        #ff6b6b 30%,
+        #ff6b6b 50%,
+        #47ff6b 50%,
+        #47ff6b 70%,
+        #ffde00 70%,
+        #ffde00 90%,
+        #ff00ff 90%
+      );
+      position: relative;
+      animation: spin 20s linear infinite;
+    }
+    
+    .psychedelic-eye::before {
+      content: "";
+      position: absolute;
+      width: 20%;
+      height: 20%;
+      border-radius: 50%;
+      background-color: black;
+      top: 40%;
+      left: 40%;
+      z-index: 2;
+    }
+    
+    .psychedelic-eye::after {
+      content: "";
+      position: absolute;
+      width: 10%;
+      height: 10%;
+      border-radius: 50%;
+      background-color: white;
+      top: 45%;
+      left: 35%;
+      z-index: 3;
+    }
+    
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    
+    /* Memphis Design Style */
+    .memphis {
+      background-color: #f5f5f5;
+      color: #333;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .memphis::before {
+      content: "";
+      position: absolute;
+      top: -20px;
+      right: -20px;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background-color: #ff99c8;
+      z-index: 1;
+    }
+    
+    .memphis::after {
+      content: "";
+      position: absolute;
+      bottom: -30px;
+      left: -30px;
+      width: 150px;
+      height: 150px;
+      background-color: #fcf6bd;
+      transform: rotate(30deg);
+      z-index: 1;
+    }
+    
+    .memphis .style-title {
+      font-family: 'Rubik', sans-serif;
+      font-weight: 700;
+      color: #333;
+      z-index: 2;
+    }
+    
+    .memphis .style-vibe {
+      color: #ff99c8;
+      font-weight: bold;
+      z-index: 2;
+    }
+    
+    .memphis .style-description {
+      color: #333;
+      z-index: 2;
+    }
+    
+    .memphis .style-example {
+      background-color: white;
+      border: 3px solid black;
+      box-shadow: 5px 5px 0 #a9def9;
+      z-index: 2;
+    }
+    
+    .memphis-example {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      padding: 15px;
+    }
+    
+    .memphis-grid {
+      width: 100%;
+      height: 100%;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      gap: 10px;
+    }
+    
+    .memphis-shape {
+      position: relative;
+    }
+    
+    .memphis-shape:nth-child(1) {
+      background-color: #e4c1f9;
+      border-radius: 50%;
+    }
+    
+    .memphis-shape:nth-child(1)::before {
+      content: "";
+      position: absolute;
+      top: 10%;
+      left: 10%;
+      width: 40%;
+      height: 40%;
+      border-radius: 50%;
+      background-color: white;
+    }
+    
+    .memphis-shape:nth-child(2) {
+      background-color: #ff99c8;
+      clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    }
+    
+    .memphis-shape:nth-child(3) {
+      background-color: #fcf6bd;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .memphis-shape:nth-child(3)::before {
+      content: "";
+      width: 70%;
+      height: 10px;
+      background: repeating-linear-gradient(90deg, #333, #333 5px, transparent 5px, transparent 10px);
+    }
+    
+    .memphis-shape:nth-child(4) {
+      background-color: #d0f4de;
+      clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);
+    }
+    
+    .memphis-shape:nth-child(5) {
+      background-color: #a9def9;
+      border: 3px dotted #333;
+    }
+    
+    .memphis-shape:nth-child(6) {
+      background: repeating-linear-gradient(45deg, #ff99c8, #ff99c8 10px, #fcf6bd 10px, #fcf6bd 20px);
+    }
+    
+    .memphis-shape:nth-child(7) {
+      background-color: white;
+      border: 3px solid #333;
+      position: relative;
+    }
+    
+    .memphis-shape:nth-child(7)::before {
+      content: "✽";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 24px;
+      color: #ff99c8;
+    }
+    
+    .memphis-shape:nth-child(8) {
+      background-color: #e4c1f9;
+      clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+    }
+    
+    .memphis-shape:nth-child(9) {
+      background: repeating-radial-gradient(circle at center, #fcf6bd, #fcf6bd 10px, #a9def9 10px, #a9def9 20px);
+    }
+    
+    /* Grunge Style */
+    .grunge {
+      background-color: #1a1a1a;
+      color: #ddd;
+      position: relative;
+      border: none;
+    }
+    
+    .grunge::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 900 600' width='900' height='600' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.5'/%3E%3C/svg%3E");
+      background-repeat: repeat;
+      opacity: 0.3;
+      z-index: 1;
+    }
+    
+    .grunge:hover {
+      background-color: #222;
+    }
+    
+    .grunge .style-title {
+      font-family: 'Special Elite', cursive;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      position: relative;
+    }
+    
+    .grunge .style-title::after {
+      content: "Grunge";
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      color: rgba(255, 0, 0, 0.5);
+      z-index: -1;
+    }
+    
+    .grunge .style-vibe {
+      color: #999;
+    }
+    
+    .grunge .style-example {
+      background-color: #111;
+      border: 1px solid #333;
+      position: relative;
+    }
+    
+    .grunge .style-example::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 900 600' width='900' height='600' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.2'/%3E%3C/svg%3E");
+      z-index: 1;
+    }
+    
+    .grunge-example {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 15px;
+      z-index: 2;
+    }
+    
+    .grunge-logo {
+      font-family: 'Special Elite', cursive;
+      font-size: 24px;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin-bottom: 15px;
+      position: relative;
+      display: inline-block;
+    }
+    
+    .grunge-logo::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #fff, transparent);
+    }
+    
+    .grunge-text {
+      font-family: 'Special Elite', cursive;
+      text-align: center;
+      font-size: 12px;
+      color: #999;
+      margin-bottom: 15px;
+      max-width: 150px;
+    }
+    
+    .grunge-button {
+      background-color: transparent;
+      border: 1px solid #666;
+      color: #fff;
+      padding: 5px 10px;
+      font-family: 'Special Elite', cursive;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 12px;
+      position: relative;
+    }
+    
+    .grunge-button::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 900 600' width='900' height='600' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.5'/%3E%3C/svg%3E");
+      z-index: -1;
+    }
+    
+    /* Experimental Typography Style */
+    .experimental-type {
+      background-color: white;
+      color: black;
+      position: relative;
+    }
+    
+    .experimental-type:hover .style-example {
+      transform: scale(1.05);
+    }
+    
+    .experimental-type .style-title {
+      font-family: 'Archivo', sans-serif;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+    }
+    
+    .experimental-type .style-vibe {
+      color: #333;
+      font-family: 'Archivo', sans-serif;
+    }
+    
+    .experimental-type .style-description {
+      color: #333;
+    }
+    
+    .experimental-type .style-example {
+      background-color: white;
+      transition: transform 0.3s ease;
+    }
+    
+    .exp-type-example {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    
+    .exp-text-container {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    
+    .exp-type-text {
+      font-size: 80px;
+      line-height: 0.8;
+      font-weight: bold;
+      display: flex;
+      text-transform: uppercase;
+      color: black;
+    }
+    
+    .exp-type-char {
+      position: relative;
+      display: inline-block;
+      animation: float 5s ease-in-out infinite;
+      animation-delay: calc(var(--i) * 0.1s);
+    }
+    
+    .exp-type-char:nth-child(1) { --i: 1; font-family: 'Archivo', sans-serif; }
+    .exp-type-char:nth-child(2) { --i: 2; font-family: 'Special Elite', cursive; transform: scale(1.2); }
+    .exp-type-char:nth-child(3) { --i: 3; font-family: 'Monoton', cursive; color: #ff2a6d; }
+    .exp-type-char:nth-child(4) { --i: 4; font-family: 'Rubik', sans-serif; font-weight: 700; }
+    .exp-type-char:nth-child(5) { --i: 5; font-family: 'VT323', monospace; transform: rotate(-5deg); }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    
+    /* Retro/8-Bit Style */
+    .retro {
+      background-color: #0d0d3b;
+      color: #52ff00;
+      border: 4px solid #52ff00;
+      position: relative;
+      box-shadow: 0 0 10px rgba(82, 255, 0, 0.5);
+    }
+    
+    .retro:hover {
+      background-color: #14145c;
+      box-shadow: 0 0 20px rgba(82, 255, 0, 0.8);
+    }
+    
+    .retro .style-title {
+      font-family: 'VT323', monospace;
+      font-size: 2.4rem;
+      color: #52ff00;
+      text-shadow: 3px 3px 0 #ff00ff;
+    }
+    
+    .retro .style-vibe {
+      color: #ff00ff;
+      font-family: 'VT323', monospace;
+      font-size: 1rem;
+    }
+    
+    .retro .style-description {
+      font-family: 'VT323', monospace;
+      font-size: 1.1rem;
+    }
+    
+    .retro .style-example {
+      background-color: #14145c;
+      border: 2px solid #52ff00;
+    }
+    
+    .retro-example {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px;
+    }
+    
+    .retro-header {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      font-family: 'VT323', monospace;
+      color: #52ff00;
+      font-size: 14px;
+      padding-bottom: 5px;
+      border-bottom: 1px dashed #52ff00;
+    }
+    
+    .retro-content {
+      flex-grow: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+    }
+    
+    .retro-grid {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      grid-template-rows: repeat(8, 1fr);
+      gap: 2px;
+      width: 100%;
+      height: 80%;
+    }
+    
+    .retro-pixel {
+      background-color: #14145c;
+      width: 100%;
+      height: 100%;
+      transition: all 0.3s ease;
+    }
+    
+    .retro-pixel:nth-child(odd):nth-child(3n) {
+      background-color: #52ff00;
+    }
+    
+    .retro-pixel:nth-child(even):nth-child(7n) {
+      background-color: #ff00ff;
+    }
+    
+    .retro-footer {
+      width: 100%;
+      border-top: 1px dashed #52ff00;
+      padding-top: 5px;
+      display: flex;
+      justify-content: space-between;
+      font-family: 'VT323', monospace;
+      color: #52ff00;
+      font-size: 14px;
+    }
+
+
+    /* Surrealism / Dreamcore Style */
+.surrealism {
+  background: linear-gradient(135deg, #1a0033, #3a0066);
+  position: relative;
+  overflow: hidden;
+}
+
+.surrealism::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 70% 30%, rgba(255, 255, 255, 0.2), transparent 40%);
+  z-index: 1;
+}
+
+.surrealism::after {
+  content: "";
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 146, 202, 0.6), transparent 70%);
+  top: -50px;
+  right: -50px;
+  filter: blur(20px);
+  z-index: 1;
+}
+
+.surrealism:hover {
+  box-shadow: 0 0 25px rgba(164, 92, 255, 0.5);
+}
+
+.surrealism .style-title {
+  font-family: 'Rubik', sans-serif;
+  font-weight: 300;
+  color: white;
+  text-shadow: 0 0 10px rgba(164, 92, 255, 0.8);
+}
+
+.surrealism .style-vibe {
+  color: #ffc2e2;
+}
+
+.surrealism .style-description {
+  color: #e0e0e0;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.surrealism .style-example {
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 15px rgba(164, 92, 255, 0.3);
+}
+
+.surrealism-example {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.surrealism-scene {
+  width: 90%;
+  height: 90%;
+  position: relative;
+}
+
+.floating-object {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(3px);
+  animation: float 8s ease-in-out infinite;
+}
+
+.floating-object:nth-child(1) {
+  width: 50px;
+  height: 50px;
+  background-color: rgba(255, 194, 226, 0.8);
+  top: 20%;
+  left: 20%;
+  animation-delay: 0s;
+}
+
+.floating-object:nth-child(2) {
+  width: 30px;
+  height: 30px;
+  background-color: rgba(164, 92, 255, 0.8);
+  top: 60%;
+  left: 50%;
+  animation-delay: 1s;
+}
+
+.floating-object:nth-child(3) {
+  width: 40px;
+  height: 40px;
+  background-color: rgba(92, 164, 255, 0.8);
+  top: 40%;
+  left: 70%;
+  animation-delay: 2s;
+}
+
+.surrealism-eye {
+  position: absolute;
+  width: 60px;
+  height: 30px;
+  background-color: white;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+.surrealism-eye::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background-color: #3a0066;
+  border-radius: 50%;
+}
+
+.surrealism-cloud {
+  position: absolute;
+  width: 100%;
+  height: 30px;
+  background-color: rgba(255, 255, 255, 0.2);
+  bottom: 15%;
+  filter: blur(10px);
+  border-radius: 50%;
+}
+
+.floating-stair {
+  position: absolute;
+  width: 80px;
+  height: 5px;
+  background-color: rgba(255, 255, 255, 0.5);
+  transform: rotate(-15deg);
+  bottom: 30%;
+  left: 20%;
+  box-shadow: 0 0 10px rgba(164, 92, 255, 0.5);
+}
+
+.floating-stair::before {
+  content: "";
+  position: absolute;
+  width: 60px;
+  height: 5px;
+  background-color: rgba(255, 255, 255, 0.5);
+  top: -15px;
+  left: 10px;
+  transform: rotate(0deg);
+  box-shadow: 0 0 10px rgba(164, 92, 255, 0.5);
+}
+
+.floating-stair::after {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 5px;
+  background-color: rgba(255, 255, 255, 0.5);
+  top: -30px;
+  left: 20px;
+  transform: rotate(0deg);
+  box-shadow: 0 0 10px rgba(164, 92, 255, 0.5);
+}
+
+@keyframes float {
+  0%, 100% { 
+    transform: translateY(0) rotate(0deg); 
+  }
+  25% { 
+    transform: translateY(-10px) rotate(5deg); 
+  }
+  50% { 
+    transform: translateY(0) rotate(0deg); 
+  }
+  75% { 
+    transform: translateY(10px) rotate(-5deg); 
+  }
+}
+    
+    /* Additional Media Queries for Responsiveness */
+    @media (max-width: 1200px) {
+      .styles-grid {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .styles-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      }
+      
+      h1 {
+        font-size: 2.5rem;
+      }
+      
+      .style-card {
+        height: 300px;
+      }
+      
+      .style-title {
+        font-size: 1.5rem;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 2rem;
+      }
+      
+      .styles-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .style-card {
+        height: 280px;
+      }
+    }
+
+
+
+  </style> 
+
+    <div class="container">
+      <header>
+        <h1>Bold & Expressive Design Styles</h1>
+        <p class="subtitle">Explore a collection of vibrant and bold design aesthetics that push the boundaries of visual communication.</p>
+      </header>
+      
+      <div class="styles-grid">
+        <!-- Maximalism Card -->
+        <div class="style-card maximalism">
+          <h2 class="style-title">Maximalism</h2>
+          <p class="style-vibe">Bold | Vibrant | Excessive</p>
+          <p class="style-description">Embrace the "more is more" philosophy with loud colors, clashing patterns, and an abundance of visual elements.</p>
+          <div class="style-example">
+            <div class="maximalism-example">
+              <div class="maximalism-header">MAXIMUM STYLE</div>
+              <div class="maximalism-grid">
+                <div class="maximalism-cell">MORE</div>
+                <div class="maximalism-cell">IS</div>
+                <div class="maximalism-cell">MORE</div>
+                <div class="maximalism-cell">BOLD</div>
+                <div class="maximalism-cell">LOUD</div>
+                <div class="maximalism-cell">WILD</div>
+                <div class="maximalism-cell">CLASH</div>
+                <div class="maximalism-cell">MIX</div>
+                <div class="maximalism-cell">PLAY</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Futurism Card -->
+        <div class="style-card futurism">
+          <h2 class="style-title">Futurism</h2>
+          <p class="style-vibe">Sleek | Digital | High-Tech</p>
+          <p class="style-description">Embrace the aesthetics of tomorrow with sharp lines, glowing elements, and a high-tech digital interface feel.</p>
+          <div class="style-example">
+            <div class="futurism-example">
+              <div class="futurism-header">
+                <div class="futurism-logo"></div>
+                <div class="futurism-badge">SYSTEM ONLINE</div>
+              </div>
+              <div class="futurism-panels">
+                <div class="futurism-panel"></div>
+                <div class="futurism-panel"></div>
+                <div class="futurism-panel"></div>
+                <div class="futurism-panel"></div>
+              </div>
+              <div class="futurism-buttons">
+                <div class="futurism-button"></div>
+                <div class="futurism-button"></div>
+                <div class="futurism-button"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Psychedelic Card -->
+        <div class="style-card psychedelic">
+          <h2 class="style-title">Psychedelic</h2>
+          <p class="style-vibe">Trippy | Colorful | Mind-Bending</p>
+          <p class="style-description">Take a journey through vibrant colors, fluid shapes, and optical illusions that challenge perception.</p>
+          <div class="style-example">
+            <div class="psychedelic-example">
+              <div class="psychedelic-eye"></div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Memphis Design Card -->
+        <div class="style-card memphis">
+          <h2 class="style-title">Memphis Design</h2>
+          <p class="style-vibe">Playful | Geometric | Postmodern</p>
+          <p class="style-description">Explore the iconic 80s style featuring bold colors, geometric shapes, and playful patterns.</p>
+          <div class="style-example">
+            <div class="memphis-example">
+              <div class="memphis-grid">
+                <div class="memphis-shape"></div>
+                <div class="memphis-shape"></div>
+                <div class="memphis-shape"></div>
+                <div class="memphis-shape"></div>
+                <div class="memphis-shape"></div>
+                <div class="memphis-shape"></div>
+                <div class="memphis-shape"></div>
+                <div class="memphis-shape"></div>
+                <div class="memphis-shape"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Grunge Card -->
+        <div class="style-card grunge">
+          <h2 class="style-title">Grunge</h2>
+          <p class="style-vibe">Raw | Textured | Rebellious</p>
+          <p class="style-description">Channel the raw energy of 90s alternative culture with distressed textures and an anti-establishment vibe.</p>
+          <div class="style-example">
+            <div class="grunge-example">
+              <div class="grunge-logo">CHAOS</div>
+              <div class="grunge-text">Break the rules of conventional design</div>
+              <div class="grunge-button">DESTROY</div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Experimental Typography Card -->
+        <div class="style-card experimental-type">
+          <h2 class="style-title">Experimental Type</h2>
+          <p class="style-vibe">Dynamic | Innovative | Expressive</p>
+          <p class="style-description">Push the boundaries of legibility with typography that becomes art and communicates beyond words.</p>
+          <div class="style-example">
+            <div class="exp-type-example">
+              <div class="exp-text-container">
+                <div class="exp-type-text">
+                  <span class="exp-type-char">T</span>
+                  <span class="exp-type-char">Y</span>
+                  <span class="exp-type-char">P</span>
+                  <span class="exp-type-char">E</span>
+                  <span class="exp-type-char">!</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Surrealism / Dreamcore Card -->
+<div class="style-card surrealism">
+  <h2 class="style-title">Surrealism / Dreamcore</h2>
+  <p class="style-vibe">Abstract | Dreamy | Ethereal</p>
+  <p class="style-description">Enter a dream-like state with floating objects, soft glows, and impossible scenes that defy reality.</p>
+  <div class="style-example">
+    <div class="surrealism-example">
+      <div class="surrealism-scene">
+        <div class="floating-object"></div>
+        <div class="floating-object"></div>
+        <div class="floating-object"></div>
+        <div class="surrealism-eye"></div>
+        <div class="floating-stair"></div>
+        <div class="surrealism-cloud"></div>
+      </div>
+    </div>
+  </div>
+</div>
+        <!-- Retro/8-Bit Card -->
+        <div class="style-card retro">
+          <h2 class="style-title">Retro 8-Bit</h2>
+          <p class="style-vibe">Pixelated | Nostalgic | Gamified</p>
+          <p class="style-description">Travel back to the early days of digital design with pixelated graphics and neon colors.</p>
+          <div class="style-example">
+            <div class="retro-example">
+              <div class="retro-header">
+                <span>LEVEL 1</span>
+                <span>SCORE: 8000</span>
+              </div>
+              <div class="retro-content">
+                <div class="retro-grid">
+                  <!-- 64 div.retro-pixel elements would be here -->
+                  <div class="retro-pixel"></div>
+                  <!-- Repeated 63 more times -->
+                </div>
+              </div>
+              <div class="retro-footer">
+                <span>PRESS START</span>
+                <span>LIVES: 3</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </body>
+  </html>

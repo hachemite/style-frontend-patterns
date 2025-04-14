@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fullscreen Transparent Carousel</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            overflow: hidden;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+        
+        .carousel-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .carousel {
+            display: flex;
+            height: 100vh;
+            transition: transform 0.5s ease-in-out;
+        }
+        
+        .carousel-slide {
+            min-width: 100vw;
+            position: relative;
+            opacity: 0.2;
+            transition: opacity 0.5s ease;
+        }
+        
+        .carousel-slide.active {
+            opacity: 1;
+        }
+        
+        .carousel iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            background: transparent;
+        }
+        
+        .carousel-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 10;
+            pointer-events: none;
+        }
+        
+        .carousel-btn {
+            background: rgba(0,0,0,0.3);
+            color: white;
+            border: none;
+            padding: 30px 15px;
+            cursor: pointer;
+            font-size: 24px;
+            transition: all 0.3s;
+            pointer-events: auto;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            opacity: 0;
+        }
+        
+        .carousel-btn:hover {
+            background: rgba(0,0,0,0.6);
+            opacity: 1;
+        }
+        
+        .carousel-container:hover .carousel-btn {
+            opacity: 1;
+        }
+        
+        .carousel-indicators {
+            position: fixed;
+            bottom: 20px;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            z-index: 10;
+        }
+        
+        .indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.3);
+            cursor: pointer;
+            transition: all 0.3s;
+            pointer-events: auto;
+        }
+        
+        .indicator.active {
+            background: white;
+            transform: scale(1.3);
+        }
+        
+        .slide-counter {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(0,0,0,0.6);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            z-index: 10;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="carousel-container">
+        <div class="slide-counter">1 / 7</div>
+        <div class="carousel">
+            <div class="carousel-slide active">
+                <iframe src="1.html" loading="lazy"></iframe>
+            </div>
+            <div class="carousel-slide">
+                <iframe src="2.html" loading="lazy"></iframe>
+            </div>
+            <div class="carousel-slide">
+                <iframe src="3.html" loading="lazy"></iframe>
+            </div>
+            <div class="carousel-slide">
+                <iframe src="4.html" loading="lazy"></iframe>
+            </div>
+            <div class="carousel-slide">
+                <iframe src="5.html" loading="lazy"></iframe>
+            </div>
+            <div class="carousel-slide">
+                <iframe src="6.html" loading="lazy"></iframe>
+            </div>
+            <div class="carousel-slide">
+                <iframe src="7.html" loading="lazy"></iframe>
+            </div>
+            <div class="carousel-slide">
+                <iframe src="7,5.html" loading="lazy"></iframe>
+            </div>
+        </div>
+
+        
+        <div class="carousel-nav">
+            <button class="carousel-btn prev-btn">‹</button>
+            <button class="carousel-btn next-btn">›</button>
+        </div>
+        
+        <div class="carousel-indicators">
+            <div class="indicator active" data-index="0"></div>
+            <div class="indicator" data-index="1"></div>
+            <div class="indicator" data-index="2"></div>
+            <div class="indicator" data-index="3"></div>
+            <div class="indicator" data-index="4"></div>
+            <div class="indicator" data-index="5"></div>
+            <div class="indicator" data-index="6"></div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const carousel = document.querySelector('.carousel');
+            const slides = document.querySelectorAll('.carousel-slide');
+            const prevBtn = document.querySelector('.prev-btn');
+            const nextBtn = document.querySelector('.next-btn');
+            const indicators = document.querySelectorAll('.indicator');
+            const slideCounter = document.querySelector('.slide-counter');
+            
+            let currentIndex = 0;
+            const totalSlides = slides.length;
+            
+            // Update carousel position and opacity
+            function updateCarousel() {
+                carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+                
+                // Update slide opacity
+                slides.forEach((slide, index) => {
+                    slide.classList.toggle('active', index === currentIndex);
+                });
+                
+                // Update indicators
+                indicators.forEach((indicator, index) => {
+                    indicator.classList.toggle('active', index === currentIndex);
+                });
+                
+                // Update counter
+                slideCounter.textContent = `${currentIndex + 1} / ${totalSlides}`;
+            }
+            
+            // Next slide
+            function nextSlide() {
+                currentIndex = (currentIndex + 1) % totalSlides;
+                updateCarousel();
+            }
+            
+            // Previous slide
+            function prevSlide() {
+                currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+                updateCarousel();
+            }
+            
+            // Button events
+            nextBtn.addEventListener('click', nextSlide);
+            prevBtn.addEventListener('click', prevSlide);
+            
+            // Indicator events
+            indicators.forEach(indicator => {
+                indicator.addEventListener('click', () => {
+                    currentIndex = parseInt(indicator.getAttribute('data-index'));
+                    updateCarousel();
+                });
+            });
+            
+            // Keyboard navigation
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowRight') {
+                    nextSlide();
+                } else if (e.key === 'ArrowLeft') {
+                    prevSlide();
+                }
+            });
+            
+            // Touch/swipe support
+            let touchStartX = 0;
+            let touchEndX = 0;
+            
+            document.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            }, {passive: true});
+            
+            document.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            }, {passive: true});
+            
+            function handleSwipe() {
+                const threshold = 50;
+                if (touchEndX < touchStartX - threshold) {
+                    nextSlide();
+                } else if (touchEndX > touchStartX + threshold) {
+                    prevSlide();
+                }
+            }
+            
+            // Auto-advance (optional)
+            // setInterval(nextSlide, 5000);
+        });
+    </script>
+</body>
+</html>

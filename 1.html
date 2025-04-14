@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modern Clean Design Styles</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+    
+    body {
+      background-color: #f5f5f7;
+      color: #333;
+      line-height: 1.6;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+    
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      color: #1d1d1f;
+    }
+    
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      color: #1d1d1f;
+    }
+    
+    .subtitle {
+      font-size: 1.2rem;
+      color: #666;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .styles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+    
+    .style-card {
+      border-radius: 10px;
+      padding: 20px;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+      height: 500px;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .style-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .style-title {
+      font-size: 1.4rem;
+      margin-bottom: 5px;
+    }
+    
+    .style-vibe {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 15px;
+      color: #666;
+    }
+    
+    .style-description {
+      margin-bottom: 15px;
+      flex-grow: 0;
+    }
+    
+    .style-example {
+      flex-grow: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px;
+      border-radius: 8px;
+      margin-top: auto;
+    }
+    
+    /* Minimalist Style */
+    .minimalist {
+      background-color: #ffffff;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    }
+    
+    .minimalist .style-example {
+      background-color: #fafafa;
+    }
+    
+    .minimalist-example {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .minimalist-circle {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: #000;
+      margin-bottom: 30px;
+    }
+    
+    .minimalist-line {
+      width: 70%;
+      height: 1px;
+      background-color: #000;
+      margin: 5px 0;
+    }
+    
+    /* Flat Design Style */
+    .flat-design {
+      background-color: #3498db;
+      color: white;
+    }
+    
+    .flat-design .style-vibe {
+      color: rgba(255, 255, 255, 0.7);
+    }
+    
+    .flat-design .style-example {
+      background-color: #2980b9;
+    }
+    
+    .flat-example {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      align-items: center;
+      justify-content: space-around;
+    }
+    
+    .flat-icon {
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #e74c3c;
+      border-radius: 5px;
+      color: white;
+      font-size: 24px;
+    }
+    
+    /* Material Design Style */
+    .material-design {
+      background-color: #ffffff;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .material-design .style-example {
+      background-color: #f5f5f5;
+    }
+    
+    .material-example {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .material-button {
+      padding: 12px 30px;
+      background-color: #4285F4;
+      color: white;
+      border-radius: 4px;
+      font-weight: 500;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 14px;
+      transition: box-shadow 0.3s ease;
+    }
+    
+    .material-button:hover {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+    
+    /* Neumorphism Style */
+    .neumorphism {
+      background-color: #e0e5ec;
+      color: #333;
+    }
+    
+    .neumorphism .style-example {
+      background-color: #e0e5ec;
+    }
+    
+    .neumorph-example {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .neumorph-circle {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background-color: #e0e5ec;
+      box-shadow: 8px 8px 15px #a3b1c6, -8px -8px 15px #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .neumorph-inner {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: linear-gradient(145deg, #cacaca, #f0f0f0);
+      box-shadow: inset 5px 5px 10px #bebebe, inset -5px -5px 10px #ffffff;
+    }
+    
+    /* Glassmorphism Style */
+    .glassmorphism {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+    }
+    
+    .glassmorphism .style-vibe {
+      color: rgba(255, 255, 255, 0.7);
+    }
+    
+    .glassmorphism .style-example {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+    
+    .glass-example {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .glass-card {
+      width: 120px;
+      height: 120px;
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 24px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+    
+    .glass-example::before {
+      content: "";
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      top: 20px;
+      left: 30px;
+    }
+    
+    .glass-example::after {
+      content: "";
+      position: absolute;
+      width: 70px;
+      height: 70px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      bottom: 10px;
+      right: 20px;
+    }
+    
+    /* Claymorphism Style */
+    .claymorphism {
+      background-color: #ffd9e8;
+      color: #6a0136;
+    }
+    
+    .claymorphism .style-vibe {
+      color: #b4006e;
+    }
+    
+    .claymorphism .style-example {
+      background-color: #ffe9f3;
+    }
+    
+    .clay-example {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .clay-button {
+      width: 120px;
+      height: 120px;
+      border-radius: 30px;
+      background-color: #ff8fb8;
+      box-shadow: 8px 8px 16px rgba(167, 58, 100, 0.4), -8px -8px 16px rgba(255, 255, 255, 0.7), inset 3px 3px 7px rgba(255, 255, 255, 0.5), inset -3px -3px 7px rgba(167, 58, 100, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      color: #6a0136;
+      font-size: 20px;
+      border: none;
+    }
+    
+    /* Metro UI Style */
+    .metro-ui {
+      background-color: #0078d7;
+      color: white;
+    }
+    
+    .metro-ui .style-vibe {
+      color: rgba(255, 255, 255, 0.7);
+    }
+    
+    .metro-ui .style-example {
+      background-color: #006cc1;
+    }
+    
+    .metro-example {
+      width: 100%;
+      height: 100%;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      gap: 10px;
+    }
+    
+    .metro-tile {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+      transition: transform 0.2s ease;
+    }
+    
+    .metro-tile:nth-child(1) {
+      background-color: #00b294;
+    }
+    
+    .metro-tile:nth-child(2) {
+      background-color: #ff4343;
+    }
+    
+    .metro-tile:nth-child(3) {
+      background-color: #ffd500;
+      color: #333;
+    }
+    
+    .metro-tile:nth-child(4) {
+      background-color: #7a7574;
+    }
+    
+    .metro-tile:hover {
+      transform: scale(0.95);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Modern Clean Design Styles</h1>
+      <p class="subtitle">Explore popular UI design trends with interactive examples of each style.</p>
+    </header>
+    
+    <div class="styles-grid">
+      <!-- Minimalist -->
+      <div class="style-card minimalist">
+        <h3 class="style-title">Minimalist</h3>
+        <p class="style-vibe">Zen, elegant</p>
+        <p class="style-description">Lots of white space, simple layout, few colors.</p>
+        <div class="style-example">
+          <div class="minimalist-example">
+            <div class="minimalist-circle"></div>
+            <div class="minimalist-line"></div>
+            <div class="minimalist-line" style="width: 50%;"></div>
+            <div class="minimalist-line" style="width: 60%;"></div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Flat Design -->
+      <div class="style-card flat-design">
+        <h3 class="style-title">Flat Design</h3>
+        <p class="style-vibe">Simple, clean</p>
+        <p class="style-description">No shadows or 3D, just flat colors and icons.</p>
+        <div class="style-example">
+          <div class="flat-example">
+            <div class="flat-icon">▲</div>
+            <div class="flat-icon" style="background-color: #f1c40f; color: #333;">■</div>
+            <div class="flat-icon" style="background-color: #2ecc71;">●</div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Material Design -->
+      <div class="style-card material-design">
+        <h3 class="style-title">Material Design</h3>
+        <p class="style-vibe">Structured, tactile</p>
+        <p class="style-description">Google's design system with depth, movement, and bold colors.</p>
+        <div class="style-example">
+          <div class="material-example">
+            <div class="material-button">Click Me</div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Neumorphism -->
+      <div class="style-card neumorphism">
+        <h3 class="style-title">Neumorphism</h3>
+        <p class="style-vibe">Soft, futuristic</p>
+        <p class="style-description">Elements look pressed into the screen, soft shadows.</p>
+        <div class="style-example">
+          <div class="neumorph-example">
+            <div class="neumorph-circle">
+              <div class="neumorph-inner"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Glassmorphism -->
+      <div class="style-card glassmorphism">
+        <h3 class="style-title">Glassmorphism</h3>
+        <p class="style-vibe">Sleek, airy</p>
+        <p class="style-description">Translucent, frosted glass effects with blur.</p>
+        <div class="style-example">
+          <div class="glass-example">
+            <div class="glass-card">✦</div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Claymorphism -->
+      <div class="style-card claymorphism">
+        <h3 class="style-title">Claymorphism</h3>
+        <p class="style-vibe">Playful, rounded</p>
+        <p class="style-description">Soft 3D elements with big shadows and vivid colors.</p>
+        <div class="style-example">
+          <div class="clay-example">
+            <button class="clay-button">Clay</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Metro UI -->
+      <div class="style-card metro-ui">
+        <h3 class="style-title">Metro UI</h3>
+        <p class="style-vibe">Techy, grid-based</p>
+        <p class="style-description">Inspired by Windows UI, strong focus on tiles and motion.</p>
+        <div class="style-example">
+          <div class="metro-example">
+            <div class="metro-tile">Mail</div>
+            <div class="metro-tile">Photos</div>
+            <div class="metro-tile">Maps</div>
+            <div class="metro-tile">Store</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

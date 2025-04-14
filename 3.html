@@ -1,0 +1,1407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>More Design Style Showcases</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=VT323&family=Playfair+Display:wght@400;700&family=Press+Start+2P&family=Roboto+Mono&family=Rubik:wght@400;700&family=Abril+Fatface&family=Luckiest+Guy&family=Staatliches&family=Helvetica&family=Poppins:wght@400;700&family=Montserrat:wght@400;700&family=Space+Mono:wght@400;700&family=Archivo+Black&family=Libre+Baskerville:wght@400;700&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      background-color: #121212;
+      color: #e0e0e0;
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.6;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+    
+    header {
+      text-align: center;
+      margin-bottom: 50px;
+      position: relative;
+    }
+    
+    header::after {
+      content: "";
+      position: absolute;
+      bottom: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 200px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #ff2a6d, transparent);
+    }
+    
+    h1 {
+      font-size: 3.5rem;
+      margin-bottom: 15px;
+      color: #ffffff;
+      font-family: 'Staatliches', sans-serif;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+    
+    .subtitle {
+      font-size: 1.1rem;
+      color: #9e9e9e;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .styles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+    
+    .style-card {
+      border-radius: 4px;
+      padding: 25px;
+      transition: all 0.4s ease;
+      cursor: pointer;
+      height: 500px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .style-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    }
+    
+    .style-title {
+      font-size: 1.8rem;
+      margin-bottom: 5px;
+      z-index: 2;
+      position: relative;
+    }
+    
+    .style-vibe {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 15px;
+      color: #888;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .style-description {
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .style-example {
+      flex-grow: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 2px;
+      margin-top: auto;
+      position: relative;
+      z-index: 2;
+    }
+    
+    /* Vaporwave Style */
+    .vaporwave {
+      background: linear-gradient(135deg, #ff6ad5, #c774e8);
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .vaporwave::before {
+      content: "";
+      position: absolute;
+      width: 150%;
+      height: 150%;
+      top: -25%;
+      left: -25%;
+      background: repeating-linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.1),
+        rgba(0, 0, 0, 0.1) 2px,
+        transparent 2px,
+        transparent 4px
+      );
+      z-index: 1;
+    }
+    
+    .vaporwave::after {
+      content: "";
+      position: absolute;
+      width: 150%;
+      height: 150%;
+      top: -25%;
+      left: -25%;
+      background: repeating-linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.1),
+        rgba(0, 0, 0, 0.1) 2px,
+        transparent 2px,
+        transparent 4px
+      );
+      z-index: 1;
+    }
+    
+    .vaporwave .style-title {
+      font-family: 'VT323', monospace;
+      text-shadow: 3px 3px 0px #ff00ff, 6px 6px 0px #00ffff;
+      letter-spacing: 2px;
+      font-size: 2.2rem;
+    }
+    
+    .vaporwave .style-vibe {
+      color: #00ffff;
+      text-shadow: 1px 1px 0px #ff00ff;
+    }
+    
+    .vaporwave .style-example {
+      perspective: 800px;
+    }
+    
+    .vaporwave-example {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transform-style: preserve-3d;
+      transform: rotateX(10deg);
+    }
+    
+    .vaporwave-grid {
+      position: absolute;
+      width: 100%;
+      height: 60%;
+      bottom: 0;
+      background: linear-gradient(0deg, #ff00ff, transparent);
+      transform: rotateX(60deg);
+      background-image: linear-gradient(90deg, rgba(0, 255, 255, 0.5) 1px, transparent 1px),
+                        linear-gradient(rgba(0, 255, 255, 0.5) 1px, transparent 1px);
+      background-size: 20px 20px;
+    }
+    
+    .vaporwave-sun {
+      position: absolute;
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, #ff5e62, #ff9966);
+      border-radius: 50%;
+      top: 20%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    
+    .vaporwave-statue {
+      position: absolute;
+      width: 60px;
+      height: 100px;
+      background-color: rgba(255, 255, 255, 0.8);
+      top: 15%;
+      left: 50%;
+      transform: translateX(-50%);
+      clip-path: polygon(50% 0%, 30% 30%, 30% 90%, 70% 90%, 70% 30%);
+    }
+    
+    .vaporwave-text {
+      position: absolute;
+      bottom: 10%;
+      width: 100%;
+      text-align: center;
+      font-family: 'VT323', monospace;
+      color: #00ffff;
+      font-size: 20px;
+      text-shadow: 2px 2px 0px #ff00ff;
+    }
+    
+    /* Retro/Vintage Style */
+    .retro {
+      background-color: #f5e4c3;
+      color: #5d4a33;
+      border: 10px solid #a0522d;
+      position: relative;
+    }
+    
+    .retro::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23a0522d' fill-opacity='0.1' fill-rule='evenodd'%3E%3Cpath d='M0 0h40v40H0V0zm40 40h40v40H40V40zm-40 0h2.5v2.5H0v-2.5zm2.5 2.5H5v2.5H2.5v-2.5z'/%3E%3C/g%3E%3C/svg%3E");
+      opacity: 0.2;
+      z-index: 1;
+    }
+    
+    .retro .style-title {
+      font-family: 'Staatliches', cursive;
+      color: #a0522d;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+    }
+    
+    .retro .style-vibe {
+      color: #a0522d;
+      font-family: 'Roboto Mono', monospace;
+    }
+    
+    .retro .style-example {
+      background-color: #e8d7be;
+      border: 5px solid #a0522d;
+    }
+    
+    .retro-example {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      padding: 15px;
+      position: relative;
+    }
+    
+    .retro-header {
+      background-color: #a0522d;
+      color: #f5e4c3;
+      padding: 10px;
+      text-align: center;
+      font-family: 'Staatliches', cursive;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      position: relative;
+      margin-bottom: 15px;
+    }
+    
+    .retro-header::after {
+      content: "";
+      position: absolute;
+      bottom: 5px;
+      left: 5px;
+      right: 5px;
+      height: 2px;
+      background-color: #f5e4c3;
+    }
+    
+    .retro-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    
+    .retro-item {
+      width: calc(50% - 5px);
+      height: 60px;
+      background-color: #a0522d;
+      border: 3px solid #5d4a33;
+      border-radius: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #f5e4c3;
+      font-family: 'Staatliches', cursive;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    
+    /* Y2K Aesthetic Style */
+    .y2k {
+      background: linear-gradient(135deg, #b9d7e8, #e8b9d7);
+      color: #333;
+      border: 10px solid #e8b9d7;
+      border-image: linear-gradient(45deg, #b9d7e8, #e8b9d7) 1;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .y2k::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(ellipse at center, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0) 70%);
+      pointer-events: none;
+      z-index: 1;
+    }
+    
+    .y2k .style-title {
+      font-family: 'Press Start 2P', cursive;
+      color: #8a2be2;
+      text-transform: uppercase;
+      text-shadow: 2px 2px 0px rgba(255,255,255,0.5);
+      font-size: 1.5rem;
+    }
+    
+    .y2k .style-vibe {
+      color: #ff69b4;
+      text-shadow: 1px 1px 0px rgba(255,255,255,0.5);
+    }
+    
+    .y2k .style-example {
+      background: linear-gradient(135deg, rgba(185, 215, 232, 0.8), rgba(232, 185, 215, 0.8));
+      border-radius: 20px;
+      overflow: hidden;
+      backdrop-filter: blur(5px);
+      border: 3px solid rgba(255, 255, 255, 0.5);
+    }
+    
+    .y2k-example {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    
+    .y2k-header {
+      padding: 10px;
+      text-align: center;
+      font-family: 'Press Start 2P', cursive;
+      font-size: 14px;
+      color: #8a2be2;
+      text-shadow: 1px 1px 0px rgba(255,255,255,0.5);
+      position: relative;
+      background: rgba(255, 255, 255, 0.3);
+      border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+    }
+    
+    .y2k-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      text-align: center;
+    }
+    
+    .y2k-button {
+      background: linear-gradient(45deg, #b9d7e8, #e8b9d7);
+      border: 2px solid #fff;
+      border-radius: 50%;
+      width: 100px;
+      height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Press Start 2P', cursive;
+      font-size: 12px;
+      color: #8a2be2;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      text-shadow: 1px 1px 0px rgba(255,255,255,0.5);
+    }
+    
+    .y2k-menu {
+      display: flex;
+      gap: 10px;
+    }
+    
+    .y2k-menu-item {
+      background: rgba(255, 255, 255, 0.3);
+      padding: 5px 10px;
+      border-radius: 20px;
+      font-family: 'Press Start 2P', cursive;
+      font-size: 8px;
+      color: #8a2be2;
+      text-transform: uppercase;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+    }
+    
+    /* Art Deco Style */
+    .art-deco {
+      background-color: #000;
+      color: #daa520;
+      border: 1px solid #daa520;
+      position: relative;
+    }
+    
+    .art-deco::before {
+      content: "";
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      right: 15px;
+      bottom: 15px;
+      border: 2px solid #daa520;
+      pointer-events: none;
+      z-index: 1;
+    }
+    
+    .art-deco .style-title {
+      font-family: 'Abril Fatface', serif;
+      color: #daa520;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+    }
+    
+    .art-deco .style-vibe {
+      color: #daa520;
+    }
+    
+    .art-deco .style-example {
+      background-color: #000;
+      position: relative;
+    }
+    
+    .art-deco-example {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    
+    .art-deco-example::before {
+      content: "";
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      right: 20px;
+      bottom: 20px;
+      border: 1px solid #daa520;
+      pointer-events: none;
+    }
+    
+    .art-deco-logo {
+      width: 120px;
+      height: 120px;
+      position: relative;
+      margin-bottom: 20px;
+    }
+    
+    .art-deco-logo::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, #daa520, transparent);
+      clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    }
+    
+    .art-deco-logo::after {
+      content: "";
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      width: 80px;
+      height: 80px;
+      background-color: #000;
+      clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+      border: 1px solid #daa520;
+    }
+    
+    .art-deco-title {
+      font-family: 'Abril Fatface', serif;
+      color: #daa520;
+      text-transform: uppercase;
+      letter-spacing: 5px;
+      font-size: 22px;
+      text-align: center;
+      position: relative;
+      margin-bottom: 20px;
+    }
+    
+    .art-deco-title::before,
+    .art-deco-title::after {
+      content: "★";
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #daa520;
+    }
+    
+    .art-deco-title::before {
+      left: -30px;
+    }
+    
+    .art-deco-title::after {
+      right: -30px;
+    }
+    
+    .art-deco-divider {
+      width: 60%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #daa520, transparent);
+      margin-bottom: 20px;
+    }
+    
+    /* Pop Art Style */
+    .pop-art {
+      background-color: #ffff00;
+      color: #000;
+      border: 10px solid #ff0000;
+      position: relative;
+    }
+    
+    .pop-art::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: radial-gradient(#ff0000 2px, transparent 2px);
+      background-size: 20px 20px;
+      opacity: 0.3;
+      z-index: 1;
+    }
+    
+    .pop-art .style-title {
+      font-family: 'Luckiest Guy', cursive;
+      color: #ff0000;
+      text-shadow: 3px 3px 0px #000;
+      text-transform: uppercase;
+    }
+    
+    .pop-art .style-vibe {
+      color: #000;
+      font-weight: bold;
+    }
+    
+    .pop-art .style-example {
+      background-color: #ffffff;
+      border: 5px solid #000;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .pop-art-example {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      padding: 15px;
+    }
+    
+    .pop-art-speech {
+      background-color: #ffffff;
+      border: 5px solid #000;
+      border-radius: 30px;
+      padding: 15px;
+      position: relative;
+      text-align: center;
+      margin-bottom: 20px;
+      width: 80%;
+    }
+    
+    .pop-art-speech::before {
+      content: "";
+      position: absolute;
+      bottom: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 0;
+      border-left: 20px solid transparent;
+      border-right: 20px solid transparent;
+      border-top: 20px solid #000;
+    }
+    
+    .pop-art-speech::after {
+      content: "";
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 0;
+      border-left: 15px solid transparent;
+      border-right: 15px solid transparent;
+      border-top: 15px solid #ffffff;
+    }
+    
+    .pop-art-text {
+      font-family: 'Luckiest Guy', cursive;
+      color: #ff0000;
+      text-shadow: 2px 2px 0px #000;
+      text-transform: uppercase;
+      font-size: 24px;
+    }
+    
+    .pop-art-action {
+      background-color: #0000ff;
+      color: #ffffff;
+      font-family: 'Luckiest Guy', cursive;
+      text-transform: uppercase;
+      padding: 10px 20px;
+      transform: rotate(-5deg);
+      margin-top: 20px;
+      border: 3px solid #000;
+      position: relative;
+    }
+    
+    .pop-art-action::before {
+      content: "";
+      position: absolute;
+      top: -5px;
+      left: -5px;
+      right: -5px;
+      bottom: -5px;
+      background-color: transparent;
+      border: 2px solid #ffffff;
+      z-index: -1;
+    }
+    
+    /* Bauhaus Style */
+    .bauhaus {
+      background-color: #f5f5f5;
+      color: #000;
+      position: relative;
+    }
+    
+    .bauhaus .style-title {
+      font-family: 'Roboto Mono', monospace;
+      color: #000;
+      text-transform: lowercase;
+      font-weight: bold;
+    }
+    
+    .bauhaus .style-vibe {
+      color: #d12229;
+    }
+    
+    .bauhaus .style-example {
+      background-color: #fff;
+      position: relative;
+    }
+    
+    .bauhaus-example {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    
+    .bauhaus-composition {
+      width: 200px;
+      height: 200px;
+      position: relative;
+    }
+    
+    .bauhaus-circle {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      background-color: #d12229;
+      border-radius: 50%;
+      top: 20px;
+      left: 20px;
+    }
+    
+    .bauhaus-square {
+      position: absolute;
+      width: 80px;
+      height: 80px;
+      background-color: #0063a6;
+      bottom: 20px;
+      right: 20px;
+    }
+    
+    .bauhaus-triangle {
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-left: 50px solid transparent;
+      border-right: 50px solid transparent;
+      border-bottom: 90px solid #ffde00;
+      bottom: 50px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: -1;
+    }
+    
+    .bauhaus-line {
+      position: absolute;
+      width: 100%;
+      height: 10px;
+      background-color: #000;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    
+    .bauhaus-text {
+      font-family: 'Roboto Mono', monospace;
+      text-transform: lowercase;
+      font-weight: bold;
+      margin-top: 20px;
+      font-size: 16px;
+    }
+    
+    /* Swiss/International Style */
+    .swiss {
+      background-color: #ffffff;
+      color: #000;
+      position: relative;
+      padding: 40px;
+    }
+    
+    .swiss .style-title {
+      font-family: 'Helvetica', sans-serif;
+      color: #000;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    
+    .swiss .style-vibe {
+      color: #ff0000;
+    }
+    
+    .swiss .style-example {
+      background-color: #f5f5f5;
+    }
+    
+    .swiss-example {
+      width: 100%;
+      height: 100%;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      grid-template-rows: auto 1fr;
+      gap: 20px;
+      padding: 20px;
+    }
+    
+    .swiss-header {
+      grid-column: 1 / -1;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .swiss-logo {
+      width: 30px;
+      height: 30px;
+      background-color: #ff0000;
+    }
+    
+    .swiss-nav {
+      display: flex;
+      gap: 20px;
+    }
+    
+    .swiss-nav-item {
+      font-family: 'Helvetica', sans-serif;
+      font-size: 12px;
+      text-transform: uppercase;
+      color: #000;
+    }
+    
+    .swiss-content {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    
+    .swiss-title {
+      font-family: 'Helvetica', sans-serif;
+      font-size: 20px;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+    
+    .swiss-paragraph {
+      height: 8px;
+      background-color: #000;
+      width: 80%;
+    }
+    
+    .swiss-paragraph:nth-child(2) {
+      width: 60%;
+    }
+    
+    .swiss-paragraph:nth-child(3) {
+      width: 70%;
+    }
+    
+    .swiss-image {
+      background-color: #ddd;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Helvetica', sans-serif;
+      font-size: 12px;
+      text-transform: uppercase;
+      color: #777;
+    }
+
+    /* Minimalist Style */
+    .minimalist {
+      background-color: #f8f8f8;
+      color: #333;
+      position: relative;
+    }
+    
+    .minimalist .style-title {
+      font-family: 'Montserrat', sans-serif;
+      color: #333;
+      font-weight: 400;
+      letter-spacing: 1px;
+    }
+    
+    .minimalist .style-vibe {
+      color: #888;
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    .minimalist .style-example {
+      background-color: #fff;
+      border: 1px solid #eee;
+    }
+    
+    .minimalist-example {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+    }
+    
+    .minimalist-line {
+      width: 80%;
+      height: 1px;
+      background-color: #eee;
+      margin: 15px 0;
+    }
+    
+    .minimalist-circle {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      border: 1px solid #333;
+      margin-bottom: 20px;
+    }
+    
+    .minimalist-text {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+      color: #888;
+      text-align: center;
+      line-height: 1.8;
+    }
+
+    /* Cyberpunk Style */
+    .cyberpunk {
+      background-color: #0f0f1a;
+      color: #00ff9d;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .cyberpunk::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: 
+        linear-gradient(45deg, 
+          transparent 48%, 
+          rgba(0, 255, 157, 0.1) 49%, 
+          rgba(0, 255, 157, 0.1) 51%, 
+          transparent 52%
+        ),
+        linear-gradient(-45deg, 
+          transparent 48%, 
+          rgba(0, 255, 157, 0.1) 49%, 
+          rgba(0, 255, 157, 0.1) 51%, 
+          transparent 52%
+        );
+      background-size: 20px 20px;
+      z-index: 1;
+    }
+    
+    .cyberpunk .style-title {
+      font-family: 'Space Mono', monospace;
+      color: #ff2a6d;
+      text-shadow: 0 0 5px #ff2a6d;
+      letter-spacing: 2px;
+    }
+    
+    .cyberpunk .style-vibe {
+      color: #00ff9d;
+      text-shadow: 0 0 5px #00ff9d;
+    }
+    
+    .cyberpunk .style-example {
+      background-color: #1a1a2e;
+      border: 1px solid #00ff9d;
+    }
+    
+    .cyberpunk-example {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+      position: relative;
+    }
+    
+    .cyberpunk-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+    
+    .cyberpunk-title {
+      font-family: 'Space Mono', monospace;
+      color: #ff2a6d;
+      text-shadow: 0 0 5px #ff2a6d;
+    }
+    
+    .cyberpunk-stats {
+      font-family: 'Space Mono', monospace;
+      color: #00ff9d;
+    }
+    
+    .cyberpunk-grid {
+      flex-grow: 1;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      gap: 10px;
+    }
+    
+    .cyberpunk-cell {
+      border: 1px solid rgba(0, 255, 157, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Space Mono', monospace;
+      font-size: 12px;
+      color: #00ff9d;
+    }
+    
+    .cyberpunk-cell:nth-child(1) {
+      grid-column: 1 / 3;
+    }
+    
+    .cyberpunk-cell:nth-child(5) {
+      grid-column: 2 / 4;
+    }
+
+    /* Brutalist Style */
+    .brutalist {
+      background-color: #000;
+      color: #fff;
+      position: relative;
+    }
+    
+    .brutalist .style-title {
+      font-family: 'Archivo Black', sans-serif;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    
+    .brutalist .style-vibe {
+      color: #ff0000;
+      font-family: 'Archivo Black', sans-serif;
+    }
+    
+    .brutalist .style-example {
+      background-color: #fff;
+      color: #000;
+    }
+    
+    .brutalist-example {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+    }
+    
+    .brutalist-header {
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 24px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      background-color: #000;
+      color: #fff;
+      padding: 10px;
+    }
+    
+    .brutalist-content {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+    
+    .brutalist-item {
+      background-color: #000;
+      color: #fff;
+      padding: 15px;
+      font-family: 'Archivo Black', sans-serif;
+      text-transform: uppercase;
+      font-size: 14px;
+    }
+    
+    .brutalist-item:nth-child(3) {
+      grid-column: 1 / -1;
+    }
+
+    /* Memphis Style */
+    .memphis {
+      background-color: #fff;
+      color: #000;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .memphis::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: 
+        linear-gradient(45deg, #ff0 25%, transparent 25%) -50px 0,
+        linear-gradient(-45deg, #ff0 25%, transparent 25%) -50px 0,
+        linear-gradient(45deg, transparent 75%, #ff0 75%),
+        linear-gradient(-45deg, transparent 75%, #ff0 75%);
+      background-size: 100px 100px;
+      opacity: 0.2;
+      z-index: 1;
+    }
+    
+    .memphis .style-title {
+      font-family: 'Rubik', sans-serif;
+      color: #000;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    
+    .memphis .style-vibe {
+      color: #ff3366;
+    }
+    
+    .memphis .style-example {
+      background-color: #fff;
+      border: 5px solid #000;
+    }
+    
+    .memphis-example {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+      position: relative;
+    }
+    
+    .memphis-grid {
+      flex-grow: 1;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      gap: 10px;
+    }
+    
+    .memphis-cell {
+      border: 3px solid #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .memphis-cell:nth-child(1) {
+      background-color: #ff3366;
+      grid-row: 1 / 3;
+    }
+    
+    .memphis-cell:nth-child(2) {
+      background-color: #33ccff;
+    }
+    
+    .memphis-cell:nth-child(3) {
+      background-color: #ffcc33;
+      grid-row: 2 / 4;
+    }
+    
+    .memphis-cell:nth-child(4) {
+      background-color: #9933ff;
+    }
+    
+    .memphis-cell:nth-child(5) {
+      background-color: #33ff66;
+    }
+    
+    .memphis-cell:nth-child(6) {
+      background-color: #ff6633;
+    }
+
+    /* Gothic Style */
+    .gothic {
+      background-color: #1a1a1a;
+      color: #c9c9c9;
+      position: relative;
+    }
+    
+    .gothic::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+
+      background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7z'/%3E%3C/svg%3E");
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>More Design Style Showcases</h1>
+      <p class="subtitle">Explore different design aesthetics that define various eras and movements.</p>
+    </header>
+    
+    <div class="styles-grid">
+      <!-- Vaporwave -->
+      <div class="style-card vaporwave">
+        <h3 class="style-title">VAPORWAVE</h3>
+        <p class="style-vibe">80s/90s surrealism</p>
+        <p class="style-description">Neon, Greek statues, grids, retro-futurism.</p>
+        <div class="style-example">
+          <div class="vaporwave-example">
+            <div class="vaporwave-sun"></div>
+            <div class="vaporwave-statue"></div>
+            <div class="vaporwave-grid"></div>
+            <div class="vaporwave-text">AESTHETIC</div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Retro/Vintage -->
+      <div class="style-card retro">
+        <h3 class="style-title">RETRO/VINTAGE</h3>
+        <p class="style-vibe">Nostalgic</p>
+        <p class="style-description">Grainy textures, bold fonts, 60s–90s color schemes.</p>
+        <div class="style-example">
+          <div class="retro-example">
+            <div class="retro-header">GOOD TIMES</div>
+            <div class="retro-content">
+              <div class="retro-item">SHOP</div>
+              <div class="retro-item">VISIT</div>
+              <div class="retro-item">PLAY</div>
+              <div class="retro-item">JOIN</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Y2K Aesthetic -->
+      <div class="style-card y2k">
+        <h3 class="style-title">Y2K AESTHETIC</h3>
+        <p class="style-vibe">Glitchy, glossy</p>
+        <p class="style-description">Chrome, glass, gradients, 2000s vibe.</p>
+        <div class="style-example">
+          <div class="y2k-example">
+            <div class="y2k-header">digital dreams</div>
+            <div class="y2k-content">
+              <div class="y2k-button">ENTER</div>
+              <div class="y2k-menu">
+                <div class="y2k-menu-item">home</div>
+                <div class="y2k-menu-item">about</div>
+                <div class="y2k-menu-item">contact</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Art Deco -->
+      <div class="style-card art-deco">
+        <h3 class="style-title">ART DECO</h3>
+        <p class="style-vibe">Classy, vintage</p>
+        <p class="style-description">Geometric, gold, elegant fonts.</p>
+        <div class="style-example">
+          <div class="art-deco-example">
+            <div class="art-deco-logo"></div>
+            <div class="art-deco-title">GATSBY</div>
+            <div class="art-deco-divider"></div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Pop Art -->
+      <div class="style-card pop-art">
+        <h3 class="style-title">POP ART</h3>
+        <p class="style-vibe">Loud, colorful</p>
+        <p class="style-description">Comic-style graphics, bold colors, Ben-Day dots.</p>
+        <div class="style-example">
+          <div class="pop-art-example">
+            <div class="pop-art-speech">
+              <div class="pop-art-text">WOW!</div>
+            </div>
+            <div class="pop-art-action">CLICK ME</div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Bauhaus -->
+      <div class="style-card bauhaus">
+        <h3 class="style-title">bauhaus</h3>
+        <p class="style-vibe">functional, geometric</p>
+        <p class="style-description">Primary colors, simple shapes, clean typography.</p>
+        <div class="style-example">
+          <div class="bauhaus-example">
+            <div class="bauhaus-composition">
+              <div class="bauhaus-circle"></div>
+              <div class="bauhaus-square"></div>
+              <div class="bauhaus-triangle"></div>
+              <div class="bauhaus-line"></div>
+            </div>
+            <div class="bauhaus-text">form follows function</div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Swiss/International -->
+      <div class="style-card swiss">
+        <h3 class="style-title">SWISS STYLE</h3>
+        <p class="style-vibe">Clean, structured</p>
+        <p class="style-description">Grid systems, sans-serif fonts, asymmetrical layouts.</p>
+        <div class="style-example">
+          <div class="swiss-example">
+            <div class="swiss-header">
+              <div class="swiss-logo"></div>
+              <div class="swiss-nav">
+                <div class="swiss-nav-item">home</div>
+                <div class="swiss-nav-item">work</div>
+                <div class="swiss-nav-item">about</div>
+              </div>
+            </div>
+            <div class="swiss-content">
+              <div class="swiss-title">International Typographic Style</div>
+              <div class="swiss-paragraph"></div>
+              <div class="swiss-paragraph"></div>
+              <div class="swiss-paragraph"></div>
+            </div>
+            <div class="swiss-image">IMAGE</div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Minimalist -->
+      <div class="style-card minimalist">
+        <h3 class="style-title">Minimalist</h3>
+        <p class="style-vibe">Essential, clean</p>
+        <p class="style-description">Limited color palette, ample white space, simple forms.</p>
+        <div class="style-example">
+          <div class="minimalist-example">
+            <div class="minimalist-circle"></div>
+            <div class="minimalist-line"></div>
+            <div class="minimalist-text">Less is more. Form follows function. Details matter.</div>
+            <div class="minimalist-line"></div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Cyberpunk -->
+      <div class="style-card cyberpunk">
+        <h3 class="style-title">CYBERPUNK</h3>
+        <p class="style-vibe">High-tech, low-life</p>
+        <p class="style-description">Neon colors, glitch effects, dystopian futurism.</p>
+        <div class="style-example">
+          <div class="cyberpunk-example">
+            <div class="cyberpunk-header">
+              <div class="cyberpunk-title">NEON DISTRICT</div>
+              <div class="cyberpunk-stats">CRED: 2550</div>
+            </div>
+            <div class="cyberpunk-grid">
+              <div class="cyberpunk-cell">ACCESS</div>
+              <div class="cyberpunk-cell">DENIED</div>
+              <div class="cyberpunk-cell">SYSTEM</div>
+              <div class="cyberpunk-cell">FAILURE</div>
+              <div class="cyberpunk-cell">REBOOT</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Brutalist -->
+      <div class="style-card brutalist">
+        <h3 class="style-title">BRUTALIST</h3>
+        <p class="style-vibe">Raw, unpolished</p>
+        <p class="style-description">Monochrome, raw HTML, unconventional layouts.</p>
+        <div class="style-example">
+          <div class="brutalist-example">
+            <div class="brutalist-header">BRUTALIST DESIGN</div>
+            <div class="brutalist-content">
+              <div class="brutalist-item">NO CSS</div>
+              <div class="brutalist-item">NO JS</div>
+              <div class="brutalist-item">JUST RAW HTML</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Memphis -->
+      <div class="style-card memphis">
+        <h3 class="style-title">MEMPHIS</h3>
+        <p class="style-vibe">Playful, chaotic</p>
+        <p class="style-description">Bright colors, geometric patterns, squiggles.</p>
+        <div class="style-example">
+          <div class="memphis-example">
+            <div class="memphis-grid">
+              <div class="memphis-cell"></div>
+              <div class="memphis-cell"></div>
+              <div class="memphis-cell"></div>
+              <div class="memphis-cell"></div>
+              <div class="memphis-cell"></div>
+              <div class="memphis-cell"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Gothic -->
+      <div class="style-card gothic">
+        <h3 class="style-title">GOTHIC</h3>
+        <p class="style-vibe">Dark, ornate</p>
+        <p class="style-description">Blackletter typography, medieval influences, dramatic.</p>
+        <div class="style-example">
+          <div class="gothic-example">
+            <div class="gothic-title">SANCTVM</div>
+            <div class="gothic-divider"></div>
+            <div class="gothic-text">MEMENTO MORI</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
